@@ -73,7 +73,7 @@
         <h1 class="mt-6 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
         
             <div class="ml-5 mt-12 mr-52 flex flex-col items-end">
-                <a href="" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                <a href="planproduccion/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                     <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
                         <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
@@ -85,8 +85,11 @@
             <h1 class="mb-4 ml-20  text-4xl font-bold leading-none tracking-tight text-gray-900">Termo <mark class="px-2 text-white bg-red-700 rounded">1</mark></h1>
             <div class="ml-20 w-10/12 overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-blue-300 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-xs text-black uppercase bg-blue-300 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
+                        <th scope="col" class="px-6 py-3">
+                            ID 
+                        </th>
                         <th scope="col" class="px-6 py-3">
                             PRODUCTO 
                         </th>
@@ -111,32 +114,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b uppercase dark:bg-gray-900 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            FRIGOCEL 128 CAV
-                        </th>
-                        <td class="px-6 py-4">
-                            17000
-                        </td>
-                        <td class="px-6 py-4">
-                            completo
-                        </td>
-                        <td class="px-6 py-4">
-                            10 x 41 blanco
-                        </td>
-                        <td class="px-6 py-4">
-                            25-sep-2023
-                        </td>
-                        <td class="px-6 py-4">
-                            28-sep-2023
-                        </td>
-                        <td class="px-6 py-4">
-                            <form action="">
-                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Editar</button>
-                                <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                            </form>
-                        </td>
-                    </tr>
+                    @foreach ($termo1s as $termo1)
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termo1->id }}</th>
+                            <td class="font-medium text-gray-700">{{ $termo1->producto}}</td>
+                            <td class="font-medium text-gray-700">{{ $termo1->cantidad}}</td>
+                            <td class="font-medium text-gray-700">{{ $termo1->corte}}</td>
+                            <td class="font-medium text-gray-700">{{ $termo1->material}}</td>
+                            <td class="font-medium text-gray-700">{{ $termo1->inicio}}</td>
+                            <td class="font-medium text-gray-700">{{ $termo1->termino}}</td>
+                           
+                            <td>
+                                <form action="{{ route ('planproduccion.destroy',$termo1->id)}}" method="POST">
+                                <a href="/planproduccion/{{ $termo1->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                    Editar
+                                </a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
             </div>
@@ -144,7 +143,7 @@
         
         <div>
             <div class="ml-5 mt-12 mr-52 flex flex-col items-end">
-                <a href="" class="text-white bg-green-700 hover:bg-green-800  focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                <a href="planproduccion/create2" class="text-white bg-green-700 hover:bg-green-800  focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                     <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
                         <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
@@ -181,58 +180,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                FRIGOCEL 128 CAV
-                            </th>
-                            <td class="px-6 py-4">
-                                17000
-                            </td>
-                            <td class="px-6 py-4">
-                                completo
-                            </td>
-                            <td class="px-6 py-4">
-                                10 x 41 blanco
-                            </td>
-                            <td class="px-6 py-4">
-                                25-sep-2023
-                            </td>
-                            <td class="px-6 py-4">
-                                28-sep-2023
-                            </td>
-                            <td class="px-6 py-4">
-                                <form action="">
-                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Editar</button>
-                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr class="border-b bg-green-200/50 dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                FRIGOCEL 200 CAV BLANCO
-                            </th>
-                            <td class="px-6 py-4">
-                                20000
-                            </td>
-                            <td class="px-6 py-4">
-                                completo
-                            </td>
-                            <td class="px-6 py-4">
-                                12 x 41 blanco
-                            </td>
-                            <td class="px-6 py-4">
-                                28-sep-2023
-                            </td>
-                            <td class="px-6 py-4">
-                                03-sep-2023
-                            </td>
-                            <td class="px-6 py-4">
-                                <form action="">
-                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Editar</button>
-                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                                </form>
-                            </td>
-                    </tbody>
+                        @foreach ($termo2s as $termo2)
+                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termo2->id }}</th>
+                                <td class="font-medium text-gray-700">{{ $termo2->producto}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo2->cantidad}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo2->corte}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo2->material}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo2->inicio}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo2->termino}}</td>
+                            
+                                <td>
+                                    <form action="{{ route ('planproduccion.destroy',$termo2->id)}}" method="POST">
+                                    <a href="/planproduccion/{{ $termo2->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                        Editar
+                                    </a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                     @endforeach
+                </tbody>
                 </table>
             </div>
         </div>
