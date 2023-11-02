@@ -69,6 +69,7 @@
                 @endauth
     </header>
 
+<body class="bg-gray-300">
     <div>
             <div class="ml-5 mt-12 mr-52 flex flex-col items-end">
                 <a href="termocuarta/create" class="text-white bg-green-700 hover:bg-green-800  focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
@@ -136,4 +137,5 @@
                 </table>
             </div>
     </div> 
+</body>
 </html>

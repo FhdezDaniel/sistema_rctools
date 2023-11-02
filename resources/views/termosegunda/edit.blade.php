@@ -70,7 +70,7 @@
 
 <body class="bg-gray-300">
         <div>
-            <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 1</mark></h2>
+            <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 2</mark></h2>
         </div>
         <div class="w-6/12  ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
             <form action="/termosegunda/{{ $termosegunda->id }}" method="POST">
@@ -193,7 +193,7 @@
                     <div class="">
                         <input 
                             type="submit"
-                            value="Crear registro"
+                            value="Guardar"
                             class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                             uppercase font-bold w-60 p-3 text-white rounded-lg"
                         />

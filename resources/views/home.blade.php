@@ -67,7 +67,7 @@
                         </nav>
                     </section>
                 @endauth
-    </header>
+</header>
 
         <div class="w-screen flex h-3/6">
           <div class="bg-gradient-to-t from-gray-300 to-black">
