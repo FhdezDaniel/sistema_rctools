@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -70,10 +70,10 @@
 
 <body class="bg-gray-300">
         <div>
-            <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">NUEVO REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 1</mark></h2>
+            <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">NUEVO REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 4</mark></h2>
         </div>
         <div class="w-6/12  ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
-            <form action="/planproduccion" method="POST">
+            <form action="/termocuarta" method="POST">
                 @csrf
                 <div class="flex">
                         <div class="mb-5 w-3/5">
@@ -185,7 +185,7 @@
                 </div>
                 <div class="flex mt-3 ml-80">
                     <div class="mt-3">
-                        <a href="/planproduccion" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
+                        <a href="/termocuarta" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
                             Cancelar
                         </a>
                     </div>
@@ -201,4 +201,4 @@
             </form>
         </div>
 </body>
-</html>  -->
+</html> 

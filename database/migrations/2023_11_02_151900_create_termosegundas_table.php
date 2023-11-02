@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('termo4s', function (Blueprint $table) {
+        Schema::create('termosegundas', function (Blueprint $table) {
             $table->id();
             $table->string('producto',50);
             $table->integer('cantidad');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('termo4s');
+        Schema::dropIfExists('termosegundas');
     }
 };

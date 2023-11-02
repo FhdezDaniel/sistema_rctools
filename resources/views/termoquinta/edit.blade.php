@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -70,10 +70,10 @@
 
 <body class="bg-gray-300">
         <div>
-            <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 1</mark></h2>
+            <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 5</mark></h2>
         </div>
         <div class="w-6/12  ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
-            <form action="/planproduccion/{{ $termo2->id }}" method="POST">
+            <form action="/termoquinta/{{ $termoquinta->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="flex">
@@ -88,7 +88,7 @@
                                 placeholder="Nombre del producto"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto') border-red-500
                                 @enderror"
-                                value="{{ $termo2->producto }}"
+                                value="{{ $termoquinta->producto }}"
                             />
                             @error('producto')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -105,7 +105,7 @@
                                 placeholder="Cantidad de piezas a fabricar"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('cantidad') border-red-500
                                 @enderror"
-                                value="{{ $termo2->cantidad }}"
+                                value="{{ $termoquinta->cantidad }}"
                             />
                             @error('cantidad')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -124,7 +124,7 @@
                                 placeholder="Tipo de corte del producto"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('corte') border-red-500
                                 @enderror"
-                                value="{{ $termo2->corte  }}"
+                                value="{{ $termoquinta->corte  }}"
                             />
                             @error('corte')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -141,7 +141,7 @@
                                 placeholder="Material del producto"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('material') border-red-500
                                 @enderror"
-                                value="{{ $termo2->material }}"
+                                value="{{ $termoquinta->material }}"
                             />
                             @error('material')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -160,7 +160,7 @@
                                 placeholder="Fecha - inicio de producción"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('inicio') border-red-500
                                 @enderror"
-                                value="{{ $termo2->inicio }}"
+                                value="{{ $termoquinta->inicio }}"
                             />
                             @error('inicio')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -177,7 +177,7 @@
                                 placeholder="Fecha - termino de produccion"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('termino') border-red-500
                                 @enderror"
-                                value="{{ $termo2->termino }}"
+                                value="{{ $termoquinta->termino }}"
                             />
                             @error('termino')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -186,7 +186,7 @@
                 </div>
                 <div class="flex mt-3 ml-80">
                     <div class="mt-3">
-                        <a href="/planproduccion" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
+                        <a href="/termocuarta" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
                             Cancelar
                         </a>
                     </div>
@@ -202,4 +202,4 @@
             </form>
         </div>
 </body>
-</html>  -->
+</html> 

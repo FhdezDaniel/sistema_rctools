@@ -9,6 +9,10 @@ use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\AlmacenpController;
 use App\Http\Controllers\SuajeController;
 use App\Http\Controllers\Termo1Controller;
+use App\Http\Controllers\TermosegundaController;
+use App\Http\Controllers\TermoterceraController;
+use App\Http\Controllers\TermocuartaController;
+use App\Http\Controllers\TermoquintaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,16 +36,16 @@ Route::get('/prueba', function () {
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenpController');
 Route::resource('/suajes','App\Http\Controllers\SuajeController');
 Route::resource('/planproduccion','App\Http\Controllers\Termo1Controller');
-Route::resource('/planproduccion/termo2','App\Http\Controllers\Termo2Controller');
-Route::resource('/planproduccion/termo3','App\Http\Controllers\Termo3Controller');
-Route::resource('/planproduccion/termo4','App\Http\Controllers\Termo4Controller');
-Route::resource('/planproduccion/termo5','App\Http\Controllers\Termo5Controller'); 
+
+Route::resource('termosegunda','App\Http\Controllers\TermosegundaController');
+Route::resource ('termotercera','App\Http\Controllers\TermoterceraController');
+Route::resource ('termocuarta','App\Http\Controllers\TermocuartaController');
+Route::resource ('termoquinta','App\Http\Controllers\TermoquintaController');
+
 
 Route::get('/registroproduccion', function(){
     return view('/registroproduccion');
 });
-
-
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 

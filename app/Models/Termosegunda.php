@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Termo3 extends Model
+class Termosegunda extends Model
 {
     use HasFactory;
 }

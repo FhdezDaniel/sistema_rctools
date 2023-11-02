@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Termo1;
 
+
 class Termo1Controller extends Controller
 {
 
@@ -12,11 +13,13 @@ class Termo1Controller extends Controller
     {
         $termo1s = Termo1::all();
         return view('planproduccion.index')->with('termo1s',$termo1s);
+       
     }
 
     public function create()
     {
         return view('planproduccion.create');
+       
     }
 
     public function store(Request $request)
@@ -44,6 +47,7 @@ class Termo1Controller extends Controller
     {
         $termo1 = Termo1::find($id);
         return view('planproduccion.edit')->with('termo1',$termo1);
+        
     }
 
    

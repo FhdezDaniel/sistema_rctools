@@ -69,8 +69,10 @@
     </header>
     
     <div class="w-screen bg-gray-300">
-        .
-        <h1 class="mt-6 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
+        
+        <div>   
+            .
+            <h1 class="mt-6 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
         
             <div class="ml-5 mt-12 mr-52 flex flex-col items-end">
                 <a href="planproduccion/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
@@ -115,26 +117,26 @@
                 </thead>
                 <tbody>
                     @foreach ($termo1s as $termo1)
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termo1->id }}</th>
-                            <td class="font-medium text-gray-700">{{ $termo1->producto}}</td>
-                            <td class="font-medium text-gray-700">{{ $termo1->cantidad}}</td>
-                            <td class="font-medium text-gray-700">{{ $termo1->corte}}</td>
-                            <td class="font-medium text-gray-700">{{ $termo1->material}}</td>
-                            <td class="font-medium text-gray-700">{{ $termo1->inicio}}</td>
-                            <td class="font-medium text-gray-700">{{ $termo1->termino}}</td>
-                           
-                            <td>
-                                <form action="{{ route ('planproduccion.destroy',$termo1->id)}}" method="POST">
-                                <a href="/planproduccion/{{ $termo1->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                    Editar
-                                </a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                                </form>
-                            </td>
-                        </tr>
+                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termo1->id }}</th>
+                                <td class="font-medium text-gray-700">{{ $termo1->producto}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo1->cantidad}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo1->corte}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo1->material}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo1->inicio}}</td>
+                                <td class="font-medium text-gray-700">{{ $termo1->termino}}</td>
+                            
+                                <td>
+                                    <form action="{{ route ('planproduccion.destroy',$termo1->id)}}" method="POST">
+                                    <a href="/planproduccion/{{ $termo1->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                        Editar
+                                    </a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -180,33 +182,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($termo2s as $termo2)
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termo2->id }}</th>
-                                <td class="font-medium text-gray-700">{{ $termo2->producto}}</td>
-                                <td class="font-medium text-gray-700">{{ $termo2->cantidad}}</td>
-                                <td class="font-medium text-gray-700">{{ $termo2->corte}}</td>
-                                <td class="font-medium text-gray-700">{{ $termo2->material}}</td>
-                                <td class="font-medium text-gray-700">{{ $termo2->inicio}}</td>
-                                <td class="font-medium text-gray-700">{{ $termo2->termino}}</td>
-                            
-                                <td>
-                                    <form action="{{ route ('planproduccion.destroy',$termo2->id)}}" method="POST">
-                                    <a href="/planproduccion/{{ $termo2->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                        Editar
-                                    </a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                                    </form>
-                                </td>
-                            </tr>
-                     @endforeach
-                </tbody>
+                    </tbody>
                 </table>
             </div>
-        </div>
-        
+        </div> 
+
         <div>
             <div class="ml-5 mt-12 mr-52 flex flex-col items-end">
                 <a href="" class="text-white bg-green-700 hover:bg-green-800  focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
@@ -494,6 +474,7 @@
             </table>
             </div>
         </div>
+        
     </div>
     <div class="w-screen h-20 bg-white flex flex-col items-center ">
         <form method="get" action="www.facebook.com" class="mt-2">
@@ -511,4 +492,4 @@
         </form>
           <p class="text-center text-black font-semibold">Norte 11 1129, Ciudad industrial de Celaya, 38010, teléfono: 461-216-0470</p>
     </div> 
-
+</html>
