@@ -114,13 +114,13 @@
                 </thead>
                 <tbody>
                         @foreach ($suajes as $suaje)
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->id }}</th>
-                            <td class="font-medium text-gray-700">{{ $suaje->modelo}}</td>
-                            <td class="font-medium text-gray-700">{{ $suaje->cantidad}}</td>
-                            <td class="font-medium text-gray-700">{{ $suaje->corte}}</td>
-                            <td class="font-medium text-gray-700">{{ $suaje->estatus}}</td>
-                            <td class="font-medium text-gray-700">{{ $suaje->ingreso}}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->modelo}}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->cantidad}}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->corte}}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->estatus}}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->ingreso}}</td>
                             <td>
                                 <form action="{{ route ('suajes.destroy',$suaje->id)}}" method="POST">
                                 <a href="/suajes/{{ $suaje->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">

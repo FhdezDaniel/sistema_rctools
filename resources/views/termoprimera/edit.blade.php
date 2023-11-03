@@ -73,7 +73,7 @@
             <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 1</mark></h2>
         </div>
         <div class="w-6/12  ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
-            <form action="/termoprimera/{{ $termo1->id }}" method="POST">
+            <form action="/termoprimera/{{ $termoprimera->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="flex">
@@ -88,7 +88,7 @@
                                 placeholder="Nombre del producto"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto') border-red-500
                                 @enderror"
-                                value="{{ $termo1->producto }}"
+                                value="{{ $termoprimera->producto }}"
                             />
                             @error('producto')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -105,7 +105,7 @@
                                 placeholder="Cantidad de piezas a fabricar"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('cantidad') border-red-500
                                 @enderror"
-                                value="{{ $termo1->cantidad }}"
+                                value="{{ $termoprimera->cantidad }}"
                             />
                             @error('cantidad')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -124,7 +124,7 @@
                                 placeholder="Tipo de corte del producto"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('corte') border-red-500
                                 @enderror"
-                                value="{{ $termo1->corte  }}"
+                                value="{{ $termoprimera->corte  }}"
                             />
                             @error('corte')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -141,7 +141,7 @@
                                 placeholder="Material del producto"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('material') border-red-500
                                 @enderror"
-                                value="{{ $termo1->material }}"
+                                value="{{ $termoprimera->material }}"
                             />
                             @error('material')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -160,7 +160,7 @@
                                 placeholder="Fecha - inicio de producción"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('inicio') border-red-500
                                 @enderror"
-                                value="{{ $termo1->inicio }}"
+                                value="{{ $termoprimera->inicio }}"
                             />
                             @error('inicio')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -177,7 +177,7 @@
                                 placeholder="Fecha - termino de produccion"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('termino') border-red-500
                                 @enderror"
-                                value="{{ $termo1->termino }}"
+                                value="{{ $termoprimera->termino }}"
                             />
                             @error('termino')
                                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -193,7 +193,7 @@
                     <div class="">
                         <input 
                             type="submit"
-                            value="Crear registro"
+                            value="Guardar"
                             class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                             uppercase font-bold w-60 p-3 text-white rounded-lg"
                         />

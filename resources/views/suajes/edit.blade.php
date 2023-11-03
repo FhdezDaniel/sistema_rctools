@@ -75,6 +75,7 @@
         <div class="w-4/12 h-2/3  ml-20 bg-white p-6 rounded-lg shadow-xl ">
             <form action="/suajes/{{ $suajes->id }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="mb-5">
                     <label for="modelo" class="mb-2 block uppercase text-gray-700 font-bold">
                         Modelo 
@@ -132,8 +133,8 @@
                     </label>
                     <select id="estatus" class="border font-medium text-gray-500  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option selected>Selecciona una opción</option>
-                        <option value="1">1</option>
-                        <option value="0">0</option>
+                        <option value="1">Disponible</option>
+                        <option value="0">Ocupado</option>
                     </select>
                     @error('estatus')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -161,7 +162,7 @@
                     </a>
                     <input 
                         type="submit"
-                        value="Crear registro"
+                        value="Guardar"
                         class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                         uppercase  font-bold w-60 p-3 text-white rounded-lg"
                     />

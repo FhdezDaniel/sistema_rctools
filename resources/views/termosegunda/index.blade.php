@@ -78,7 +78,13 @@
                         <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
                     </svg>
                     <span class="ml-2">CREAR PLAN TERMO 2</span>
-                <a>
+                </a>
+                <a href="/planproduccion" class="text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                </svg>
+                <span class="ml-2">REGRESAR</span>
+                </a>  
             </div>
             <h1 class="ml-20 mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900">Termo <mark class="px-2 text-white bg-red-700 rounded">2</mark></h1>
             <div class="ml-20 w-10/12 overflow-x-auto shadow-md sm:rounded-lg">
@@ -113,7 +119,7 @@
                     </thead>
                     <tbody>
                         @foreach ($termosegundas as $termosegunda)
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termosegunda->id  }}</th>
                             <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termosegunda->producto}}</td>
                             <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termosegunda->cantidad}}</td>

@@ -9,8 +9,8 @@
         <title>Sistema RC Tools - @yield('titulo')</title>
     </head>
 
-    <body class="bg-gray-100">
-        <header class="p-5 border-b bg-white shadow">
+    <body class="bg-gray-200">
+        <header class="p-5 border-b bg-gray-100 shadow">
             <div class="container mx-auto flex justify-between items-center">
                 <h1 class="text-2xl font-semibold">
                     RC Tools S.A de C.V
@@ -20,7 +20,7 @@
                 @auth 
                     <nav class="flex gap-2 items-center">
                         <a 
-                            class="flex items-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm
+                            class="flex items-center gap-2 bg-gray-200 border p-2 text-gray-600 rounded text-sm
                             uppercase font-bold cursor-pointer"    
                             href="{{ route('posts.create') }}">
                         
@@ -51,7 +51,7 @@
                 @guest
                     <nav class="flex gap-2">
                         <a  class="font-bold uppercase text-gray-600 text-sm" href="/login">Iniciar sesión</a>
-                        <a  class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear cuenta</a>
+                       <!--  <a  class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear cuenta</a> -->
                     </nav>
                 @endguest
 

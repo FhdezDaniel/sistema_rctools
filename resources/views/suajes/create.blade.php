@@ -131,10 +131,10 @@
                     <label for="estatus" class="mb-2 block uppercase text-gray-700 font-bold">
                         Estatus
                     </label>
-                    <select id="estatus" class="border-2 font-medium text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    <select id="estatus" type="text" class="border-2 font-medium text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option selected>Selecciona una opción</option>
-                        <option value="1">1</option>
-                        <option value="0">0</option>
+                        <option value="disponible">Disponible</option>
+                        <option value="ocupado">Ocupado</option>
                     </select>
                     @error('estatus')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

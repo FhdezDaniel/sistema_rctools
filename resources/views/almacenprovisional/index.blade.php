@@ -109,11 +109,11 @@
                     </thead>
                     <tbody>
                         @foreach ($almacenps as $almacen)
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $almacen->id }}</th>
-                            <td class="font-medium text-gray-700">{{ $almacen->nombre}}</td>
-                            <td class="font-medium text-gray-700">{{ $almacen->materia}}</td>
-                            <td class="font-medium text-gray-700">{{ $almacen->piezas}}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->nombre}}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->materia}}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->piezas}}</td>
                             <td>
                                 <form action="{{ route ('almacenprovisional.destroy',$almacen->id)}}" method="POST">
                                 <a href="/almacenprovisional/{{ $almacen->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">

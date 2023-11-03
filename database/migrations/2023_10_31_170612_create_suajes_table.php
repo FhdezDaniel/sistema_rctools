@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('modelo',50);
             $table->integer('cantidad');
             $table->string('corte',50);
-            $table->boolean('estatus');
+            $table->varchar('estatus');
             $table->date('ingreso');
             $table->timestamps();
         });
