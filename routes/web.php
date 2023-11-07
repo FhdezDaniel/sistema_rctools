@@ -8,6 +8,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\AlmacenpController;
 use App\Http\Controllers\SuajeController;
+use App\Http\Controllers\SuajemodeloController;
 use App\Http\Controllers\Termo1Controller;
 use App\Http\Controllers\TermoprimeraController;
 use App\Http\Controllers\TermosegundaController;
@@ -37,6 +38,7 @@ Route::get('/prueba', function () {
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenpController');
 Route::resource('/suajes','App\Http\Controllers\SuajeController');
 Route::resource('/planproduccion','App\Http\Controllers\Termo1Controller');
+Route::resource('/suajemodelos','App\Http\Controllers\SuajemodeloController');
 
 Route::resource('termoprimera','App\Http\Controllers\TermoprimeraController');
 Route::resource('termosegunda','App\Http\Controllers\TermosegundaController');
