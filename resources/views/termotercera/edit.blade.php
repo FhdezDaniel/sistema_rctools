@@ -34,7 +34,7 @@
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion/create">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
@@ -114,6 +114,22 @@
                 </div>
                 <div class="flex">
                         <div class="mb-5 w-3/5">
+                            <label for="suaje" class="mb-2 block uppercase text-gray-700 font-bold">
+                                Suaje
+                            </label>
+                            <input
+                                id="suaje"
+                                name="suaje" 
+                                type="text"
+                                class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('suaje') border-red-500
+                                @enderror"
+                                value="{{ $termotercera->suaje  }}"
+                            />
+                            @error('suaje')
+                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="mb-5 ml-5 w-3/5">
                             <label for="corte" class="mb-2 block uppercase text-gray-700 font-bold">
                                 Corte
                             </label>

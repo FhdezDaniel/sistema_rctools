@@ -1,23 +1,43 @@
-@extends('layouts.app')
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+            @stack('styles')
+            @vite('resources/css/app.css')
+            @vite('resources/js/app.js')
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <title>Sistema RC Tools - Prueba</title>
+    </head>
 
-@section('titulo')
-    Bienvenido al sistema de RC TOOLS - Inicie sesión
-@endsection
+    
+    <header>
+        <section>
+            <nav class="flex justify-between bg-red-700 text-neutral-100 w-screen" :class="{'flex': open, 'hidden': !open}">
+                <div class="px-10 py-4 flex w-screen items-center">
+                <img class="h-16" src="{{ asset('images/rctoolslogo.jpg') }}" alt="logo"> 
+                    <a class="text-3xl font-sans font-medium ml-3 hover:text-black uppercase" href="/home">
+                        RC Tools 
+                    </a>                
+                </div>            
+            </nav>
+        </section>
+    </header>
 
-@section('contenido')
+    
+
 <div class="md:flex md:justify-center md:gap-4 md:items-center">
+    <div class="md:w-4/12 p-5">
+        <img src="{{ asset('images/rctoolslogo.jpg') }}" alt="img-registro">
+    </div>
+   
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-        <form method="POST" action="{{ route('login') }} " novalidate>
+        <form method="POST" action=" " novalidate>
             @csrf            
 
-            @if(session('mensaje'))
-                 <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
-                    {{ session('mensaje') }}
-                 </p>
-            @endif 
 
             <div class="mb-5">
-                <label for="email" class="mb-2 block uppercase text-gray-700 font-bold">
+                <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
                     Correo electronico
                 </label>
                 <input
@@ -34,7 +54,7 @@
                 @enderror
             </div>
             <div class="mb-5">
-                <label for="password" class="mb-2 block uppercase text-gray-700 font-bold">
+                <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">
                     Contraseña
                 </label>
                 <input
@@ -64,4 +84,9 @@
         </form>
     </div>
 </div>
-@endsection
+
+
+    <body class="bg-gray-300">
+        
+    </body>
+

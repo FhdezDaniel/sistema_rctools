@@ -31,6 +31,7 @@ class TermosegundaController extends Controller
         $termosegundas->material = $request->get('material');
         $termosegundas->inicio = $request->get('inicio');
         $termosegundas->termino = $request->get('termino');
+        $termosegundas->suaje = $request->get('suaje');
 
         $termosegundas->save();
 
@@ -62,6 +63,7 @@ class TermosegundaController extends Controller
         $termosegunda->material = $request->get('material');
         $termosegunda->inicio = $request->get('inicio');
         $termosegunda->termino = $request->get('termino');
+        $termosegunda->suaje = $request->get('suaje');
 
         $termosegunda->save();
 

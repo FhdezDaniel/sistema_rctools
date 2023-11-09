@@ -25,7 +25,6 @@
             </div>
 
         </div>
-
     </div>
 
     <section class="container mx-auto mt">

@@ -6,13 +6,16 @@
             @stack('styles')
             @vite('resources/css/app.css')
             @vite('resources/js/app.js')
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <title>Sistema RC Tools - @yield('titulo')</title>
     </head>
 
-    <body class="bg-gray-200">
-        <header class="p-5 border-b bg-gray-100 shadow">
+    <body class="bg-gray-300">
+        <header class="p-5 bg-red-700 shadow">
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-2xl font-semibold">
+                <h1 class="text-3xl flex items-center font-sans font-medium ml-3 text-white uppercase hover:text-black">
+                <img class="h-16 mr-3" src="{{ asset('images/rctoolslogo.jpg') }}" alt="logo">
                     RC Tools S.A de C.V
                 </h1>
 
@@ -50,7 +53,7 @@
                 @endauth
                 @guest
                     <nav class="flex gap-2">
-                        <a  class="font-bold uppercase text-gray-600 text-sm" href="/login">Iniciar sesión</a>
+                        <a  class="font-bold uppercase text-white hover:text-black text-sm" href="/login">Iniciar sesión</a>
                        <!--  <a  class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear cuenta</a> -->
                     </nav>
                 @endguest
@@ -58,13 +61,13 @@
             </div>
         </header> 
         <main class="container mx-auto mt-10">
-            <h2 class="font-normal text-center text-3xl mb-10">
+            <h2 class="font-semibold text-center text-3xl mb-10">
                 @yield('titulo')
             </h2>
             @yield('contenido')
         </main>
         
-        <footer class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
+        <footer class="mt-52 text-center p-5 text-black font-bold uppercase">
             RC Tools s.a de c.v - Todos los derechos reservados <?php echo date('Y') ?>
         </footer>  
     </body>

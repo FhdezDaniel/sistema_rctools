@@ -7,7 +7,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\AlmacenpController;
-use App\Http\Controllers\SuajeController;
 use App\Http\Controllers\SuajemodeloController;
 use App\Http\Controllers\Termo1Controller;
 use App\Http\Controllers\TermoprimeraController;
@@ -15,6 +14,7 @@ use App\Http\Controllers\TermosegundaController;
 use App\Http\Controllers\TermoterceraController;
 use App\Http\Controllers\TermocuartaController;
 use App\Http\Controllers\TermoquintaController;
+use App\Http\Controllers\ProduccionregistroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,15 +31,19 @@ Route::get('/home', function () {
     return view('/home');
 });  
 
-Route::get('/prueba', function () {
-    return view('/prueba');
+Route::get('/loginp', function () {
+    return view('/loginp');
 });  
 
+
+// MENU DE NAVEGACIÓN
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenpController');
-Route::resource('/suajes','App\Http\Controllers\SuajeController');
 Route::resource('/planproduccion','App\Http\Controllers\Termo1Controller');
 Route::resource('/suajemodelos','App\Http\Controllers\SuajemodeloController');
+Route::resource('/registroproduccion','App\Http\Controllers\ProduccionregistroController');
 
+
+// TERMO FORMADORAS
 Route::resource('termoprimera','App\Http\Controllers\TermoprimeraController');
 Route::resource('termosegunda','App\Http\Controllers\TermosegundaController');
 Route::resource ('termotercera','App\Http\Controllers\TermoterceraController');
@@ -47,18 +51,15 @@ Route::resource ('termocuarta','App\Http\Controllers\TermocuartaController');
 Route::resource ('termoquinta','App\Http\Controllers\TermoquintaController');
 
 
-Route::get('/registroproduccion', function(){
-    return view('/registroproduccion');
-});
-
+// REGISTRO Y LOGIN 
 Route::get('/', [LoginController::class, 'index'])->name('login');
-
 Route::get('/register', [RegisterController::class, 'index'])->name('register'); 
 Route::post('/register', [RegisterController::class, 'store']); 
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
+
 
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');

@@ -28,6 +28,7 @@ class TermoterceraController extends Controller
         $termoterceras->material = $request->get('material');
         $termoterceras->inicio = $request->get('inicio');
         $termoterceras->termino = $request->get('termino');
+        $termoterceras->suaje = $request->get('suaje');
 
         $termoterceras->save();
 
@@ -59,6 +60,7 @@ class TermoterceraController extends Controller
         $termotercera->material = $request->get('material');
         $termotercera->inicio = $request->get('inicio');
         $termotercera->termino = $request->get('termino');
+        $termotercera->suaje = $request->get('suaje');
 
         $termotercera->save();
 
