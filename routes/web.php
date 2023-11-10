@@ -15,6 +15,12 @@ use App\Http\Controllers\TermoterceraController;
 use App\Http\Controllers\TermocuartaController;
 use App\Http\Controllers\TermoquintaController;
 use App\Http\Controllers\ProduccionregistroController;
+use App\Http\Controllers\ProduccionController;
+use App\Http\Controllers\Linea1Controller;
+use App\Http\Controllers\Linea2Controller;
+use App\Http\Controllers\Linea3Controller;
+use App\Http\Controllers\Linea4Controller;
+use App\Http\Controllers\Linea5Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +43,7 @@ Route::get('/loginp', function () {
 
 
 // MENU DE NAVEGACIÓN
+Route::resource('/produccion','App\Http\Controllers\ProduccionController');
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenpController');
 Route::resource('/planproduccion','App\Http\Controllers\Termo1Controller');
 Route::resource('/suajemodelos','App\Http\Controllers\SuajemodeloController');
@@ -59,6 +66,12 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
+// LINEAS 
+Route::resource('/linea1','App\Http\Controllers\Linea1Controller');
+Route::resource('/linea2','App\Http\Controllers\Linea2Controller');
+Route::resource('/linea3','App\Http\Controllers\Linea3Controller');
+Route::resource('/linea4','App\Http\Controllers\Linea4Controller');
+Route::resource('/linea5','App\Http\Controllers\Linea5Controller');
 
 
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
