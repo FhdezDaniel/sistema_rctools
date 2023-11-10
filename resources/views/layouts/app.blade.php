@@ -23,7 +23,7 @@
                 @auth 
                     <nav class="flex gap-2 items-center">
                         <a 
-                            class="flex items-center gap-2 bg-gray-200 border p-2 text-gray-600 rounded text-sm
+                            class="flex items-center gap-2 bg-gray-200 border p-2 text-black rounded text-sm
                             uppercase font-bold cursor-pointer"    
                             href="{{ route('posts.create') }}">
                         
@@ -34,7 +34,7 @@
 
                         Crear</a>
 
-                        <a  class="font-bold text-gray-600 text-sm" 
+                        <a  class="font-bold text-white hover:text-black text-sm" 
                             href="{{ route('posts.index', auth()->user()->username) }}">
                             Hola:
                                 <span class="font-normal"> 
@@ -44,7 +44,7 @@
                         
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="font-bold uppercase text-gray-600 text-sm">
+                            <button type="submit" class="font-bold uppercase text-white hover:text-black text-sm">
                                 Cerrar sesión
                             </button>
                         </form>
