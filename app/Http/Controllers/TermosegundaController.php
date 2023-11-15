@@ -7,9 +7,6 @@ use App\Models\Termosegunda;
 
 class TermosegundaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $termosegundas = Termosegunda::all();
@@ -50,9 +47,6 @@ class TermosegundaController extends Controller
         return view('termosegunda.edit')->with('termosegunda',$termosegunda);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $termosegunda = Termosegunda::find($id);
@@ -70,9 +64,6 @@ class TermosegundaController extends Controller
         return redirect('/termosegunda');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $termosegunda = Termosegunda::find($id);

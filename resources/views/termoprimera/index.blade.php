@@ -68,102 +68,102 @@
                 @endauth
     </header>
     
-<body class="bg-gray-300">
-    <div class="w-screen">
-        
-        <div>   
-            .
-            <h1 class="mt-6 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
-        
-            <div class="ml-5 mt-12 mr-52 flex flex-col items-end">
-                <a href="termoprimera/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                    <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
-                        <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
+    <body class="bg-gray-300">
+        <div class="w-screen">
+            
+            <div>   
+                .
+                <h1 class="mt-6 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
+            
+                <div class="ml-5 mt-12 mr-52 flex flex-col items-end">
+                    <a href="termoprimera/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
+                            <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
+                        </svg>
+                        <span class="ml-2">CREAR PLAN TERMO 1</span>
+                    </a> 
+                    <a href="/planproduccion" class="text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
                     </svg>
-                    <span class="ml-2">CREAR PLAN TERMO 1</span>
-                </a> 
-                <a href="/planproduccion" class="text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
-                </svg>
-                <span class="ml-2">REGRESAR</span>
-                </a>       
+                    <span class="ml-2">REGRESAR</span>
+                    </a>       
+                </div>
+                <div>
+                <h1 class="mb-4 ml-20  text-4xl font-bold leading-none tracking-tight text-gray-900">Termo <mark class="px-2 text-white bg-red-700 rounded">1</mark></h1>
+                <div class="ml-20 w-10/12 overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-black uppercase bg-blue-300 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                ID 
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                PRODUCTO 
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                CANTIDAD
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                CORTE
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                MATERIAL
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                FECHA - INICIO
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                FECHA - TERMINO
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                ACCIÓN
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($termoprimeras as $termoprimera)
+                                <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->id }}</th>
+                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->producto}}</td>
+                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->cantidad}}</td>
+                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->corte}}</td>
+                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->material}}</td>
+                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->inicio}}</td>
+                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->termino}}</td>
+                                
+                                    <td>
+                                        <form action="{{ route ('termoprimera.destroy',$termoprimera->id)}}" method="POST">
+                                        <a href="/termoprimera/{{ $termoprimera->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                            Editar
+                                        </a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                </div>
             </div>
-            <div>
-            <h1 class="mb-4 ml-20  text-4xl font-bold leading-none tracking-tight text-gray-900">Termo <mark class="px-2 text-white bg-red-700 rounded">1</mark></h1>
-            <div class="ml-20 w-10/12 overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-black uppercase bg-blue-300 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-                            ID 
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            PRODUCTO 
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            CANTIDAD
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            CORTE
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            MATERIAL
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            FECHA - INICIO
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            FECHA - TERMINO
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            ACCIÓN
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($termoprimeras as $termoprimera)
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->id }}</th>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->producto}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->cantidad}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->corte}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->material}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->inicio}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->termino}}</td>
-                            
-                                <td>
-                                    <form action="{{ route ('termoprimera.destroy',$termoprimera->id)}}" method="POST">
-                                    <a href="/termoprimera/{{ $termoprimera->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                        Editar
-                                    </a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                                    </form>
-                                </td>
-                            </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            </div>
-        </div>
-        <!-- <div class="w-screen h-20 bg-white flex flex-col items-center ">
-        <form method="get" action="www.facebook.com" class="mt-2">
-                <button
-                    type="submit"
-                    href="www.facebook.com"
-                    data-te-ripple-init
-                    data-te-ripple-color="light"
-                    class="mb-2 inline-block rounded align-center px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
-                    style="background-color: #1877f2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                    </svg>
-                </button>
-        </form>
-          <p class="text-center text-black font-semibold">Norte 11 1129, Ciudad industrial de Celaya, 38010, teléfono: 461-216-0470</p>
-    </div>  -->
-</body>
+            <!-- <div class="w-screen h-20 bg-white flex flex-col items-center ">
+            <form method="get" action="www.facebook.com" class="mt-2">
+                    <button
+                        type="submit"
+                        href="www.facebook.com"
+                        data-te-ripple-init
+                        data-te-ripple-color="light"
+                        class="mb-2 inline-block rounded align-center px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                        style="background-color: #1877f2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                    </button>
+            </form>
+            <p class="text-center text-black font-semibold">Norte 11 1129, Ciudad industrial de Celaya, 38010, teléfono: 461-216-0470</p>
+        </div>  -->
+    </body>
 </html>

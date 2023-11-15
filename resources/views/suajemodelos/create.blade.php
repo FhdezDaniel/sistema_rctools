@@ -69,100 +69,100 @@
     </header>
 
 
-<body class="bg-gray-300">
-        <div>
-            <h2 class="mt-6 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">suajes</mark></h2>
-        </div>
-        <div class="w-4/12 h-2/3  ml-20 bg-white p-6 rounded-lg shadow-xl ">
-            <form action="/suajemodelos" method="POST">
-                @csrf
-                <div class="mb-5">
-                    <label for="codigo" class="mb-2 block uppercase text-gray-700 font-bold">
-                        Codigo
-                    </label>
-                    <input
-                        id="codigo"
-                        name="codigo" 
-                        type="text"
-                        placeholder="Escriba el codigo del suaje"
-                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('codigo') border-red-500
-                        @enderror"
-                        value="{{ old('codigo') }}"
-                    />
-                    @error('codigo')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
-                    <label for="activo" class="mb-2 block uppercase text-gray-700 font-bold">
-                        Estatus activo
-                    </label>
-                    <input
-                        id="activo"
-                        name="activo" 
-                        type="text"
-                        placeholder="Escriba el estatus activo del suaje"
-                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('activo') border-red-500
-                        @enderror"
-                        value="{{ old('activo') }}"
-                    />
-                    @error('activo')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
-                    <label for="comentarios" class="mb-2 block uppercase text-gray-700 font-bold">
-                        Comentarios
-                    </label>
-                    <input
-                        id="comentarios"
-                        name="comentarios" 
-                        type="text"
-                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('comentarios') border-red-500
-                        @enderror"
-                        value="{{ old('comentarios') }}"
-                    />
-                    @error('comentarios')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
-                    <label for="estatus" class="mb-2 block uppercase text-gray-700 font-bold">
-                        Estatus
-                    </label>
-                    <select
-                        id="estatus"
-                        name="estatus" 
-                        type="selected"
-                        class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('estatus') border-red-500
-                        @enderror"
-                        value="{{ old('estatus') }}"
-                    >
-                    <option value="DISPONIBLE">Disponible</option>
-                    <option value="OCUPADO">Ocupado</option>
-                    <option value="OBSOLETO">Obsoleto</option>
-                    <option value="DAÑADO">Dañado</option>
-                    </select>
-                    @error('estatus')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
-                </div>
+    <body class="bg-gray-300">
+            <div>
+                <h2 class="mt-6 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">suajes</mark></h2>
+            </div>
+            <div class="w-4/12 h-2/3  ml-20 bg-white p-6 rounded-lg shadow-xl ">
+                <form action="/suajemodelos" method="POST">
+                    @csrf
+                    <div class="mb-5">
+                        <label for="codigo" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Codigo
+                        </label>
+                        <input
+                            id="codigo"
+                            name="codigo" 
+                            type="text"
+                            placeholder="Escriba el codigo del suaje"
+                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('codigo') border-red-500
+                            @enderror"
+                            value="{{ old('codigo') }}"
+                        />
+                        @error('codigo')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-5">
+                        <label for="activo" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Estatus activo
+                        </label>
+                        <input
+                            id="activo"
+                            name="activo" 
+                            type="text"
+                            placeholder="Escriba el estatus activo del suaje"
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('activo') border-red-500
+                            @enderror"
+                            value="{{ old('activo') }}"
+                        />
+                        @error('activo')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-5">
+                        <label for="comentarios" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Comentarios
+                        </label>
+                        <input
+                            id="comentarios"
+                            name="comentarios" 
+                            type="text"
+                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('comentarios') border-red-500
+                            @enderror"
+                            value="{{ old('comentarios') }}"
+                        />
+                        @error('comentarios')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-5">
+                        <label for="estatus" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Estatus
+                        </label>
+                        <select
+                            id="estatus"
+                            name="estatus" 
+                            type="selected"
+                            class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('estatus') border-red-500
+                            @enderror"
+                            value="{{ old('estatus') }}"
+                        >
+                        <option value="DISPONIBLE">Disponible</option>
+                        <option value="OCUPADO">Ocupado</option>
+                        <option value="OBSOLETO">Obsoleto</option>
+                        <option value="DAÑADO">Dañado</option>
+                        </select>
+                        @error('estatus')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                <div class="mb-2">
-                    <a href="/suajemodelos" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg  px-20 py-3 mr-3 ">
-                        Cancelar
-                    </a>
-                    <input 
-                        type="submit"
-                        value="Crear registro"
-                        class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                        uppercase  font-bold w-60 p-3 text-white rounded-lg"
-                    />
-                </div>
-            </form>
-        </div>
-        <div>
-            
-        </div>
-</body>
+                    <div class="mb-2">
+                        <a href="/suajemodelos" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg  px-20 py-3 mr-3 ">
+                            Cancelar
+                        </a>
+                        <input 
+                            type="submit"
+                            value="Crear registro"
+                            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                            uppercase  font-bold w-60 p-3 text-white rounded-lg"
+                        />
+                    </div>
+                </form>
+            </div>
+            <div>
+                
+            </div>
+    </body>
 </html> 

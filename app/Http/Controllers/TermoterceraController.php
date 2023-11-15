@@ -47,9 +47,7 @@ class TermoterceraController extends Controller
         return view('termotercera.edit')->with('termotercera',$termotercera);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, string $id)
     {
         $termotercera = Termotercera::find($id);
@@ -67,9 +65,6 @@ class TermoterceraController extends Controller
         return redirect('/termotercera');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $termotercera = Termotercera::find($id);

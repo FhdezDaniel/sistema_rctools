@@ -68,137 +68,137 @@
                 @endauth
     </header>
 
-<body class="bg-gray-300">
-        <div>
-            <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">NUEVO REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 5</mark></h2>
-        </div>
-        <div class="w-6/12  ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
-            <form action="/termoquinta" method="POST">
-                @csrf
-                <div class="flex">
-                        <div class="mb-5 w-3/5">
-                            <label for="producto" class="mb-2 block uppercase text-gray-700 font-bold">
-                                Producto
-                            </label>
-                            <input
-                                id="producto"
-                                name="producto" 
-                                type="text"
-                                placeholder="Nombre del producto"
-                                class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto') border-red-500
-                                @enderror"
-                                value="{{ old('producto') }}"
-                            />
-                            @error('producto')
-                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="mb-5 ml-6 w-3/5">
-                            <label for="cantidad" class="mb-2 block uppercase text-gray-700 font-bold">
-                                Cantidad
-                            </label>
-                            <input
-                                id="cantidad"
-                                name="cantidad" 
-                                type="text"
-                                placeholder="Cantidad de piezas a fabricar"
-                                class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('cantidad') border-red-500
-                                @enderror"
-                                value="{{ old('cantidad') }}"
-                            />
-                            @error('cantidad')
-                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                            @enderror
-                        </div>
-                </div>
-                <div class="flex">
-                        <div class="mb-5 w-3/5">
-                            <label for="corte" class="mb-2 block uppercase text-gray-700 font-bold">
-                                Corte
-                            </label>
-                            <input
-                                id="corte"
-                                name="corte" 
-                                type="text"
-                                placeholder="Tipo de corte del producto"
-                                class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('corte') border-red-500
-                                @enderror"
-                                value="{{ old('corte') }}"
-                            />
-                            @error('corte')
-                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="mb-5 ml-6 w-3/5">
-                            <label for="material" class="mb-2 block uppercase text-gray-700 font-bold">
-                                Material
-                            </label>
-                            <input
-                                id="material"
-                                name="material" 
-                                type="text"
-                                placeholder="Material del producto"
-                                class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('material') border-red-500
-                                @enderror"
-                                value="{{ old('material') }}"
-                            />
-                            @error('material')
-                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                            @enderror
-                        </div>
-                </div>
-                <div class="flex">
-                        <div class="mb-5 w-3/5">
-                            <label for="inicio" class="mb-2 block uppercase text-gray-700 font-bold">
-                                Fecha - Inicio
-                            </label>
-                            <input
-                                id="inicio"
-                                name="inicio" 
-                                type="date"
-                                placeholder="Fecha - inicio de producción"
-                                class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('inicio') border-red-500
-                                @enderror"
-                                value="{{ old('inicio') }}"
-                            />
-                            @error('inicio')
-                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="mb-5 w-3/5 ml-6">
-                            <label for="termino" class="mb-2 block uppercase text-gray-700 font-bold">
-                                Fecha - Termino
-                            </label>
-                            <input
-                                id="termino"
-                                name="termino" 
-                                type="date"
-                                placeholder="Fecha - termino de produccion"
-                                class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('termino') border-red-500
-                                @enderror"
-                                value="{{ old('termino') }}"
-                            />
-                            @error('termino')
-                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                            @enderror
-                        </div>
-                </div>
-                <div class="flex mt-3 ml-80">
-                    <div class="mt-3">
-                        <a href="/termoquinta" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
-                            Cancelar
-                        </a>
+    <body class="bg-gray-300">
+            <div>
+                <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">NUEVO REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 5</mark></h2>
+            </div>
+            <div class="w-6/12  ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
+                <form action="/termoquinta" method="POST">
+                    @csrf
+                    <div class="flex">
+                            <div class="mb-5 w-3/5">
+                                <label for="producto" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Producto
+                                </label>
+                                <input
+                                    id="producto"
+                                    name="producto" 
+                                    type="text"
+                                    placeholder="Nombre del producto"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto') border-red-500
+                                    @enderror"
+                                    value="{{ old('producto') }}"
+                                />
+                                @error('producto')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-5 ml-6 w-3/5">
+                                <label for="cantidad" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Cantidad
+                                </label>
+                                <input
+                                    id="cantidad"
+                                    name="cantidad" 
+                                    type="text"
+                                    placeholder="Cantidad de piezas a fabricar"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('cantidad') border-red-500
+                                    @enderror"
+                                    value="{{ old('cantidad') }}"
+                                />
+                                @error('cantidad')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
                     </div>
-                    <div class="">
-                        <input 
-                            type="submit"
-                            value="Crear registro"
-                            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                            uppercase font-bold w-60 p-3 text-white rounded-lg"
-                        />
+                    <div class="flex">
+                            <div class="mb-5 w-3/5">
+                                <label for="corte" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Corte
+                                </label>
+                                <input
+                                    id="corte"
+                                    name="corte" 
+                                    type="text"
+                                    placeholder="Tipo de corte del producto"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('corte') border-red-500
+                                    @enderror"
+                                    value="{{ old('corte') }}"
+                                />
+                                @error('corte')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-5 ml-6 w-3/5">
+                                <label for="material" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Material
+                                </label>
+                                <input
+                                    id="material"
+                                    name="material" 
+                                    type="text"
+                                    placeholder="Material del producto"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('material') border-red-500
+                                    @enderror"
+                                    value="{{ old('material') }}"
+                                />
+                                @error('material')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
                     </div>
-                </div>
-            </form>
-        </div>
-</body>
+                    <div class="flex">
+                            <div class="mb-5 w-3/5">
+                                <label for="inicio" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Fecha - Inicio
+                                </label>
+                                <input
+                                    id="inicio"
+                                    name="inicio" 
+                                    type="date"
+                                    placeholder="Fecha - inicio de producción"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('inicio') border-red-500
+                                    @enderror"
+                                    value="{{ old('inicio') }}"
+                                />
+                                @error('inicio')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="mb-5 w-3/5 ml-6">
+                                <label for="termino" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Fecha - Termino
+                                </label>
+                                <input
+                                    id="termino"
+                                    name="termino" 
+                                    type="date"
+                                    placeholder="Fecha - termino de produccion"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('termino') border-red-500
+                                    @enderror"
+                                    value="{{ old('termino') }}"
+                                />
+                                @error('termino')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
+                    </div>
+                    <div class="flex mt-3 ml-80">
+                        <div class="mt-3">
+                            <a href="/termoquinta" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
+                                Cancelar
+                            </a>
+                        </div>
+                        <div class="">
+                            <input 
+                                type="submit"
+                                value="Crear registro"
+                                class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                                uppercase font-bold w-60 p-3 text-white rounded-lg"
+                            />
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </body>
 </html> 

@@ -7,9 +7,6 @@ use App\Models\Termoprimera;
 
 class TermoprimeraController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $termoprimeras = Termoprimera::all();

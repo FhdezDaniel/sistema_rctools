@@ -37,11 +37,6 @@ Route::get('/home', function () {
     return view('/home');
 });  
 
-Route::get('/loginp', function () {
-    return view('/loginp');
-});  
-
-
 // MENU DE NAVEGACIÓN
 Route::resource('/produccion','App\Http\Controllers\ProduccionController');
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenpController');

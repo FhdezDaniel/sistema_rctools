@@ -52,9 +52,6 @@ class ProduccionregistroController extends Controller
         return view('registroproduccion.edit')->with('produccionregistro',$produccionregistro);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
 

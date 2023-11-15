@@ -47,9 +47,7 @@ class TermocuartaController extends Controller
         return view('termocuarta.edit')->with('termocuarta',$termocuarta);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, string $id)
     {
         $termocuarta = Termocuarta::find($id);
@@ -66,9 +64,7 @@ class TermocuartaController extends Controller
         return redirect('/termocuarta');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(string $id)
     {
         $termocuarta = Termocuarta::find($id);

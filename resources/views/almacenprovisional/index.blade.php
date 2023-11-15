@@ -68,68 +68,68 @@
                 @endauth
     </header>
    
-<body class="bg-gray-300">
-    <div class="w-screen h-screen bg-gray-300">
-        <div class="bg-gray-300">
-            <p>.</p>
-            <h1 class="mt-6 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">ALMACEN <mark class="px-2 text-white bg-red-700 rounded">Provisional</mark></h1>
-        </div>
-    <div>
-
-    <div class="">
-            <div class="ml-5 mt-12 mr-40 flex flex-col items-end">
-                <a href="almacenprovisional/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                    <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
-                        <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
-                    </svg>
-                    <span class="ml-2">CREAR NUEVO REGISTRO</span>
-                <a>
+    <body class="bg-gray-300">
+        <div class="w-screen h-screen bg-gray-300">
+            <div class="bg-gray-300">
+                <p>.</p>
+                <h1 class="mt-6 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">ALMACEN <mark class="px-2 text-white bg-red-700 rounded">Provisional</mark></h1>
             </div>
-        <div class="w-5/6 flex flex-col ml-28 mt-5 items-center">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-black bg-amber-300 uppercase  dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                ID
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                NOMBRE DEL PRODUCTO 
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                MATERIAL
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                PIEZAS
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                ACCION
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($almacenps as $almacen)
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $almacen->id }}</th>
-                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->nombre}}</td>
-                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->materia}}</td>
-                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->piezas}}</td>
-                            <td>
-                                <form action="{{ route ('almacenprovisional.destroy',$almacen->id)}}" method="POST">
-                                <a href="/almacenprovisional/{{ $almacen->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                    Editar
-                                </a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-            </table>
+        <div>
+
+        <div class="">
+                <div class="ml-5 mt-12 mr-40 flex flex-col items-end">
+                    <a href="almacenprovisional/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
+                            <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
+                        </svg>
+                        <span class="ml-2">CREAR NUEVO REGISTRO</span>
+                    <a>
+                </div>
+            <div class="w-5/6 flex flex-col ml-28 mt-5 items-center">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-black bg-amber-300 uppercase  dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    ID
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    NOMBRE DEL PRODUCTO 
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    MATERIAL
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    PIEZAS
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    ACCION
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($almacenps as $almacen)
+                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $almacen->id }}</th>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->nombre}}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->materia}}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacen->piezas}}</td>
+                                <td>
+                                    <form action="{{ route ('almacenprovisional.destroy',$almacen->id)}}" method="POST">
+                                    <a href="/almacenprovisional/{{ $almacen->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                        Editar
+                                    </a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                </table>
+            </div>
         </div>
-    </div>
 
     </body>
 </html>

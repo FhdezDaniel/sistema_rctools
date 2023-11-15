@@ -68,76 +68,76 @@
                 @endauth
     </header>
 
-<body class="bg-gray-300">
-        <div>
-            <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR NUEVO REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Almacen provisional</mark></h2>
-        </div>
-        <div class="w-4/12  ml-20 bg-white p-6 rounded-lg shadow-xl">
-            <form action="/almacenprovisional" method="POST">
-                @csrf
-                <div class="mb-5">
-                    <label for="nombre" class="mb-2 block uppercase text-gray-700 font-bold">
-                        Nombre del producto
-                    </label>
-                    <input
-                        id="nombre"
-                        name="nombre" 
-                        type="text"
-                        placeholder="Escriba el nombre del producto"
-                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombre') border-red-500
-                        @enderror"
-                        value="{{ old('nombre') }}"
-                    />
-                    @error('nombre')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
-                    <label for="materia" class="mb-2 block uppercase text-gray-700 font-bold">
-                        Material
-                    </label>
-                    <input
-                        id="materia"
-                        name="materia" 
-                        type="text"
-                        placeholder="Escriba material del producto"
-                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('materia') border-red-500
-                        @enderror"
-                        value="{{ old('materia') }}"
-                    />
-                    @error('materia')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-5">
-                    <label for="name" class="mb-2 block uppercase text-gray-700 font-bold">
-                        Piezas
-                    </label>
-                    <input
-                        id="piezas"
-                        name="piezas" 
-                        type="text"
-                        placeholder="Numero de piezas"
-                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('piezas') border-red-500
-                        @enderror"
-                        value="{{ old('piezas') }}"
-                    />
-                    @error('piezas')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="mb-10">
-                    <a href="/almacenprovisional" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg  px-20 py-3 mr-3 ">
-                        Cancelar
-                    </a>
-                    <input 
-                        type="submit"
-                        value="Crear registro"
-                        class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                        uppercase mt-4 font-bold w-1/2 p-3 text-white rounded-lg"
-                    />
-                </div>
-            </form>
-        </div>
-</body>
+    <body class="bg-gray-300">
+            <div>
+                <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR NUEVO REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Almacen provisional</mark></h2>
+            </div>
+            <div class="w-4/12  ml-20 bg-white p-6 rounded-lg shadow-xl">
+                <form action="/almacenprovisional" method="POST">
+                    @csrf
+                    <div class="mb-5">
+                        <label for="nombre" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Nombre del producto
+                        </label>
+                        <input
+                            id="nombre"
+                            name="nombre" 
+                            type="text"
+                            placeholder="Escriba el nombre del producto"
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombre') border-red-500
+                            @enderror"
+                            value="{{ old('nombre') }}"
+                        />
+                        @error('nombre')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-5">
+                        <label for="materia" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Material
+                        </label>
+                        <input
+                            id="materia"
+                            name="materia" 
+                            type="text"
+                            placeholder="Escriba material del producto"
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('materia') border-red-500
+                            @enderror"
+                            value="{{ old('materia') }}"
+                        />
+                        @error('materia')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-5">
+                        <label for="name" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Piezas
+                        </label>
+                        <input
+                            id="piezas"
+                            name="piezas" 
+                            type="text"
+                            placeholder="Numero de piezas"
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('piezas') border-red-500
+                            @enderror"
+                            value="{{ old('piezas') }}"
+                        />
+                        @error('piezas')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-10">
+                        <a href="/almacenprovisional" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg  px-20 py-3 mr-3 ">
+                            Cancelar
+                        </a>
+                        <input 
+                            type="submit"
+                            value="Crear registro"
+                            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                            uppercase mt-4 font-bold w-1/2 p-3 text-white rounded-lg"
+                        />
+                    </div>
+                </form>
+            </div>
+    </body>
 </html> 
