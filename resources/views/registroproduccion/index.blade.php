@@ -68,109 +68,39 @@
                 @endauth
     </header>
     
-    <body class="bg-gray-300">
-        <div class="w-screen h-screen bg-gray-300">
-            <div class="bg-gray-300">
-                <p>.</p>
-                <h1 class="mt-8 ml-5 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">REGISTROS<mark class="px-2 text-white bg-red-700 rounded ml-3">Produccion</mark></h1>
-            </div>
-        <div>
-
-        <div class="ml-5 mt-12 mr-40 flex flex-col items-end">
-                <a href="/registroproduccion/create" class="text-white bg-orange-500 hover:bg-orange-600  focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
-                    </svg>
-                    <span class="ml-2">REGRESAR</span>
-                <a>
-            </div>
-        <div class="overflow-x-auto w-screen  mt-4 ml-2 shadow-md sm:rounded-lg flex flex-col items-center">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-black bg-amber-300 uppercase  dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-                            ID
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           NOMBRE OPERADOR
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           MAQUINA 
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            FECHA
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            TURNO
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            PRODUCTO
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           PIEZAS BUENAS 
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           PIEZAS MALAS 
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           TIEMPO MUERTO MTO 
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           CAUSA
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           TIEMPO MUERTO OP
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           CAUSA 
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           LIMPIEZA 
-                        </th>
-                        <th scope="col" class="px-4 py-3">
-                           ACCION 
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                        @foreach ( $produccionregistros as $produccionregistro )
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->id }} </td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->nombreop}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->maquina}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->fecha}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->turno}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->producto}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->pzsbuenas}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->pzsmalas}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->tiempomto}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->causa}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->tiempoop}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->causa2}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $produccionregistro->limpieza}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">
-                                <form action="{{ route ('registroproduccion.destroy',$produccionregistro->id)}}" method="POST">
-                                    <a href="/registroproduccion/{{ $produccionregistro->id }}/edit" class="text-white mt-2  bg-blue-700 shadow hover:bg-blue-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-8 mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                                    </svg>
-                                    </a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-8 mb-2 uppercase dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- <div class="w-screen h-20 bg-black flex flex-col items-center ">
+    <body class="bg-gray-300"> 
+        <div class="w-screen">
+            <div>   
+                .
+                <h1 class="mt-6 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">REGISTROS <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
+            
+                <div class="">
+                    <a href="/registrotermoformado" class="text-white mt-7 ml-20 bg-gray-200 shadow hover:bg-gray-500 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-black">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" />
+                        </svg>
+                        <span class="ml-2 text-black hover:text-white">TERMO FORMADO</span>
+                    </a>
+                    <a href="/registroprensa" class="text-white mt-7 bg-gray-200 shadow hover:bg-gray-500 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-black">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.875 14.25l1.214 1.942a2.25 2.25 0 001.908 1.058h2.006c.776 0 1.497-.4 1.908-1.058l1.214-1.942M2.41 9h4.636a2.25 2.25 0 011.872 1.002l.164.246a2.25 2.25 0 001.872 1.002h2.092a2.25 2.25 0 001.872-1.002l.164-.246A2.25 2.25 0 0116.954 9h4.636M2.41 9a2.25 2.25 0 00-.16.832V12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 12V9.832c0-.287-.055-.57-.16-.832M2.41 9a2.25 2.25 0 01.382-.632l3.285-3.832a2.25 2.25 0 011.708-.786h8.43c.657 0 1.281.287 1.709.786l3.284 3.832c.163.19.291.404.382.632M4.5 20.25h15A2.25 2.25 0 0021.75 18v-2.625c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125V18a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                        <span class="ml-2 text-black hover:text-white">PRENSA</span>
+                    </a>
+                    <a href="/registroinspeccionbarrenado" class="text-white mt-7 bg-gray-200 shadow hover:bg-gray-500 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-black">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                        <span class="ml-2 text-black hover:text-white">INSPECCION - BARRENADO</span>
+                    </a>
+                    <a href="/registroempaquetado" class="text-white mt-7 bg-gray-200 shadow hover:bg-gray-500 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-black">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.75v16.5M2.25 12h19.5M6.375 17.25a4.875 4.875 0 004.875-4.875V12m6.375 5.25a4.875 4.875 0 01-4.875-4.875V12m-9 8.25h16.5a1.5 1.5 0 001.5-1.5V5.25a1.5 1.5 0 00-1.5-1.5H3.75a1.5 1.5 0 00-1.5 1.5v13.5a1.5 1.5 0 001.5 1.5zm12.621-9.44c-1.409 1.41-4.242 1.061-4.242 1.061s-.349-2.833 1.06-4.242a2.25 2.25 0 013.182 3.182zM10.773 7.63c1.409 1.409 1.06 4.242 1.06 4.242S9 12.22 7.592 10.811a2.25 2.25 0 113.182-3.182z" />
+                        </svg>
+                        <span class="ml-2 text-black hover:text-white">EMPAQUETADO</span>
+                    </a>
+                </div>
+        <!-- <div class="w-screen h-20 bg-white flex flex-col items-center ">
             <form method="get" action="www.facebook.com" class="mt-2">
                     <button
                         type="submit"
@@ -184,8 +114,7 @@
                         </svg>
                     </button>
             </form>
-             <p class="text-center text-white">Norte 11 1129, Ciudad industrial de Celaya, 38010, teléfono: 461-216-0470</p>
+            <p class="text-center text-black font-semibold">Norte 11 1129, Ciudad industrial de Celaya, 38010, teléfono: 461-216-0470</p>
         </div>  -->
     </body>
 </html>
- 

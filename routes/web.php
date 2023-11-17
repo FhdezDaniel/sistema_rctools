@@ -21,17 +21,12 @@ use App\Http\Controllers\Linea2Controller;
 use App\Http\Controllers\Linea3Controller;
 use App\Http\Controllers\Linea4Controller;
 use App\Http\Controllers\Linea5Controller;
+use App\Http\Controllers\RegistrotermoformadoController;
+use App\Http\Controllers\RegistroprensaController;
+use App\Http\Controllers\RegistroinspeccionbarrenadoController;
+use App\Http\Controllers\Registroempaquetado;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 
 Route::get('/home', function () {
     return view('/home');
@@ -68,10 +63,14 @@ Route::resource('/linea3','App\Http\Controllers\Linea3Controller');
 Route::resource('/linea4','App\Http\Controllers\Linea4Controller');
 Route::resource('/linea5','App\Http\Controllers\Linea5Controller');
 
+// REGISTROS
+Route::resource('/registrotermoformado','App\Http\Controllers\RegistrotermoformadoController');
+Route::resource('/registroprensa','App\Http\Controllers\RegistroprensaController');
+Route::resource('/registroinspeccionbarrenado','App\Http\Controllers\RegistroinspeccionbarrenadoController');
+Route::resource('/registroempaquetado','App\Http\Controllers\RegistroempaquetadoController');
 
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name('posts.show');
-
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
