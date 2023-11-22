@@ -8,7 +8,8 @@
             @vite('resources/js/app.js')
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <title>Sistema RC Tools</title>
+        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
+        <title>RC Tools - Crear registro</title>
     </head>
 
     <header>
@@ -72,14 +73,14 @@
     <body class="bg-gray-300">
                 <div class="bg-gray-300">
                     <p>.</p>
-                    <h1 class="mt-6 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Prensa</mark></h1>
+                    <h1 class="mt-6 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Empaquetado</mark></h1>
                 </div>
-                <div class=" mt-12 ml-64 flex flex-col items-center">
+                <div class=" mt-12 ml-56 flex flex-col items-center">
                     <a href="/registroempaquetado" class="text-black mt-7 ml-20 hover:text-white bg-gray-200 shadow hover:bg-gray-500 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                         </svg>
-                        <span class="hover:text-white ml-2">REGISTROS PRENSA</span>
+                        <span class="hover:text-white ml-2">REGISTROS EMPAQUETADO</span>
                     <a>
                 </div>
                 

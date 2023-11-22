@@ -8,7 +8,8 @@
             @vite('resources/js/app.js')
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <title>Sistema RC Tools - Prueba</title>
+        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
+        <title>RC Tools - Editar registro</title>
     </head>
 
     <header>
@@ -71,7 +72,7 @@
     
     <body class="bg-gray-300">
         <div>
-            <h2 class="mt-6 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Empaquetado</mark></h2>
+            <h2 class="mt-20 ml-24 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Empaquetado</mark></h2>
         </div>
         <div class="w-3/5 h-2/3 mt-4  ml-20 bg-white p-6 rounded-lg shadow-xl">
             <form action="/registroempaquetado/{{ $registroempaquetado->id }}" method="POST">
@@ -232,8 +233,7 @@
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-                    </div>
-                    <div class="flex">
+
                                 <div class="mb-5 ml-4 w-1/4">
                                     <label for="limpieza" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Limpieza
@@ -258,7 +258,7 @@
                                     @enderror
                                 </div>
                     </div>
-                    <div class="mb-2">
+                    <div class="mb-2 flex flex-row justify-end">
                         <a href="/registroempaquetado" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg  px-20 py-3 mr-3 ">
                             Cancelar
                         </a>

@@ -48,7 +48,6 @@ Route::resource ('termotercera','App\Http\Controllers\TermoterceraController');
 Route::resource ('termocuarta','App\Http\Controllers\TermocuartaController');
 Route::resource ('termoquinta','App\Http\Controllers\TermoquintaController');
 
-
 // REGISTRO Y LOGIN 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/register', [RegisterController::class, 'index'])->name('register'); 

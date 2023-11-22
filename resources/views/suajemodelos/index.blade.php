@@ -8,7 +8,8 @@
             @vite('resources/js/app.js')
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <title>Sistema RC Tools - Prueba</title>
+        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
+        <title>RC Tools - Suajes</title>
     </head>
     
     <header>
@@ -20,7 +21,7 @@
                 <a class="text-3xl font-sans font-medium ml-3 hover:text-black uppercase" href="/home">
                     RC Tools 
                 </a>
-
+ 
                 <ul class="hidden md:flex px-4 mx-auto font-sans font-medium space-x-12">
                     <li><a class="hover:text-black text-lg uppercase" href="/home">Inicio</a></li>
                     
@@ -76,7 +77,7 @@
             </div>
         <div>
 
-        <div class="ml-5 mt-12 mr-40 flex flex-col items-end">
+        <div class="ml-5 mt-12 mr-20 flex flex-row justify-end">
                 <a href="suajemodelos/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                     <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>

@@ -8,7 +8,8 @@
             @vite('resources/js/app.js')
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <title>Sistema RC Tools - Prueba</title>
+        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
+        <title>RC Tools - Registro producción</title>
     </head>
     
     <header>
@@ -72,7 +73,7 @@
         <div class="w-screen">
             <div>   
                 .
-                <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">REGISTRO  DE <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
+                <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">REGISTRO<mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
             
                 <div class="">
                     <a href="/registrotermoformado" class="text-white mt-8 ml-20 bg-gray-200 shadow hover:bg-gray-500 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
