@@ -24,7 +24,8 @@ use App\Http\Controllers\Linea5Controller;
 use App\Http\Controllers\RegistrotermoformadoController;
 use App\Http\Controllers\RegistroprensaController;
 use App\Http\Controllers\RegistroinspeccionbarrenadoController;
-use App\Http\Controllers\Registroempaquetado;
+use App\Http\Controllers\RegistroempaquetadoController;
+
 
 
 

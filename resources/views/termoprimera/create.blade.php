@@ -8,7 +8,8 @@
             @vite('resources/js/app.js')
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <title>Sistema RC Tools - Prueba</title>
+        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
+        <title>RC Tools - Crear plan producción</title>
     </head>
     
     <header>
@@ -34,7 +35,7 @@
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion/create">Registro de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
@@ -70,9 +71,9 @@
 
     <body class="bg-gray-300">
             <div>
-                <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">NUEVO REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 1</mark></h2>
+                <h2 class="mt-20 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">NUEVO REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 1</mark></h2>
             </div>
-            <div class="w-6/12  ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
+            <div class="w-6/12 ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
                 <form action="/termoprimera" method="POST">
                     @csrf
                     <div class="flex">
@@ -183,7 +184,7 @@
                                 @enderror
                             </div>
                     </div>
-                    <div class="flex mt-3 ml-80">
+                    <div class="flex flex-row justify-end">
                         <div class="mt-3">
                             <a href="/termoprimera" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
                                 Cancelar
