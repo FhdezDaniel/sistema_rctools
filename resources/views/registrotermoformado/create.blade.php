@@ -69,7 +69,6 @@
                 @endauth
     </header>
 
-
     <body class="bg-gray-300">
                 <div class="bg-gray-300">
                     <h1 class="mt-20 ml-24 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR NUEVO REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Termo formado</mark></h1>

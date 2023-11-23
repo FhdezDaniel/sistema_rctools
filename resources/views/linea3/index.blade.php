@@ -69,7 +69,6 @@
                 @endauth
     </header>
 
-    
     <body class="bg-gray-300"> 
         <div class="w-screen">
             <div>   

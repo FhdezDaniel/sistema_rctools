@@ -69,10 +69,9 @@
                 @endauth
     </header>
 
-    
     <body class="bg-gray-300">
         <div>
-            <h2 class="mt-20 ml-24 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">produccion</mark></h2>
+            <h2 class="mt-20 ml-24 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">prensa</mark></h2>
         </div>
         <div class="w-3/5 h-2/3 mt-4  ml-20 bg-white p-6 rounded-lg shadow-xl">
             <form action="/registroprensa/{{ $registroprensa->id }}" method="POST">

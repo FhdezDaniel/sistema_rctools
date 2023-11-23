@@ -69,7 +69,6 @@
                 @endauth
     </header>
 
-
     <body class="bg-gray-300">
             <div>
                 <h2 class="mt-6 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">suajes</mark></h2>

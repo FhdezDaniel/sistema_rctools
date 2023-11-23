@@ -265,14 +265,21 @@
                                     @enderror
                                 </div>
                             </div>
-                                <div class="mb-2 flex-col flex items-end">
-                                  <input 
-                                  type="submit"
-                                  value="Crear registro"
-                                  class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                                  uppercase  font-bold w-60 p-3 text-white rounded-lg"
-                                  />
+                            <div class="flex flex-row justify-end">
+                                <div class="mt-3">
+                                    <a href="/registroempaquetado" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
+                                        Cancelar
+                                    </a>
                                 </div>
+                                <div class="">
+                                    <input 
+                                        type="submit"
+                                        value="Crear nuevo registro"
+                                        class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                                        uppercase font-bold w-60 p-3 text-white rounded-lg"
+                                    />
+                                </div>
+                            </div>
                         </form>
                     </div>        
     </body>
