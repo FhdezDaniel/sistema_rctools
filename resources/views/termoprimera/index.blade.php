@@ -77,7 +77,7 @@
                 <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
             
                 <div class="ml-5 mt-12 mr-60 flex flex-row justify-end">
-                    @role(['Admin','DireccionGeneral','Supervisor'])
+                    @role(['Admin'])
                     <a href="termoprimera/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                         <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
@@ -128,31 +128,33 @@
                     </thead>
                     <tbody>
                         @foreach ($termoprimeras as $termoprimera)
-                                <tr class="bg-white border-b uppercase">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->id }}</th>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->producto}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->cantidad}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->corte}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->material}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->inicio}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->termino}}</td>
-                                
-                                    <td>
-                                        <form action="{{ route ('termoprimera.destroy',$termoprimera->id)}}" method="POST">
-                                        <a href="/termoprimera/{{ $termoprimera->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                            Editar
-                                        </a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                                        </form>
-                                    </td>
-                                </tr>
+                            <tr class="bg-white border-b uppercase">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->id }}</th>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->producto}}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->cantidad}}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->corte}}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->material}}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->inicio}}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->termino}}</td>
+                            
+                                <td>
+                                @role(['Admin'])
+                                    <form action="{{ route ('termoprimera.destroy',$termoprimera->id)}}" method="POST">
+                                    <a href="/termoprimera/{{ $termoprimera->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                        Editar
+                                    </a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
+                                    </form>
+                                @endrole
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
-                </div>
             </div>
+        </div>
             <!-- <div class="w-screen h-20 bg-white flex flex-col items-center ">
             <form method="get" action="www.facebook.com" class="mt-2">
                     <button
