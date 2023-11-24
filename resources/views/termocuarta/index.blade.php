@@ -73,7 +73,7 @@
         <div>
             <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
                 <div class="ml-5 mt-12 mr-60 flex flex-row justify-end">
-                    @role(['Admin'])
+                    @role(['Admin','GerenteProduccion'])
                     <a href="termocuarta/create" class="text-white bg-green-700 shadow hover:bg-green-800   focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                         <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
@@ -93,7 +93,7 @@
                 <h1 class="mt-4 ml-20 mb-6 text-4xl font-bold leading-none tracking-tight text-gray-900">Termo <mark class="px-2 text-white bg-red-700 rounded">4</mark></h1>
                 <div class="ml-20 w-10/12 overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-sm text-black bg-blue-300 dark:bg-gray-700 dark:text-gray-400">
+                        <thead class="text-sm text-white bg-sky-900 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     ID 
@@ -116,9 +116,11 @@
                                 <th scope="col" class="px-6 py-3">
                                     FECHA - TERMINO
                                 </th>
+                                @role(['Admin','GerenteProduccion'])
                                 <th scope="col" class="px-6 py-3">
                                     ACCIÓN
                                 </th>
+                                @endrole
                             </tr>
                         </thead>
                         <tbody>
@@ -132,7 +134,7 @@
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termocuarta->inicio}}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termocuarta->termino}}</td>
                                 <td>
-                                    @role(['Admin'])
+                                    @role(['Admin','GerenteProduccion'])
                                     <form action="{{ route ('termocuarta.destroy',$termocuarta->id)}}" method="POST">
                                     <a href="/termocuarta/{{ $termocuarta->id }}/edit" class="text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
                                         Editar

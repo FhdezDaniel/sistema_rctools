@@ -74,7 +74,7 @@
             <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Empaquetado</mark></h1>
 
             <div class="mt-12 mr-20 flex flex-row justify-end">
-                @role(['Admin'])
+                @role(['Admin','Operador'])
                 <a href="registroempaquetado/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                     <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
@@ -94,10 +94,10 @@
             <div>
                 <div class="ml-20 mt-4 w-11/12 overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-black uppercase bg-blue-300 dark:bg-gray-700 dark:text-gray-400">
+                        <thead class="text-xs text-white uppercase bg-sky-900 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    ID 
+                                    ID
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     NOMBRE DEL OPERADOR 
@@ -126,9 +126,11 @@
                                 <th scope="col" class="px-6 py-3">
                                     LIMPIEZA
                                 </th>
+                                @role(['Admin','Operador','Supervisor'])
                                 <th scope="col" class="px-6 py-3">
                                     ACCIÓN
                                 </th>
+                                @endrole
                             </tr>
                         </thead>
                         <tbody>
@@ -147,13 +149,15 @@
                                     
                                     <td>
                                         <form action="{{ route ('registroempaquetado.destroy',$registroempaquetado->id)}}" method="POST">
+                                            @role(['Admin','Operador','Supervisor'])
                                             <a href="/registroempaquetado/{{ $registroempaquetado->id }}/edit" class="text-white flex bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 mt-2 py-2.5 mr-2 w-16">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                                                 </svg>
                                             </a>
+                                            @endrole
                                             @csrf
-                                            @role(['Admin'])
+                                            @role(['Admin','Operador'])
                                             @method('DELETE')
                                             <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

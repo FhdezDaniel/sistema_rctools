@@ -77,7 +77,7 @@
                 <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
             
                 <div class="ml-5 mt-12 mr-60 flex flex-row justify-end">
-                    @role(['Admin'])
+                    @role(['Admin','GerenteProduccion'])
                     <a href="termoprimera/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                         <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
@@ -98,7 +98,7 @@
                 <h1 class="mb-4 ml-20  text-4xl font-bold leading-none tracking-tight text-gray-900">Termo<mark class="ml-2 px-2 text-white bg-red-700 rounded">1</mark></h1>
                 <div class="ml-20 w-10/12 overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="mt-4 w-full text-sm  text-left text-black">
-                    <thead class="text-sm text-black uppercase bg-blue-300">
+                    <thead class="text-sm text-white uppercase bg-sky-900">
                         <tr>
                             <th scope="col" class="px-6 py-3">
                                 ID 
@@ -121,9 +121,11 @@
                             <th scope="col" class="px-6 py-3">
                                 FECHA - TERMINO
                             </th>
+                            @role(['Admin','GerenteProduccion'])
                             <th scope="col" class="px-6 py-3">
                                 ACCIÓN
                             </th>
+                            @endrole
                         </tr>
                     </thead>
                     <tbody>
@@ -138,7 +140,7 @@
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->termino}}</td>
                             
                                 <td>
-                                @role(['Admin'])
+                                @role(['Admin','GerenteProduccion'])
                                     <form action="{{ route ('termoprimera.destroy',$termoprimera->id)}}" method="POST">
                                     <a href="/termoprimera/{{ $termoprimera->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
                                         Editar
@@ -155,21 +157,5 @@
                 </table>
             </div>
         </div>
-            <!-- <div class="w-screen h-20 bg-white flex flex-col items-center ">
-            <form method="get" action="www.facebook.com" class="mt-2">
-                    <button
-                        type="submit"
-                        href="www.facebook.com"
-                        data-te-ripple-init
-                        data-te-ripple-color="light"
-                        class="mb-2 inline-block rounded align-center px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
-                        style="background-color: #1877f2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                        </svg>
-                    </button>
-            </form>
-            <p class="text-center text-black font-semibold">Norte 11 1129, Ciudad industrial de Celaya, 38010, teléfono: 461-216-0470</p>
-        </div>  -->
     </body>
 </html>
