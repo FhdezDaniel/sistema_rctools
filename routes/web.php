@@ -27,8 +27,6 @@ use App\Http\Controllers\RegistroinspeccionbarrenadoController;
 use App\Http\Controllers\RegistroempaquetadoController;
 
 
-
-
 Route::get('/home', function () {
     return view('/home');
 });  
