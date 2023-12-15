@@ -137,6 +137,7 @@
                         @enderror"
                         value="{{ $suajemodelos->estatus }}"
                     >
+                    <option selected>Seleccione una opción</option>
                     <option value="DISPONIBLE">Disponible</option>
                     <option value="OCUPADO">Ocupado</option>
                     <option value="OBSOLETO">Obsoleto</option>

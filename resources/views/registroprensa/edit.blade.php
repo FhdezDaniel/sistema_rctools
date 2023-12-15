@@ -107,7 +107,7 @@
                                         @enderror"
                                         value="{{ $registroprensa->maquina }}"
                                     >
-                                    
+                                    <option selected>Seleccione una opción</option>
                                     <option value="Prensa 1">Prensa 1</option>
                                     <option value="Prensa 2">Prensa 2</option>
                                     <option value="Prensa 3">Prensa 3</option>
@@ -149,7 +149,7 @@
                                         @enderror"
                                         value="{{ $registroprensa->turno }}"
                                     >
-                                 
+                                    <option selected>Seleccione una opción</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -277,6 +277,7 @@
                                         @enderror"
                                         value="{{ $registroprensa->limpieza }}"
                                     >
+                                    <option selected>Seleccione una opción</option>
                                     <option value="100%">Excelente</option>
                                     <option value="90%">Bueno</option>
                                     <option value="75%">Regular</option>

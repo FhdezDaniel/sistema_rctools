@@ -19,7 +19,7 @@
             <div class="px-10 py-4 flex w-screen items-center">
             <img class="h-16" src="{{ asset('images/rctoolslogo.jpg') }}" alt="logo"> 
                 <a class="text-3xl font-sans font-medium ml-3 hover:text-black uppercase" href="/home">
-                    RC Tools 
+                    RC Tools
                 </a>
 
                 <ul class="hidden md:flex px-4 mx-auto font-sans font-medium space-x-12">

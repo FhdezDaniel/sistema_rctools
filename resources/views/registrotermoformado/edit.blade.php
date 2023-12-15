@@ -107,7 +107,7 @@
                                         @enderror"
                                         value="{{ $registrotermoformado->maquina }}"
                                     >
-                                    
+                                    <option selected>Seleccione una opción</option>
                                     <option value="termoformadora 1">Termoformadora 1</option>
                                     <option value="termoformadora 2">Termoformadora 2</option>
                                     <option value="termoformadora 3">Termoformadora 3</option>
@@ -149,7 +149,7 @@
                                         @enderror"
                                         value="{{ $registrotermoformado->turno }}"
                                     >
-                                 
+                                    <option selected>Seleccione una opción</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -294,6 +294,7 @@
                                         @enderror"
                                         value="{{ $registrotermoformado->limpieza }}"
                                     >
+                                    <option selected>Seleccione una opción</option>
                                     <option value="100%">Excelente</option>
                                     <option value="90%">Bueno</option>
                                     <option value="75%">Regular</option>

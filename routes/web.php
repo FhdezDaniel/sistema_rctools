@@ -2,10 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\AlmacenpController;
 use App\Http\Controllers\SuajemodeloController;
 use App\Http\Controllers\PlanproduccionController;
@@ -31,13 +30,13 @@ Route::get('/home', function () {
     return view('/home');
 });  
 
+
 // MENU DE NAVEGACIÓN
 Route::resource('/produccion','App\Http\Controllers\ProduccionController');
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenpController');
 Route::resource('/planproduccion','App\Http\Controllers\PlanproduccionController');
 Route::resource('/suajemodelos','App\Http\Controllers\SuajemodeloController');
 Route::resource('/registroproduccion','App\Http\Controllers\ProduccionregistroController');
-
 
 // TERMO FORMADORAS
 Route::resource('termoprimera','App\Http\Controllers\TermoprimeraController');

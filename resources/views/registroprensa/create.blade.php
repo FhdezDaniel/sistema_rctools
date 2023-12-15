@@ -231,7 +231,7 @@
                                         id="tiempoop"
                                         name="tiempoop" 
                                         type="text"
-                                        placeholder="Timepo muerto operador"
+                                        placeholder="Tiempo muerto operador"
                                         class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempoop') border-red-500
                                         @enderror"
                                         value="{{ old('tiempoop') }}"

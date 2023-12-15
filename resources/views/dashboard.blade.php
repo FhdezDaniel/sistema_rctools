@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Nombre de usuario: {{ $user->username }}
+    Usuario: {{ $user->username }}
 @endsection 
 
 @section('contenido')
@@ -13,7 +13,7 @@
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:justify-center md:items-start py-10">
                 <p class="text-gray-700 text-2xl uppercase">{{ $user->username }}</p>
-                <p class=>{{ $user->name }} {{ $user->apellidos}}</p>
+                <p class=>{{ $user->name }} {{ $user->apellidos}} {{ $user->email}} {{ $user->id}}</p>
             </div>
         </div>
     </div>
