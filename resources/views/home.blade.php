@@ -12,6 +12,8 @@
         <title>RC Tools - Inicio</title>
     </head>
 
+    prueba github
+
     <header>
         @auth 
             <section>
