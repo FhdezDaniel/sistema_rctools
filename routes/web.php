@@ -8,7 +8,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\AlmacenpController;
 use App\Http\Controllers\SuajemodeloController;
-use App\Http\Controllers\Termo1Controller;
+use App\Http\Controllers\PlanproduccionController;
 use App\Http\Controllers\TermoprimeraController;
 use App\Http\Controllers\TermosegundaController;
 use App\Http\Controllers\TermoterceraController;
@@ -34,7 +34,7 @@ Route::get('/home', function () {
 // MENU DE NAVEGACIÓN
 Route::resource('/produccion','App\Http\Controllers\ProduccionController');
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenpController');
-Route::resource('/planproduccion','App\Http\Controllers\Termo1Controller');
+Route::resource('/planproduccion','App\Http\Controllers\PlanproduccionController');
 Route::resource('/suajemodelos','App\Http\Controllers\SuajemodeloController');
 Route::resource('/registroproduccion','App\Http\Controllers\ProduccionregistroController');
 
