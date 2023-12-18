@@ -69,7 +69,7 @@
                 @endauth
     </header>
 
-    <body class="bg-gray-300"> 
+    <body class="bg-gray-300">
         <div class="w-screen">
             <div>   
                 <h1 class="mt-12 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">Linea <mark class="px-2 text-white bg-red-700 rounded">3</mark></h1>

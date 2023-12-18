@@ -12,8 +12,6 @@
         <title>RC Tools - Inicio</title>
     </head>
 
-    prueba github
-
     <header>
         @auth 
             <section>
@@ -83,7 +81,7 @@
         </div>
 
         <div class="">
-        <h1 class="mt-20 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-black">Acerca de la <mark class="px-2 text-white bg-red-700 rounded">empresa</mark></h1>
+        <h1 class="mt-20 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-black">Acerca de la<mark class="px-2 text-white bg-red-700 rounded">empresa</mark></h1>
           <div class="flex flex-row bg-gray-300">
             <a href="#" class="ml-20 mt-10 max-w-sm p-6 w-1/4 bg-white border  rounded-lg border-gray-300 shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">

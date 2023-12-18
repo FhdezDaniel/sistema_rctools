@@ -24,6 +24,7 @@ use App\Http\Controllers\RegistrotermoformadoController;
 use App\Http\Controllers\RegistroprensaController;
 use App\Http\Controllers\RegistroinspeccionbarrenadoController;
 use App\Http\Controllers\RegistroempaquetadoController;
+use App\Http\Controllers\EmpleadosController;
 
 
 Route::get('/home', function () {
@@ -65,6 +66,9 @@ Route::resource('/registrotermoformado','App\Http\Controllers\Registrotermoforma
 Route::resource('/registroprensa','App\Http\Controllers\RegistroprensaController');
 Route::resource('/registroinspeccionbarrenado','App\Http\Controllers\RegistroinspeccionbarrenadoController');
 Route::resource('/registroempaquetado','App\Http\Controllers\RegistroempaquetadoController');
+
+// EMPLEADOS
+Route::resource('/empleados','App\Http\Controllers\EmpleadosController');
 
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
