@@ -101,10 +101,10 @@
                                 CORTE
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                MATERIAL
+                                MATERIAL 
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                FECHA - INICIO
+                                FECHA - INICIO 
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 FECHA - TERMINO
@@ -134,7 +134,7 @@
                     <thead class="text-xs text-black uppercase bg-amber-300">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                ID 
+                                ID
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 PRODUCTO 

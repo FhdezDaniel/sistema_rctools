@@ -40,13 +40,13 @@ class EmpleadosController extends Controller
     
     public function show(string $id)
     {
-        //
+        
     }
 
     
     public function edit(string $id)
     {
-        $empleados = Empleado::find($id);
+        $empleado = Empleado::find($id);
         return view('empleados.edit')->with('empleado',$empleado);
     }
 
