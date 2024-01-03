@@ -31,7 +31,6 @@ Route::get('/home', function () {
     return view('/home');
 });  
 
-
 // MENU DE NAVEGACIÓN
 Route::resource('/produccion','App\Http\Controllers\ProduccionController');
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenpController');
@@ -49,7 +48,7 @@ Route::resource ('termoquinta','App\Http\Controllers\TermoquintaController');
 // REGISTRO Y LOGIN 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('/register', [RegisterController::class, 'index'])->name('register'); 
-Route::post('/register', [RegisterController::class, 'store']); 
+Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');

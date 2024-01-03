@@ -71,7 +71,7 @@
 
     <body class="bg-gray-300">
             <div>
-                <h2 class="mt-20 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">NUEVO REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 1</mark></h2>
+                <h2 class="mt-20 ml-24 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">NUEVO REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción Termo 1</mark></h2>
             </div>
             <div class="w-6/12 ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
                 <form action="/termoprimera" method="POST">

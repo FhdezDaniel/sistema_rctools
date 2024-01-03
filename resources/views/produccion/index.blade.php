@@ -43,7 +43,6 @@
                         </div>
                     </div>    
                     </li>
-                
                                 <li><a class="hover:text-black text-lg uppercase" href="/calidad">Calidad</a></li>
                                 <li><a class="hover:text-black text-lg uppercase" href="/mantenimiento">Mantenimiento</a></li>
                                 <li><a class="hover:text-black text-lg uppercase" href="/empleados">Empleados</a></li>

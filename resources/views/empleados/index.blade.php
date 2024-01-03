@@ -97,7 +97,7 @@
                         <thead class="text-xs text-white uppercase bg-sky-900 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    ID 
+                                    ID
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     NUMERO DE TRABAJADOR 
@@ -112,16 +112,16 @@
                                     APELLIDO MATERNO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    PUESTO 
+                                    PUESTO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     FECHA - NAC
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    FECHA INGRESO 
+                                    FECHA INGRESO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    CORREO 
+                                    CORREO
                                 </th>
                                 @role(['Admin','Operador','Supervisor'])
                                 <th scope="col" class="px-6 py-3">
@@ -141,7 +141,7 @@
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->puesto }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fechanacimiento }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fechaingreso }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->correo}}</td>  
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->correo }}</td>  
                                     <td>
                                         <form action="{{ route ('empleados.destroy',$empleado->id)}}" method="POST">
                                             @role(['Admin'])

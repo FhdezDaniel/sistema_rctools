@@ -129,7 +129,7 @@
                             <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white"></td>
                             <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white"></td>
                         </tr>
-                    </tbody>
+                    </tbody scope="row">
                 </table>
             </div>
 
@@ -159,7 +159,7 @@
                             <td>
                                 <form action="" method="POST">
                                 <a href="" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">
-                                    Editar
+                                    Editar 
                                 </a>
                                 </form>
                             </td>

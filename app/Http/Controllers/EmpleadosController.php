@@ -30,7 +30,7 @@ class EmpleadosController extends Controller
         $empleados->fechanacimiento = $request->get('fechanacimiento');
         $empleados->fechaingreso = $request->get('fechaingreso');
         $empleados->correo = $request->get('correo');
-
+        
         $empleados->save();
 
         return redirect('/empleados');
@@ -67,6 +67,7 @@ class EmpleadosController extends Controller
         $empleado->save();
 
         return redirect('/empleados');
+        
     }
 
     
@@ -74,7 +75,8 @@ class EmpleadosController extends Controller
     {
         $empleado = Empleado::find($id);
         $empleado->delete();
-
+        
         return redirect('/empleados');
+        
     }
 }

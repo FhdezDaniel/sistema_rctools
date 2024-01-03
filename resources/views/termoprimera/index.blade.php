@@ -74,7 +74,7 @@
             
             <div>   
                 
-                <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
+                <h1 class="mt-14 ml-20 mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción</mark></h1>
             
                 <div class="ml-5 mt-12 mr-60 flex flex-row justify-end">
                     @role(['Admin','GerenteProduccion'])
@@ -83,7 +83,7 @@
                             <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
                             <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
                         </svg>
-                        <span class="ml-2">CREAR PLAN TERMO 1</span>
+                        <span class="ml-2">CREAR PLAN TERMO FORMADORA 1</span>
                     </a> 
                     @endrole
                     <a href="/planproduccion" class="text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
@@ -119,7 +119,7 @@
                                 FECHA - INICIO
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                FECHA - TERMINO
+                                FECHA - TERMINO 
                             </th>
                             @role(['Admin','GerenteProduccion'])
                             <th scope="col" class="px-6 py-3">
@@ -143,7 +143,7 @@
                                 @role(['Admin','GerenteProduccion'])
                                     <form action="{{ route ('termoprimera.destroy',$termoprimera->id)}}" method="POST">
                                     <a href="/termoprimera/{{ $termoprimera->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                        Editar
+                                        Editar 
                                     </a>
                                     @csrf
                                     @method('DELETE')

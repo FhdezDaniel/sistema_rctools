@@ -115,7 +115,7 @@
                             <div class="flex">
                                 <div class="mb-5 w-1/2 ml-4">
                                     <label for="apepaterno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Ape Paterno
+                                        Ape Paterno 
                                     </label>
                                     <input
                                         id="apepaterno"
@@ -149,7 +149,7 @@
                             <div class="flex">
                                 <div class="mb-5 ml-4 w-1/4">
                                     <label for="puesto" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Puesto
+                                        Puesto 
                                     </label>
                                     <input
                                         id="puesto"
@@ -165,7 +165,7 @@
                                 </div>
                                 <div class="mb-5 ml-4 w-1/4">
                                     <label for="fechanacimiento" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Fecha Nacimiento
+                                        Fecha de Nacimiento
                                     </label>
                                     <input
                                         id="fechanacimiento"

@@ -44,7 +44,7 @@ class TermoprimeraController extends Controller
     {
         $termoprimera = Termoprimera::find($id);
         return view('termoprimera.edit')->with('termoprimera',$termoprimera);
-        
+            
     }
 
    
@@ -58,10 +58,11 @@ class TermoprimeraController extends Controller
         $termoprimera->material = $request->get('material');
         $termoprimera->inicio = $request->get('inicio');
         $termoprimera->termino = $request->get('termino');
-
+        
         $termoprimera->save();
-
+      
         return redirect('/termoprimera');
+        
     }
 
     public function destroy(string $id)

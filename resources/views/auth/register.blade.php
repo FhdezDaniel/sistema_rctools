@@ -49,7 +49,7 @@
             </div>
             <div class="mb-5">
                 <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">
-                    Nombre de usuario 
+                    Nombre de usuario
                 </label>
                 <input
                     id="username"

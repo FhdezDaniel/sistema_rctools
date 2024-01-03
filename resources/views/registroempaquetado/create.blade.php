@@ -91,7 +91,7 @@
                             <div class="flex">
                                 <div class="mb-5 w-3/4">
                                     <label for="nombreop" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Nombre operador
+                                        Nombre operador 
                                     </label>
                                     <input
                                         id="nombreop"
@@ -189,7 +189,7 @@
                                 </div>
                                 <div class="mb-5 ml-4 w-1/4">
                                     <label for="cajasrechazadas" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Cajas rechazadas
+                                        Cajas rechazadas 
                                     </label>
                                     <input
                                         id="cajasrechazadas"
@@ -212,7 +212,7 @@
                                         id="totalcajas"
                                         name="totalcajas" 
                                         type="text"
-                                        placeholder="Numero dtotal de cajas"
+                                        placeholder="Numero total de cajas"
                                         class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('totalcajas') border-red-500
                                         @enderror"
                                         value="{{ old('totalcajas') }}"
@@ -232,7 +232,7 @@
                                         id="observaciones"
                                         name="observaciones" 
                                         type="text"
-                                        placeholder="Observaciones"
+                                        placeholder="observaciones"
                                         class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('causa') border-red-500
                                         @enderror"
                                         value="{{ old('causa') }}"
@@ -279,8 +279,8 @@
                                         uppercase font-bold w-60 p-3 text-white rounded-lg"
                                     />
                                 </div>
-                            </div>
-                        </form>
-                    </div>        
+                        </div>
+                </form>
+            </div>        
     </body>
 </html>

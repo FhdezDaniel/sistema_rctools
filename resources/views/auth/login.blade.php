@@ -24,7 +24,7 @@
                     id="email"
                     name="email" 
                     type="email"
-                    placeholder="Tu E-mail de registro"
+                    placeholder="E-mail de registro"
                     class="border p-3 w-full rounded-lg @error('email') border-red-500
                     @enderror"
                     value="{{ old('email') }}"
@@ -49,10 +49,6 @@
                 @error('password')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                 @enderror
-            </div>
-
-            <div class="mb-5">
-                <input type="checkbox" name="remember"><label class="text-gray-500 font bold text-sm"> Mantener mi sesión abierta</label>
             </div>
 
             <input 

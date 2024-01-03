@@ -43,7 +43,7 @@
                 @guest
                     <nav class="flex gap-2">
                         <a  class="font-bold uppercase text-white hover:text-black text-sm" href="/login">Iniciar sesión</a>
-                       <!--  <a  class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Crear cuenta</a> -->
+                        <-- <a  class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Registrar nuevo usuario</a>
                     </nav>
                 @endguest
 

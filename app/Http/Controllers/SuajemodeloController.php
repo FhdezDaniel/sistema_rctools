@@ -26,6 +26,7 @@ class SuajemodeloController extends Controller
         $suajemodelos->activo = $request->get('activo');
         $suajemodelos->comentarios = $request->get('comentarios');
         $suajemodelos->estatus = $request->get('estatus');
+        
 
         $suajemodelos->save();
 
@@ -55,8 +56,8 @@ class SuajemodeloController extends Controller
         $suajemodelo->save();
 
         return redirect('/suajemodelos');
-    }
-
+    }   
+    
     public function destroy(string $id)
     {
         $suajemodelo = Suajemodelo::find($id);

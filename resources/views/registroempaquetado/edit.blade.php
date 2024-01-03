@@ -80,7 +80,7 @@
                     <div class="flex">
                                 <div class="mb-5 w-3/4">
                                     <label for="nombreop" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Nombre operador
+                                        Nombre operador 
                                     </label>
                                     <input
                                         id="nombreop"
@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="mb-5 ml-4 w-1/4">
                                     <label for="cajasrechazadas" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Cajas rechazadas 
+                                        Cajas rechazadas
                                     </label>
                                     <input
                                         id="cajasrechazadas"
@@ -199,7 +199,7 @@
                     <div class="flex">
                                 <div class="mb-5 w-1/4">
                                     <label for="totalcajas" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Total cajas
+                                        Total cajas 
                                     </label>
                                     <input
                                         id="totalcajas"
