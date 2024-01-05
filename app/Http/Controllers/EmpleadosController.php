@@ -35,6 +35,7 @@ class EmpleadosController extends Controller
 
         return redirect('/empleados');
 
+
     }
 
     
@@ -48,8 +49,8 @@ class EmpleadosController extends Controller
     {
         $empleado = Empleado::find($id);
         return view('empleados.edit')->with('empleado',$empleado);
+        
     }
-
     
     public function update(Request $request, string $id)
     {
@@ -63,7 +64,7 @@ class EmpleadosController extends Controller
         $empleado->fechanacimiento = $request->get('fechanacimiento');
         $empleado->fechaingreso = $request->get('fechaingreso');
         $empleado->correo = $request->get('correo');
-
+        
         $empleado->save();
 
         return redirect('/empleados');
@@ -75,7 +76,7 @@ class EmpleadosController extends Controller
     {
         $empleado = Empleado::find($id);
         $empleado->delete();
-        
+
         return redirect('/empleados');
         
     }

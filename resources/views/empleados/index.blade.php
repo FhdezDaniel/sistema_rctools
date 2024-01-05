@@ -112,7 +112,7 @@
                                     APELLIDO MATERNO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    PUESTO
+                                    PUESTO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     FECHA - NAC
@@ -171,3 +171,5 @@
         </div>
     </body>
 </html>
+
+actualización aun con varias tablas y controladores 

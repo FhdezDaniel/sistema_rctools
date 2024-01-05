@@ -96,7 +96,7 @@
                                         name="nombreop" 
                                         type="text"
                                         placeholder="Escriba su nombre completo"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombreop') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombreop') border-red-500
                                         @enderror"
                                         value="{{ old('nombreop') }}"
                                     />
@@ -112,7 +112,7 @@
                                         id="maquina"
                                         name="maquina" 
                                         type="selected"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
                                         @enderror"
                                         value="{{ old('maquina') }}"
                                     >
@@ -154,7 +154,7 @@
                                         id="turno"
                                         name="turno" 
                                         type="selected"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
                                         @enderror"
                                         value="{{ old('turno') }}"
                                     >
@@ -223,7 +223,7 @@
                                 </div>
                                     <div class="ml-4 mb-5 w-1/4">
                                         <label for="pzasmalasnuevo" class="mb-2 block uppercase text-gray-700 font-bold">
-                                            Pzas malas / molde - materia
+                                            Pzas malas / molde - materia 
                                         </label>
                                         <input
                                             id="pzasmalasnuevo"
@@ -240,13 +240,13 @@
                                     </div>
                                 <div class="mb-5 ml-4 w-1/4">
                                     <label for="tiempoop" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Tiempo muerto operador
+                                        Tiempo muerto operador 
                                     </label>
                                     <input
                                         id="tiempoop"
                                         name="tiempoop" 
                                         type="text"
-                                        placeholder="Timepo muerto operador"
+                                        placeholder="Tiempo muerto operador"
                                         class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempoop') border-red-500
                                         @enderror"
                                         value="{{ old('tiempoop') }}"
@@ -257,7 +257,7 @@
                                 </div>
                                 <div class="mb-5 ml-4 w-1/4">
                                     <label for="tiempomtto" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Tiempor muerto mto
+                                        Tiempo muerto mto
                                     </label>
                                     <input
                                         id="tiempomtto"
@@ -329,9 +329,8 @@
                                         uppercase font-bold w-60 p-3 text-white rounded-lg"
                                     />
                                 </div>
-                            </div>
-                                
-                        </form>
-                    </div>        
+                            </div>            
+                    </form>
+            </div>        
     </body>
 </html>

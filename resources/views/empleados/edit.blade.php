@@ -181,7 +181,7 @@
                                 </div>
                                 <div class="mb-5 w-1/4 ml-4">
                                     <label for="fechaingreso" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Fecha de ingreso
+                                        Fecha de ingreso 
                                     </label>
                                     <input
                                         id="fechaingreso"

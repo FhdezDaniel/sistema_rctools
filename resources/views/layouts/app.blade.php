@@ -20,7 +20,6 @@
                     RC Tools S.A de C.V
                 </h1>
 
-
                 @auth 
                     <nav class="flex gap-2 items-center">
                         <a  class="font-bold text-white hover:text-black text-sm" 
@@ -43,7 +42,7 @@
                 @guest
                     <nav class="flex gap-2">
                         <a  class="font-bold uppercase text-white hover:text-black text-sm" href="/login">Iniciar sesión</a>
-                        <-- <a  class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Registrar nuevo usuario</a>
+                        <!-- <a  class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">Registrar nuevo usuario</a> -->
                     </nav>
                 @endguest
 
@@ -53,7 +52,7 @@
             <h2 class="font-semibold text-center text-3xl mb-10">
                 @yield('titulo')
             </h2>
-            @yield('contenido')
+                @yield('contenido')
         </main>
         
         <footer class="mt-52 text-center p-5 text-black font-bold uppercase">

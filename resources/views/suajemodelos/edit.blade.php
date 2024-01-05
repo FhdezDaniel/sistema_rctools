@@ -117,7 +117,7 @@
                         id="comentarios"
                         name="comentarios" 
                         type="text"
-                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('comentarios') border-red-500
+                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('comentarios') border-red-500
                         @enderror"
                         value="{{ $suajemodelos->comentarios }}"
                     />
@@ -133,7 +133,7 @@
                         id="estatus"
                         name="estatus" 
                         type="selected"
-                        class="border-2 ont-medium text-gray-500 uppercase p-3 w-full rounded-lg @error('estatus') border-red-500
+                        class="border-2 font-medium text-gray-500 uppercase p-3 w-full rounded-lg @error('estatus') border-red-500
                         @enderror"
                         value="{{ $suajemodelos->estatus }}"
                     >

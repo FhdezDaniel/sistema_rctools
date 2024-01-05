@@ -89,7 +89,7 @@
                     <thead class="text-xs text-black uppercase bg-blue-300 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                ID 
+                                ID
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 PRODUCTO 

@@ -100,7 +100,7 @@
                                     ID 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    NOMBRE DEL OPERADOR 
+                                    NOMBRE DEL OPERADOR
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     MAQUINA

@@ -104,7 +104,7 @@
                                     ID
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    NOMBRE DEL PRODUCTO
+                                    NOMBRE DEL PRODUCTO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     MATERIAL 
