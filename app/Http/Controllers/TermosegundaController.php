@@ -35,7 +35,6 @@ class TermosegundaController extends Controller
         return redirect('/termosegunda');
     }
 
-
     public function show(string $id)
     {
         

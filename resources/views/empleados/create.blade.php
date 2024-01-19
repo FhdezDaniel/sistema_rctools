@@ -89,7 +89,7 @@
                                         id="numempleado"
                                         name="numempleado" 
                                         type="text"
-                                        placeholder="Escriba numero de empleado"
+                                        placeholder="Escriba el numero de empleado"
                                         class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombreop') border-red-500
                                         @enderror"
                                         value="{{ old('numempleado') }}"
@@ -119,7 +119,7 @@
                             <div class="flex">
                                 <div class="mb-5 ml-4 w-1/2">
                                     <label for="apepaterno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Ape Paterno
+                                        Apellido Paterno
                                     </label>
                                     <input
                                         id="apepaterno"
@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="mb-5 ml-4 w-1/2">
                                     <label for="apematerno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Ape Materno
+                                        Apellido Materno
                                     </label>
                                     <input
                                         id="apematerno"

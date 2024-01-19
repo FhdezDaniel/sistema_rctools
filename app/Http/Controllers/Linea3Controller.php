@@ -12,7 +12,6 @@ class Linea3Controller extends Controller
         return view('linea3.index');
     }
 
-    
     public function create()
     {
         //
@@ -23,25 +22,21 @@ class Linea3Controller extends Controller
         //
     }
 
-    
     public function show(string $id)
     {
         //
     }
 
-    
     public function edit(string $id)
     {
         //
     }
 
-    
     public function update(Request $request, string $id)
     {
         //
     }
 
-    
     public function destroy(string $id)
     {
         //

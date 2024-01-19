@@ -71,14 +71,14 @@
 
     <body class="bg-gray-300">
         <div>
-            <h2 class="mt-20 ml-24 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">prensa</mark></h2>
+            <h2 class="mt-20 ml-24 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Empleados</mark></h2>
         </div>
         <div class="w-3/5 h-2/3 mt-4  ml-20 bg-white p-6 rounded-lg shadow-xl">
             <form action="/empleados/{{ $empleado->id }}" method="POST">
                 @csrf
                 @method('PUT')
                             <div class="flex">
-                                <div class="mb-5 w-1/4">
+                                <div class="mb-5 ml-4 w-1/4">
                                     <label for="numempleado" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Numero de empleado 
                                     </label>
@@ -115,7 +115,7 @@
                             <div class="flex">
                                 <div class="mb-5 w-1/2 ml-4">
                                     <label for="apepaterno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Ape Paterno 
+                                        Apellido Paterno 
                                     </label>
                                     <input
                                         id="apepaterno"
@@ -131,7 +131,7 @@
                                 </div>
                                 <div class="mb-5 w-1/2 ml-4">
                                     <label for="apematerno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Ape Materno
+                                        Apellido Materno
                                     </label>
                                     <input
                                         id="apematerno"

@@ -37,14 +37,12 @@ class EmpleadosController extends Controller
 
 
     }
-
     
     public function show(string $id)
     {
         
     }
 
-    
     public function edit(string $id)
     {
         $empleado = Empleado::find($id);
@@ -71,7 +69,6 @@ class EmpleadosController extends Controller
         
     }
 
-    
     public function destroy(string $id)
     {
         $empleado = Empleado::find($id);

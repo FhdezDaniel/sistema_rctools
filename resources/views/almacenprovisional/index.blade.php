@@ -72,8 +72,8 @@
     <body class="bg-gray-300">
         <div class="w-screen h-screen bg-gray-300">
             <div class="bg-gray-300">
-                <p>.</p>
-                <h1 class="mt-6 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">ALMACEN <mark class="px-2 text-white bg-red-700 rounded">Provisional</mark></h1>
+                
+                <h1 class="mt-12 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">ALMACEN <mark class="px-2 text-white bg-red-700 rounded">Provisional</mark></h1>
             </div>
         <div>
 
@@ -134,7 +134,7 @@
                                     </a>
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
+                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">ELIMINAR</button>
                                     </form>
                                     @endrole 
                                 </td>

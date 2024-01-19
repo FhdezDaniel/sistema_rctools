@@ -25,6 +25,9 @@ use App\Http\Controllers\RegistroprensaController;
 use App\Http\Controllers\RegistroinspeccionbarrenadoController;
 use App\Http\Controllers\RegistroempaquetadoController;
 use App\Http\Controllers\EmpleadosController;
+use App\Http\Controllers\TermoformadorasController;
+use App\Http\Controllers\RegistroDeTermoformadosController;
+use App\Http\Controllers\Prueba1Controller;
 
 Route::get('/home', function () {
     return view('/home');
@@ -37,7 +40,12 @@ Route::resource('/planproduccion','App\Http\Controllers\PlanproduccionController
 Route::resource('/suajemodelos','App\Http\Controllers\SuajemodeloController');
 Route::resource('/registroproduccion','App\Http\Controllers\ProduccionregistroController');
 
+Route::resource('prueba1','App\Http\Controllers\Prueba1Controller');
+
+
 // TERMO FORMADORAS
+Route::resource('termoformadoras','App\Http\Controllers\TermoformadorasController');
+
 Route::resource('termoprimera','App\Http\Controllers\TermoprimeraController');
 Route::resource('termosegunda','App\Http\Controllers\TermosegundaController');
 Route::resource ('termotercera','App\Http\Controllers\TermoterceraController');
@@ -60,6 +68,8 @@ Route::resource('/linea4','App\Http\Controllers\Linea4Controller');
 Route::resource('/linea5','App\Http\Controllers\Linea5Controller');
 
 // REGISTROS
+Route::resource('/registrodetermoformado','App\Http\Controllers\RegistroDeTermoformadosController');
+
 Route::resource('/registrotermoformado','App\Http\Controllers\RegistrotermoformadoController');
 Route::resource('/registroprensa','App\Http\Controllers\RegistroprensaController');
 Route::resource('/registroinspeccionbarrenado','App\Http\Controllers\RegistroinspeccionbarrenadoController');

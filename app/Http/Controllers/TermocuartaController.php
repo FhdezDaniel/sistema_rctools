@@ -13,7 +13,6 @@ class TermocuartaController extends Controller
         return view('termocuarta.index')->with('termocuartas',$termocuartas);
     }
 
-    
     public function create()
     {
         return view('termocuarta.create');
@@ -35,7 +34,6 @@ class TermocuartaController extends Controller
         return redirect('/termocuarta');
     }
 
-
     public function show(string $id)
     {
         
@@ -47,7 +45,6 @@ class TermocuartaController extends Controller
         return view('termocuarta.edit')->with('termocuarta',$termocuarta);
     }
 
-    
     public function update(Request $request, string $id)
     {
         $termocuarta = Termocuarta::find($id);
@@ -64,7 +61,6 @@ class TermocuartaController extends Controller
         return redirect('/termocuarta');
     }
 
-    
     public function destroy(string $id)
     {
         $termocuarta = Termocuarta::find($id);

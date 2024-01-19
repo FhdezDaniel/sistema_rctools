@@ -60,7 +60,7 @@
                                 <form class="space-x-4" method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <button type="submit" class="font-semibold text-white uppercase hover:text-black">
-                                        Cerrar sesión
+                                        Cerrar sesión 
                                     </button>
                                 </form>
                             </div>
@@ -125,7 +125,7 @@
                                 </th>
                                 @role(['Admin','Operador','Supervisor'])
                                 <th scope="col" class="px-6 py-3">
-                                    ACCIÓN
+                                    ACCIÓN 
                                 </th>
                                 @endrole
                             </tr>
@@ -142,6 +142,7 @@
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fechanacimiento }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fechaingreso }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->correo }}</td>  
+                                    
                                     <td>
                                         <form action="{{ route ('empleados.destroy',$empleado->id)}}" method="POST">
                                             @role(['Admin'])
@@ -171,5 +172,3 @@
         </div>
     </body>
 </html>
-
-actualización aun con varias tablas y controladores 

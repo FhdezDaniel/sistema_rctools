@@ -9,7 +9,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
-        <title>RC Tools - Plan Termo 1</title>
+        <title>RC Tools - Termoformadoras</title>
     </head>
 
     <header>
@@ -78,12 +78,12 @@
             
                 <div class="ml-5 mt-12 mr-60 flex flex-row justify-end">
                     @role(['Admin','GerenteProduccion'])
-                    <a href="termoprimera/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                    <a href="termoformadoras/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                         <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
                             <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
                         </svg>
-                        <span class="ml-2">CREAR PLAN TERMO FORMADORA 1</span>
+                        <span class="ml-2">PLAN NUEVO TERMOFORMADORAS</span>
                     </a> 
                     @endrole
                     <a href="/planproduccion" class="text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
@@ -95,7 +95,7 @@
                     </a>       
                 </div>
                 <div>
-                <h1 class="mb-4 ml-20  text-4xl font-bold leading-none tracking-tight text-gray-900">Termo<mark class="ml-2 px-2 text-white bg-red-700 rounded">1</mark></h1>
+                <h1 class="mb-4 ml-20  text-4xl font-bold leading-none tracking-tight text-gray-900">Termo<mark class="ml-2 px-2 text-white bg-red-700 rounded">Formadoras</mark></h1>
                 <div class="ml-20 w-10/12 overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="mt-4 w-full text-sm  text-left text-black">
                     <thead class="text-sm text-white uppercase bg-sky-900">
@@ -104,7 +104,13 @@
                                 ID 
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                TERMOFORMADORA
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 PRODUCTO
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                SUAJE_ID
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 CANTIDAD
@@ -121,6 +127,9 @@
                             <th scope="col" class="px-6 py-3">
                                 FECHA - TERMINO 
                             </th>
+                            <th scope="col" class="px-6 py-3">
+                                ESTATUS 
+                            </th>
                             @role(['Admin','GerenteProduccion'])
                             <th scope="col" class="px-6 py-3">
                                 ACCIÓN
@@ -129,25 +138,42 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($termoprimeras as $termoprimera)
+                        @foreach ($termoformadoras as $termoformadora)
                             <tr class="bg-white border-b uppercase">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->id }}</th>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->producto}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->cantidad}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->corte}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->material}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->inicio}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoprimera->termino}}</td>
-                            
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->id }}</th>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->termoformadora }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->producto }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->suaje_id }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->cantidad }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->corte }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->material }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->inicio }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $termoformadora->termino}}</td>
+                                @switch(true)
+                                        @case($termoformadora->estatus == 'Terminado') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-green-600  whitespace-nowrap  bg-white"> {{ $termoformadora->estatus}}</td> 
+                                        @break
+
+                                        @case($termoformadora->estatus == 'Problemas') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-red-600  whitespace-nowrap dark:text-white bg-white"> {{ $termoformadora->estatus}}</td> 
+                                        @break
+
+                                        @case($termoformadora->estatus == 'Pausado') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-600  whitespace-nowrap dark:text-white bg-white"> {{ $termoformadora->estatus}}</td> 
+                                        @break
+
+                                        @case($termoformadora->estatus == 'Proceso') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-gray-600  whitespace-nowrap dark:text-white bg-white"> {{ $termoformadora->estatus}}</td> 
+                                        @endswitch
                                 <td>
                                 @role(['Admin','GerenteProduccion'])
-                                    <form action="{{ route ('termoprimera.destroy',$termoprimera->id)}}" method="POST">
-                                    <a href="/termoprimera/{{ $termoprimera->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                    <form action="{{ route ('termoformadoras.destroy', $termoformadora->id) }}" method="POST">
+                                    <a href="/termoformadoras/{{ $termoformadora->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
                                         Editar 
                                     </a>
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">ELIMINAR</button>
+                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
                                     </form>
                                 @endrole
                                 </td>
@@ -156,49 +182,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="flex items-center justify-between  bg-gray-300 px-4 py-3 sm:px-6 mt-8">
-                <div class="flex flex-1 justify-between sm:hidden">
-                    <a href="#" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
-                    <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
-                </div>
-                <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-                    <div>
-                    <p class="text-sm text-gray-700">
-                        Resultados
-                        <span class="font-medium">1</span>
-                        de
-                        <span class="font-medium">10</span>
-                        de
-                        <span class="font-medium">100</span>
-                        resultados
-                    </p>
-                    </div>
-                    <div>
-                    <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                        <a href="#" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                        <span class="sr-only">Previous</span>
-                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
-                        </svg>
-                        </a>
-                        <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
-                        <a href="#" aria-current="page" class="relative z-10 inline-flex items-center bg-red-700 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">1</a>
-                        <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
-                        <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
-                        <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">4</span>
-                        <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">5</a>
-                        <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">...</a>
-                        
-                        <a href="#" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                        <span class="sr-only">Next</span>
-                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                        </svg>
-                        </a>
-                    </nav>
-                    </div>
-                </div>
-                </div>
         </div>
     </body>
 </html>

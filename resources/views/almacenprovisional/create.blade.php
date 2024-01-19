@@ -84,7 +84,7 @@
                             id="nombre"
                             name="nombre" 
                             type="text"
-                            placeholder="Escriba el nombre del producto"
+                            placeholder="Escriba el nombre del producto a almacenar"
                             class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombre') border-red-500
                             @enderror"
                             value="{{ old('nombre') }}"

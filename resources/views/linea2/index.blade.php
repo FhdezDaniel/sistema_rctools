@@ -137,11 +137,11 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-black uppercase bg-amber-300">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 PY-3">
                                 ID 
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                PRODUCTO 
+                                PRODUCTO
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 ESTATUS
@@ -185,6 +185,11 @@
                         </svg>    
                     <span class="ml-2">Completar datos</span>
                     </a>
+                </div>
+
+                <div class="w-1/4 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+
+
                 </div>
                 <div class="ml-10 w-1/4 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
