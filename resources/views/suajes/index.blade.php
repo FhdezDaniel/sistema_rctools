@@ -9,9 +9,9 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
-        <title>RC Tools - Almacen provisional</title>
+        <title>RC Tools - Suajes</title>
     </head>
-
+    
     <header>
     @auth 
         <section>
@@ -21,7 +21,7 @@
                 <a class="text-3xl font-sans font-medium ml-3 hover:text-black uppercase" href="/home">
                     RC Tools 
                 </a>
-
+ 
                 <ul class="hidden md:flex px-4 mx-auto font-sans font-medium space-x-12">
                     <li><a class="hover:text-black text-lg uppercase" href="/home">Inicio</a></li>
                     
@@ -33,7 +33,7 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                        <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
@@ -42,6 +42,7 @@
                         </div>
                         </div>
                     </div>    
+
                     </li>
                 
                                 <li><a class="hover:text-black text-lg uppercase" href="/calidad">Calidad</a></li>
@@ -68,81 +69,99 @@
                     </section>
                 @endauth
     </header>
-   
+    
     <body class="bg-gray-300">
         <div class="w-screen h-screen bg-gray-300">
-            <div class="bg-gray-300">
-                
-                <h1 class="mt-12 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">ALMACEN <mark class="px-2 text-white bg-red-700 rounded">Provisional</mark></h1>
+            <div>
+                <h1 class="mt-20 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Suajes</mark></h1>
             </div>
         <div>
 
-        <div class="">
-                <div class="ml-5 mt-12 mr-48 flex flex-row justify-end">
-                    @role(['Admin','Supervisor'])
-                    <a href="almacenprovisional/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
-                            <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
-                        </svg>
-                        <span class="ml-2">CREAR NUEVO REGISTRO ALMACEN PROVISIONAL</span>
-                    <a>
-                    @endrole
-                    <a href="/home" class="text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+        <div class="ml-5 mt-12 mr-20 flex flex-row justify-end">
+                @role(['Admin','Supervisor'])
+                <a href="suajes/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                    <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
+                        <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
+                    </svg>
+                    <span class="ml-2">CREAR NUEVO REGISTRO DE SUAJE</span>
+                <a>
+                @endrole
+                <a href="/home" class="text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                     <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
                         <path d="M13.606 3.748V2.53a1.542 1.542 0 0 0-.872-1.431 1.352 1.352 0 0 0-1.472.2L6.155 5.552a1.6 1.6 0 0 0 0 2.415l5.108 4.25a1.355 1.355 0 0 0 1.472.2 1.546 1.546 0 0 0 .872-1.428v-1.09a4.721 4.721 0 0 1 3.7 2.868 1.186 1.186 0 0 0 1.08.73 1.225 1.225 0 0 0 1.213-1.286v-1.33a6.923 6.923 0 0 0-5.994-7.133Z"/>
                         <path d="m2.434 6.693 5.517-4.95A1 1 0 0 0 6.615.257L1.1 5.205a2.051 2.051 0 0 0-.01 3.035l5.61 5.088a1 1 0 1 0 1.344-1.482l-5.61-5.153Z"/>
                     </svg>
                     <span class="ml-2">REGRESAR</span>
-                    </a>  
-                </div>
-            <div class="w-5/6 flex flex-col ml-28 mt-5 items-center">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-white bg-sky-900 uppercase  dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    ID
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    NOMBRE DEL PRODUCTO 
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    MATERIAL 
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    PIEZAS
-                                </th>
+                </a>  
+        </div>
+        <div class="w-12/12  mt-4 ml-20  flex flex-col items-center">
+            <table class="w-11/12 text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-white  bg-sky-900 uppercase  dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-4">
+                            ID
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                           CODIGO
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                           ACTIVO
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            COMENTARIOS
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            ESTATUS
+                        </th>
+                        @role(['Admin','Supervisor'])
+                        <th scope="col" class="px-6 py-3">
+                            ACCION
+                        </th>
+                        @endrole
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach ( $suajes as $suaje )
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
+                            <th scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->id }} </th>
+                            <td scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->codigo}}</td>
+                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->activo}}</td>
+                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->comentarios}}</td>
+                            @switch(true)
+                                @case($suaje->estatus == 'DISPONIBLE') 
+                                <td scope="row" class="px-6 py-4 font-bold text-green-600  whitespace-nowrap  bg-white"> {{ $suaje->estatus}}</td> 
+                                 @break
+
+                                 @case($suaje->estatus == 'OCUPADO') 
+                                 <td scope="row" class="px-6 py-4 font-bold text-red-600  whitespace-nowrap dark:text-white bg-white"> {{ $suaje->estatus}}</td> 
+                                 @break
+
+                                 @case($suaje->estatus == 'DAÑADO') 
+                                 <td scope="row" class="px-6 py-4 font-bold text-orange-600  whitespace-nowrap dark:text-white bg-white"> {{ $suaje->estatus}}</td> 
+                                 @break
+
+                                 @case($suaje->estatus == 'OBSOLETO') 
+                                 <td scope="row" class="px-6 py-4 font-bold text-gray-600  whitespace-nowrap dark:text-white bg-white"> {{ $suaje->estatus}}</td> 
+                                 @endswitch
+                            <td>
                                 @role(['Admin','Supervisor'])
-                                <th scope="col" class="px-6 py-3">
-                                    ACCION
-                                </th>
+                                <form action="{{ route ('suajes.destroy',$suaje->id)}}" method="POST">
+                                <a href="/suajes/{{ $suaje->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                    EDITAR
+                                </a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 uppercase dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
+                                </form>
                                 @endrole
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach ($almacenprovisionals as $almacenprovisional)
-                            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $almacenprovisional->id }}</th>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacenprovisional->producto->nombre}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacenprovisional->producto->material}}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $almacenprovisional->piezas}}</td>
-                                <td>
-                                    @role(['Admin','Supervisor'])
-                                    <form action="{{ route ('almacenprovisional.destroy',$almacenprovisional->id)}}" method="POST">
-                                    <a href="/almacenprovisional/{{ $almacenprovisional->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                        Editar
-                                    </a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">ELIMINAR</button>
-                                    </form>
-                                    @endrole 
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
     </body>
 </html>
+ 

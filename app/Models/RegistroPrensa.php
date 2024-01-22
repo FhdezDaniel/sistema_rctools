@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Registroprensa extends Model
 {
     use HasFactory;
+
+    public function empleado(){
+        return $this->belongsTo(Empleado::class, 'empleado_id');
+    }
 }

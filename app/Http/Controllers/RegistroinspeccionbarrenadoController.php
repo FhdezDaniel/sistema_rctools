@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Registroinspeccion;
+use App\Models\Registroinspeccionbarrenado;
 
 class RegistroinspeccionbarrenadoController extends Controller
 {
-    
     public function index()
     {
-        $registroinspeccions = Registroinspeccion::all();
-        return view('registroinspeccionbarrenado.index')->with('registroinspeccions',$registroinspeccions);
+        $registroinspeccionbarrenados = Registroinspeccionbarrenado::all();
+        return view('registroinspeccionbarrenado.index')->with('registroinspeccionbarrenados',$registroinspeccionbarrenados);
     }
 
     public function create()
@@ -19,63 +18,65 @@ class RegistroinspeccionbarrenadoController extends Controller
         return view('registroinspeccionbarrenado.create');
     }
 
-
     public function store(Request $request)
     {
-        $registroinspeccions = new Registroinspeccion();
+        $registroinspeccionbarrenados = new Registroinspeccionbarrenado();
 
-        $registroinspeccions->nombreop = $request->get('nombreop');
-        $registroinspeccions->maquina = $request->get('maquina');
-        $registroinspeccions->fecha = $request->get('fecha');
-        $registroinspeccions->turno = $request->get('turno');
-        $registroinspeccions->producto = $request->get('producto');
-        $registroinspeccions->totalpzs = $request->get('totalpzs');
-        $registroinspeccions->pzsmalas = $request->get('pzsmalas');
-        $registroinspeccions->tiempoop = $request->get('tiempoop');
-        $registroinspeccions->tiempomtto = $request->get('tiempomtto');
-        $registroinspeccions->limpieza = $request->get('limpieza');
+        $registroinspeccionbarrenados->empleado_id = $request->get('empleado_id');
+        $registroinspeccionbarrenados->maquina = $request->get('maquina');
+        $registroinspeccionbarrenados->hora = $request->get('hora');
+        $registroinspeccionbarrenados->fecha = $request->get('fecha');
+        $registroinspeccionbarrenados->turno = $request->get('turno');
+        $registroinspeccionbarrenados->producto = $request->get('producto');
+        $registroinspeccionbarrenados->total_piezas = $request->get('total_piezas');
+        $registroinspeccionbarrenados->piezas_malas = $request->get('piezas_malas');
+        $registroinspeccionbarrenados->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
+        $registroinspeccionbarrenados->causa = $request->get('causa');
+        $registroinspeccionbarrenados->limpieza = $request->get('limpieza');
 
-        $registroinspeccions->save();
+        $registroinspeccionbarrenados->save();
 
         return redirect('/registroinspeccionbarrenado');
     }
 
     public function show(string $id)
     {
-    
+        //
     }
+
 
     public function edit(string $id)
     {
-        $registroinspeccion = Registroinspeccion::find($id);
-        return view('registroinspeccionbarrenado.edit')->with('registroinspeccion',$registroinspeccion);
+        $registroinspeccionbarrenado = Registroinspeccionbarrenado::find($id);
+        return view('registroinspeccionbarrenado.edit')->with('registroinspeccionbarrenado',$registroinspeccionbarrenado);
     }
 
     public function update(Request $request, string $id)
     {
-        $registroinspeccion = Registroinspeccion::find($id);
+        $registroinspeccionbarrenado = Registroinspeccionbarrenado::find($id);
 
-        $registroinspeccion->nombreop = $request->get('nombreop');
-        $registroinspeccion->maquina = $request->get('maquina');
-        $registroinspeccion->fecha = $request->get('fecha');
-        $registroinspeccion->turno = $request->get('turno');
-        $registroinspeccion->producto = $request->get('producto');
-        $registroinspeccion->totalpzs = $request->get('totalpzs');
-        $registroinspeccion->pzsmalas = $request->get('pzsmalas');
-        $registroinspeccion->tiempoop = $request->get('tiempoop');
-        $registroinspeccion->tiempomtto = $request->get('tiempomtto');
-        $registroinspeccion->limpieza = $request->get('limpieza');
+        $registroinspeccionbarrenado->empleado_id = $request->get('empleado_id');
+        $registroinspeccionbarrenado->maquina = $request->get('maquina');
+        $registroinspeccionbarrenado->hora = $request->get('hora');
+        $registroinspeccionbarrenado->fecha = $request->get('fecha');
+        $registroinspeccionbarrenado->turno = $request->get('turno');
+        $registroinspeccionbarrenado->producto = $request->get('producto');
+        $registroinspeccionbarrenado->total_piezas = $request->get('total_piezas');
+        $registroinspeccionbarrenado->piezas_malas = $request->get('piezas_malas');
+        $registroinspeccionbarrenado->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
+        $registroinspeccionbarrenado->causa = $request->get('causa');
+        $registroinspeccionbarrenado->limpieza = $request->get('limpieza');
 
-        $registroinspeccion->save();
+        $registroinspeccionbarrenado->save();
 
         return redirect('/registroinspeccionbarrenado');
     }
 
-   
+    
     public function destroy(string $id)
     {
-        $registroinspeccion = Registroinspeccion::find($id);
-        $registroinspeccion->delete();
+        $registroinspeccionbarrenado = Registroinspeccionbarrenado::find($id);
+        $registroinspeccionbarrenado->delete();
 
         return redirect('/registroinspeccionbarrenado');
     }

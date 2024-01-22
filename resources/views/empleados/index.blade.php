@@ -33,11 +33,11 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
+                        <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                         </div>
                         </div>
@@ -134,13 +134,13 @@
                             @foreach ($empleados as $empleado)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                                     <th scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->id }}</th>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->numempleado }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->nombre }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->apepaterno }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->apematerno }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->numero_empleado }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->nombres }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->apellido_paterno }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->apellido_materno }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->puesto }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fechanacimiento }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fechaingreso }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fecha_nacimiento }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fecha_ingreso }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->correo }}</td>  
                                     
                                     <td>

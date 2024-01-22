@@ -22,16 +22,17 @@ class RegistroprensaController extends Controller
     {
         $registroprensas = new Registroprensa();
 
-        $registroprensas->nombreop = $request->get('nombreop');
+        $registroprensas->empleado_id = $request->get('empleado_id');
         $registroprensas->maquina = $request->get('maquina');
+        $registroprensas->hora = $request->get('hora');
         $registroprensas->fecha = $request->get('fecha');
         $registroprensas->turno = $request->get('turno');
         $registroprensas->producto = $request->get('producto');
-        $registroprensas->pzsbuenas = $request->get('pzsbuenas');
-        $registroprensas->pzsmalas = $request->get('pzsmalas');
-        $registroprensas->tiempoop = $request->get('tiempoop');
-        $registroprensas->tiempomtto = $request->get('tiempomtto');
-        $registroprensas->observaciones = $request->get('observaciones');
+        $registroprensas->piezas_buenas = $request->get('piezas_buenas');
+        $registroprensas->piezas_malas = $request->get('piezas_malas');
+        $registroprensas->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
+        $registroprensas->tiempo_muerto_mantenimiento = $request->get('tiempo_muerto_mantenimiento');
+        $registroprensas->causa = $request->get('causa');
         $registroprensas->limpieza = $request->get('limpieza');
 
         $registroprensas->save();
@@ -44,34 +45,37 @@ class RegistroprensaController extends Controller
         //
     }
 
+
     public function edit(string $id)
     {
         $registroprensa = Registroprensa::find($id);
         return view('registroprensa.edit')->with('registroprensa',$registroprensa);
     }
 
-
     public function update(Request $request, string $id)
     {
         $registroprensa = Registroprensa::find($id);
 
-        $registroprensa->nombreop = $request->get('nombreop');
+        $registroprensa->empleado_id = $request->get('empleado_id');
         $registroprensa->maquina = $request->get('maquina');
+        $registroprensa->hora = $request->get('hora');
         $registroprensa->fecha = $request->get('fecha');
         $registroprensa->turno = $request->get('turno');
         $registroprensa->producto = $request->get('producto');
-        $registroprensa->pzsbuenas = $request->get('pzsbuenas');
-        $registroprensa->pzsmalas = $request->get('pzsmalas');
-        $registroprensa->tiempoop = $request->get('tiempoop');
-        $registroprensa->tiempomtto = $request->get('tiempomtto');
-        $registroprensa->observaciones = $request->get('observaciones');
+        $registroprensa->piezas_buenas = $request->get('piezas_buenas');
+        $registroprensa->piezas_malas = $request->get('piezas_malas');
+        $registroprensa->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
+        $registroprensa->tiempo_muerto_mantenimiento = $request->get('tiempo_muerto_mantenimiento');
+        $registroprensa->causa = $request->get('causa');
         $registroprensa->limpieza = $request->get('limpieza');
+
 
         $registroprensa->save();
 
         return redirect('/registroprensa');
     }
 
+    
     public function destroy(string $id)
     {
         $registroprensa = Registroprensa::find($id);

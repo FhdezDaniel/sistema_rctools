@@ -33,11 +33,11 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
+                        <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                         </div>
                         </div>
@@ -83,7 +83,7 @@
                     <span class="ml-2">NUEVO REGISTRO EMPAQUETADO</span>
                 </a> 
                 @endrole 
-                <a href="/registroproduccion" class="text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                <a href="/registrosproduccion" class="text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                     <svg class="w-6 h-6 text-white  dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
                         <path d="M13.606 3.748V2.53a1.542 1.542 0 0 0-.872-1.431 1.352 1.352 0 0 0-1.472.2L6.155 5.552a1.6 1.6 0 0 0 0 2.415l5.108 4.25a1.355 1.355 0 0 0 1.472.2 1.546 1.546 0 0 0 .872-1.428v-1.09a4.721 4.721 0 0 1 3.7 2.868 1.186 1.186 0 0 0 1.08.73 1.225 1.225 0 0 0 1.213-1.286v-1.33a6.923 6.923 0 0 0-5.994-7.133Z"/>
                         <path d="m2.434 6.693 5.517-4.95A1 1 0 0 0 6.615.257L1.1 5.205a2.051 2.051 0 0 0-.01 3.035l5.61 5.088a1 1 0 1 0 1.344-1.482l-5.61-5.153Z"/>
@@ -96,14 +96,17 @@
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-white uppercase bg-sky-900 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="px-6 py-3">
                                     ID
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    NOMBRE DEL OPERADOR
+                                    ID DEL OPERADOR
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     MAQUINA
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    HORA
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     FECHA
@@ -121,7 +124,10 @@
                                     TOTAL DE CAJAS
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    OBSERVACIONES
+                                    TIEMPO MUERTO OPERADOR
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    CAUSAS
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     LIMPIEZA 
@@ -134,18 +140,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($registroempaquetados as $registroempaquetado)
+                        @foreach($registroempaquetados as $registroempaquetado)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->id }}</th>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->nombreop}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->maquina}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->fecha}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->turno}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->producto}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->cajasrechazadas}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->totalcajas}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->observaciones}}</td>
-                                    <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $registroempaquetado->limpieza}}</td>
+                                    <th scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->id }}</th>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->empleado->nombres }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->maquina}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->hora}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->fecha}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->turno}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->producto}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->cajas_rechazadas}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->total_cajas}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->tiempo_muerto_operador}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->causa}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->limpieza}}</td>
                                     
                                     <td>
                                         <form action="{{ route ('registroempaquetado.destroy',$registroempaquetado->id)}}" method="POST">

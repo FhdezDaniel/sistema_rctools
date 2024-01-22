@@ -33,11 +33,11 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
+                        <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                         </div>
                         </div>
@@ -82,72 +82,72 @@
                             @csrf
                             <div class="flex">
                                 <div class="mb-5 ml-4 w-1/4">
-                                    <label for="numempleado" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="numero_empleado" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Numero de empleado
                                     </label>
                                     <input
-                                        id="numempleado"
-                                        name="numempleado" 
+                                        id="numero_empleado"
+                                        name="numero_empleado" 
                                         type="text"
                                         placeholder="Escriba el numero de empleado"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombreop') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('numero_empleado') border-red-500
                                         @enderror"
-                                        value="{{ old('numempleado') }}"
+                                        value="{{ old('numero_empleado') }}"
                                     />
-                                    @error('numempleado')
+                                    @error('numero_empleado')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-5 ml-4 w-3/4">
-                                    <label for="nombre" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="nombres" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Nombre(s)
                                     </label>
                                     <input
-                                        id="nombre"
-                                        name="nombre" 
+                                        id="nombres"
+                                        name="nombres" 
                                         type="text"
                                         placeholder="Escriba los nombres del empleado"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombre') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombres') border-red-500
                                         @enderror"
-                                        value="{{ old('nombre') }}"
+                                        value="{{ old('nombres') }}"
                                     />
-                                    @error('nombre')
+                                    @error('nombres')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div class="flex">
                                 <div class="mb-5 ml-4 w-1/2">
-                                    <label for="apepaterno" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="apellido_paterno" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Apellido Paterno
                                     </label>
                                     <input
-                                        id="apepaterno"
-                                        name="apepaterno" 
+                                        id="apellido_paterno"
+                                        name="apellido_paterno" 
                                         placeholder="Escriba apellido paterno"
                                         type="text"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('apepaterno') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('apellido_paterno') border-red-500
                                         @enderror"
-                                        value="{{ old('apepaterno') }}"
+                                        value="{{ old('apellido_paterno') }}"
                                     />
-                                    @error('apepaterno')
+                                    @error('apellido_paterno')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-5 ml-4 w-1/2">
-                                    <label for="apematerno" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="apellido_materno" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Apellido Materno
                                     </label>
                                     <input
-                                        id="apematerno"
-                                        name="apematerno" 
+                                        id="apellido_materno"
+                                        name="apellido_materno" 
                                         placeholder="Escriba apellido materno"
                                         type="text"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('apematerno') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('apellido_materno') border-red-500
                                         @enderror"
-                                        value="{{ old('apematerno') }}"
+                                        value="{{ old('apellido_materno') }}"
                                     />
-                                    @error('apematerno')
+                                    @error('apellido_materno')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -171,36 +171,36 @@
                                     @enderror
                                 </div>
                                 <div class="mb-5 w-1/4 ml-4">
-                                    <label for="fechanacimiento" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="fecha_nacimiento" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Fecha Nacimiento
                                     </label>
                                     <input
-                                        id="fechanacimiento"
-                                        name="fechanacimiento" 
+                                        id="fecha_nacimiento"
+                                        name="fecha_nacimiento" 
                                         type="date"
                                         placeholder="Fecha - nacimiento"
-                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fechanacimiento') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fecha_nacimiento') border-red-500
                                         @enderror"
-                                        value="{{ old('fechanacimiento') }}"
+                                        value="{{ old('fecha_nacimiento') }}"
                                     />
-                                    @error('fechanacimiento')
+                                    @error('fecha_nacimiento')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-5 w-1/4 ml-4">
-                                    <label for="fechaingreso" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="fecha_ingreso" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Fecha de Ingreso
                                     </label>
                                     <input
-                                        id="fechaingreso"
-                                        name="fechaingreso" 
+                                        id="fecha_ingreso"
+                                        name="fecha_ingreso" 
                                         type="date"
                                         placeholder="Fecha - ingreso"
-                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fechaingreso') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fecha_ingreso') border-red-500
                                         @enderror"
-                                        value="{{ old('fechaingreso') }}"
+                                        value="{{ old('fecha_ingreso') }}"
                                     />
-                                    @error('fechaingreso')
+                                    @error('fecha_ingreso')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>

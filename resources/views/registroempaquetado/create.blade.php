@@ -33,11 +33,11 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
+                        <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                         </div>
                         </div>
@@ -90,19 +90,19 @@
 
                             <div class="flex">
                                 <div class="mb-5 w-3/4">
-                                    <label for="nombreop" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Nombre operador 
+                                    <label for="empleado_id" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Empleado ID
                                     </label>
                                     <input
-                                        id="nombreop"
-                                        name="nombreop" 
+                                        id="empleado_id"
+                                        name="empleado_id" 
                                         type="text"
-                                        placeholder="Escriba su nombre completo"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombreop') border-red-500
+                                        placeholder="Escriba su id de empleado"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('empleado_id') border-red-500
                                         @enderror"
-                                        value="{{ old('nombreop') }}"
+                                        value="{{ old('empleado_id') }}"
                                     />
-                                    @error('nombreop')
+                                    @error('empleado_id')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -114,7 +114,7 @@
                                         id="maquina"
                                         name="maquina" 
                                         type="selected"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
                                         @enderror"
                                         value="{{ old('maquina') }}"
                                     >
@@ -126,6 +126,23 @@
                                     <option value="Empaquetado 5">Empaquetado 5</option>
                                     </select>
                                     @error('maquina')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-5 w-3/4 ml-4">
+                                    <label for="hora" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Hora
+                                    </label>
+                                    <input
+                                        id="hora"
+                                        name="hora" 
+                                        type="text"
+                                        placeholder="Escriba la hora de registro"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('hora') border-red-500
+                                        @enderror"
+                                        value="{{ old('hora') }}"
+                                    />
+                                    @error('hora')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -156,7 +173,7 @@
                                         id="turno"
                                         name="turno" 
                                         type="selected"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
                                         @enderror"
                                         value="{{ old('turno') }}"
                                     >
@@ -170,7 +187,7 @@
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="mb-5 ml-4 w-1/4">
+                                <div class="mb-5 ml-4 w-2/4">
                                     <label for="producto" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Producto
                                     </label>
@@ -188,51 +205,70 @@
                                     @enderror
                                 </div>
                                 <div class="mb-5 ml-4 w-1/4">
-                                    <label for="cajasrechazadas" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Cajas rechazadas 
+                                    <label for="cajas_rechazadas" class="mb-2 block uppercase text-gray-700 font-bold">
+                                       Cajas rechazadas
                                     </label>
                                     <input
-                                        id="cajasrechazadas"
-                                        name="cajasrechazadas" 
+                                        id="cajas_rechazadas"
+                                        name="cajas_rechazadas" 
                                         type="text"
                                         placeholder="Numero de cajas rechazadas"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('cajasrechazadas') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('cajas_rechazadas') border-red-500
                                         @enderror"
-                                        value="{{ old('cajasrechazadas') }}"
+                                        value="{{ old('cajas_rechazadas') }}"
                                     />
-                                    @error('cajasrechazadas')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4  w-1/4">
-                                    <label for="totalcajas" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Total cajas
-                                    </label>
-                                    <input
-                                        id="totalcajas"
-                                        name="totalcajas" 
-                                        type="text"
-                                        placeholder="Numero total de cajas"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('totalcajas') border-red-500
-                                        @enderror"
-                                        value="{{ old('totalcajas') }}"
-                                    />
-                                    @error('totalcajas')
+                                    @error('cajas_rechazadas')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
-    
                             <div class="flex">
-                                <div class="mb-5  w-3/4">
-                                    <label for="observaciones" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Observaciones
+                                <div class="mb-5 w-1/4">
+                                    <label for="total_cajas" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Total de cajas
                                     </label>
                                     <input
-                                        id="observaciones"
-                                        name="observaciones" 
+                                        id="total_cajas"
+                                        name="total_cajas" 
                                         type="text"
-                                        placeholder="observaciones"
+                                        placeholder="Numero total de cajas"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('total_cajas') border-red-500
+                                        @enderror"
+                                        value="{{ old('total_cajas') }}"
+                                    />
+                                    @error('total_cajas')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                    
+                                <div class="mb-5 ml-4 w-1/4">
+                                    <label for="tiempo_muerto_operador" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Tiempo muerto operador 
+                                    </label>
+                                    <input
+                                        id="tiempo_muerto_operador"
+                                        name="tiempo_muerto_operador" 
+                                        type="text"
+                                        placeholder="Tiempo muerto operador"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempo_muerto_operador') border-red-500
+                                        @enderror"
+                                        value="{{ old('tiempo_muerto_operador') }}"
+                                    />
+                                    @error('tiempo_muerto_operador')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="mb-5  w-3/4">
+                                    <label for="causa" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Causa
+                                    </label>
+                                    <input
+                                        id="causa"
+                                        name="causa" 
+                                        type="text"
+                                        placeholder="Causas de tiempo muerto mantenimiento"
                                         class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('causa') border-red-500
                                         @enderror"
                                         value="{{ old('causa') }}"

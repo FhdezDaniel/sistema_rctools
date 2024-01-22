@@ -33,11 +33,11 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
+                        <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                         </div>
                         </div>
@@ -87,21 +87,22 @@
                         <form action="/registroinspeccionbarrenado" method="POST">
                             @csrf
 
+                            
                             <div class="flex">
                                 <div class="mb-5 w-3/4">
-                                    <label for="nombreop" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Nombre operador
+                                    <label for="empleado_id" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Empleado ID
                                     </label>
                                     <input
-                                        id="nombreop"
-                                        name="nombreop" 
+                                        id="empleado_id"
+                                        name="empleado_id" 
                                         type="text"
-                                        placeholder="Escriba su nombre completo"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombreop') border-red-500
+                                        placeholder="Escriba su id de empleado"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('empleado_id') border-red-500
                                         @enderror"
-                                        value="{{ old('nombreop') }}"
+                                        value="{{ old('empleado_id') }}"
                                     />
-                                    @error('nombreop')
+                                    @error('empleado_id')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -113,7 +114,7 @@
                                         id="maquina"
                                         name="maquina" 
                                         type="selected"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
                                         @enderror"
                                         value="{{ old('maquina') }}"
                                     >
@@ -127,6 +128,23 @@
                                     <option value="Barrenado 2">Barrenado 2</option>
                                     </select>
                                     @error('maquina')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-5 w-3/4 ml-4">
+                                    <label for="hora" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Hora
+                                    </label>
+                                    <input
+                                        id="hora"
+                                        name="hora" 
+                                        type="text"
+                                        placeholder="Escriba la hora de registro"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('hora') border-red-500
+                                        @enderror"
+                                        value="{{ old('hora') }}"
+                                    />
+                                    @error('hora')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -157,7 +175,7 @@
                                         id="turno"
                                         name="turno" 
                                         type="selected"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
                                         @enderror"
                                         value="{{ old('turno') }}"
                                     >
@@ -189,73 +207,76 @@
                                     @enderror
                                 </div>
                                 <div class="mb-5 ml-4 w-1/4">
-                                    <label for="totalpzs" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Total de piezas
+                                    <label for="total_piezas" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Total piezas
                                     </label>
                                     <input
-                                        id="totalpzs"
-                                        name="totalpzs" 
+                                        id="total_piezas"
+                                        name="total_piezas" 
                                         type="text"
-                                        placeholder="Numero total de piezas"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('totalpzs') border-red-500
+                                        placeholder="Numero de piezas buenas"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('total_piezas') border-red-500
                                         @enderror"
-                                        value="{{ old('totalpzs') }}"
+                                        value="{{ old('total_piezas') }}"
                                     />
-                                    @error('totalpzs')
+                                    @error('total_piezas')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div class="flex">
                                 <div class="mb-5 w-1/4">
-                                    <label for="pzsmalas" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="piezas_malas" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Piezas malas
                                     </label>
                                     <input
-                                        id="pzsmalas"
-                                        name="pzsmalas" 
+                                        id="piezas_malas"
+                                        name="piezas_malas" 
                                         type="text"
                                         placeholder="Numero de piezas malas"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('pzsmalas') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('piezas_malas') border-red-500
                                         @enderror"
-                                        value="{{ old('pzsmalas') }}"
+                                        value="{{ old('piezas_malas') }}"
                                     />
-                                    @error('pzsmalas')
+                                    @error('piezas_malas')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                    
+                                <div class="mb-5 ml-4 w-1/4">
+                                    <label for="tiempo_muerto_operador" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Tiempo muerto operador 
+                                    </label>
+                                    <input
+                                        id="tiempo_muerto_operador"
+                                        name="tiempo_muerto_operador" 
+                                        type="text"
+                                        placeholder="Tiempo muerto operador"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempo_muerto_operador') border-red-500
+                                        @enderror"
+                                        value="{{ old('tiempo_muerto_operador') }}"
+                                    />
+                                    @error('tiempo_muerto_operador')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="tiempoop" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Tiempo muerto operador
+                            </div>
+                            <div class="flex">
+                                <div class="mb-5  w-3/4">
+                                    <label for="causa" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Causa
                                     </label>
                                     <input
-                                        id="tiempoop"
-                                        name="tiempoop" 
+                                        id="causa"
+                                        name="causa" 
                                         type="text"
-                                        placeholder="Timepo muerto operador"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempoop') border-red-500
+                                        placeholder="Causas de tiempo muerto mantenimiento"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('causa') border-red-500
                                         @enderror"
-                                        value="{{ old('tiempoop') }}"
+                                        value="{{ old('causa') }}"
                                     />
-                                    @error('tiempoop')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="tiempomtto" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Tiempor muerto mto
-                                    </label>
-                                    <input
-                                        id="tiempomtto"
-                                        name="tiempomtto" 
-                                        type="text"
-                                        placeholder="Tiempo muerto mantenimiento"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempomtto') border-red-500
-                                        @enderror"
-                                        value="{{ old('tiempomtto') }}"
-                                    />
-                                    @error('timepomtto')
+                                    @error('causa')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>

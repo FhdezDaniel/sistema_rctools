@@ -22,16 +22,17 @@ class RegistrotermoformadoController extends Controller
     {
         $registrotermoformados = new Registrotermoformado();
 
-        $registrotermoformados->nombreop = $request->get('nombreop');
+        $registrotermoformados->empleado_id = $request->get('empleado_id');
         $registrotermoformados->maquina = $request->get('maquina');
+        $registrotermoformados->hora = $request->get('hora');
         $registrotermoformados->fecha = $request->get('fecha');
         $registrotermoformados->turno = $request->get('turno');
         $registrotermoformados->producto = $request->get('producto');
-        $registrotermoformados->pzsbuenas = $request->get('pzsbuenas');
-        $registrotermoformados->pzsmalas = $request->get('pzsmalas');
-        $registrotermoformados->pzasmalasnuevo = $request->get('pzasmalasnuevo');
-        $registrotermoformados->tiempoop = $request->get('tiempoop');
-        $registrotermoformados->tiempomtto = $request->get('tiempomtto');
+        $registrotermoformados->piezas_buenas = $request->get('piezas_buenas');
+        $registrotermoformados->piezas_malas = $request->get('piezas_malas');
+        $registrotermoformados->piezas_malas_nuevo = $request->get('piezas_malas_nuevo');
+        $registrotermoformados->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
+        $registrotermoformados->tiempo_muerto_mantenimiento = $request->get('tiempo_muerto_mantenimiento');
         $registrotermoformados->causa = $request->get('causa');
         $registrotermoformados->limpieza = $request->get('limpieza');
 
@@ -45,9 +46,7 @@ class RegistrotermoformadoController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id)
     {
         $registrotermoformado = Registrotermoformado::find($id);
@@ -58,16 +57,17 @@ class RegistrotermoformadoController extends Controller
     {
         $registrotermoformado = Registrotermoformado::find($id);
 
-        $registrotermoformado->nombreop = $request->get('nombreop');
+        $registrotermoformado->empleado_id = $request->get('empleado_id');
         $registrotermoformado->maquina = $request->get('maquina');
+        $registrotermoformado->hora = $request->get('hora');
         $registrotermoformado->fecha = $request->get('fecha');
         $registrotermoformado->turno = $request->get('turno');
         $registrotermoformado->producto = $request->get('producto');
-        $registrotermoformado->pzsbuenas = $request->get('pzsbuenas');
-        $registrotermoformado->pzsmalas = $request->get('pzsmalas');
-        $registrotermoformado->pzasmalasnuevo = $request->get('pzasmalasnuevo');
-        $registrotermoformado->tiempoop = $request->get('tiempoop');
-        $registrotermoformado->tiempomtto = $request->get('tiempomtto');
+        $registrotermoformado->piezas_buenas = $request->get('piezas_buenas');
+        $registrotermoformado->piezas_malas = $request->get('piezas_malas');
+        $registrotermoformado->piezas_malas_nuevo = $request->get('piezas_malas_nuevo');
+        $registrotermoformado->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
+        $registrotermoformado->tiempo_muerto_mantenimiento = $request->get('tiempo_muerto_mantenimiento');
         $registrotermoformado->causa = $request->get('causa');
         $registrotermoformado->limpieza = $request->get('limpieza');
 
@@ -80,9 +80,9 @@ class RegistrotermoformadoController extends Controller
     
     public function destroy(string $id)
     {
-        $registrotermo = RegistroTermoformado::find($id);
-        $registrotermo->delete();
+        $registrotermoformado = Registrotermoformadora::find($id);
+        $registrotermoformado->delete();
 
-        return redirect('/registrotermoformado');
+        return redirect('/registrotermoformadora');
     }
 }

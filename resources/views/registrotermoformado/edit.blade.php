@@ -33,11 +33,11 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
+                        <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                         </div>
                         </div>
@@ -77,21 +77,21 @@
             <form action="/registrotermoformado/{{ $registrotermoformado->id }}" method="POST">
                 @csrf
                 @method('PUT')
-                    <div class="flex">
+                <div class="flex">
                                 <div class="mb-5 w-3/4">
-                                    <label for="nombreop" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Nombre operador
+                                    <label for="empleado_id" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Empleado ID
                                     </label>
                                     <input
-                                        id="nombreop"
-                                        name="nombreop" 
+                                        id="empleado_id"
+                                        name="empleado_id" 
                                         type="text"
-                                        placeholder="Escriba su nombre completo"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombreop') border-red-500
+                                        placeholder="Escriba su id de empleado"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('empleado_id') border-red-500
                                         @enderror"
-                                        value="{{ $registrotermoformado->nombreop }}"
+                                        value="{{ $registrotermoformado->empleado_id }}"
                                     />
-                                    @error('nombreop')
+                                    @error('empleado_id')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -103,7 +103,7 @@
                                         id="maquina"
                                         name="maquina" 
                                         type="selected"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
                                         @enderror"
                                         value="{{ $registrotermoformado->maquina }}"
                                     >
@@ -112,9 +112,26 @@
                                     <option value="termoformadora 2">Termoformadora 2</option>
                                     <option value="termoformadora 3">Termoformadora 3</option>
                                     <option value="termoformadora 4">Termoformadora 4</option>
-                                    <option value="termoformadora 5">Termoformadora 5</option>    
+                                    <option value="termoformadora 5">Termoformadora 5</option>
                                     </select>
                                     @error('maquina')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-5 w-3/4 ml-4">
+                                    <label for="hora" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Hora
+                                    </label>
+                                    <input
+                                        id="hora"
+                                        name="hora" 
+                                        type="text"
+                                        placeholder="Escriba la hora de registro"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('hora') border-red-500
+                                        @enderror"
+                                        value="{{ $registrotermoformado->hora }}"
+                                    />
+                                    @error('hora')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -135,8 +152,8 @@
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-                    </div>
-                    <div class="flex">
+                            </div>
+                            <div class="flex">
                                 <div class="mb-5 w-1/4">
                                     <label for="turno" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Turno
@@ -145,7 +162,7 @@
                                         id="turno"
                                         name="turno" 
                                         type="selected"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
                                         @enderror"
                                         value="{{ $registrotermoformado->turno }}"
                                     >
@@ -177,103 +194,103 @@
                                     @enderror
                                 </div>
                                 <div class="mb-5 ml-4 w-1/4">
-                                    <label for="pzsbuenas" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="piezas_buenas" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Piezas buenas
                                     </label>
                                     <input
-                                        id="pzsbuenas"
-                                        name="pzsbuenas" 
+                                        id="piezas_buenas"
+                                        name="piezas_buenas" 
                                         type="text"
                                         placeholder="Numero de piezas buenas"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('pzsbuenas') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('piezas_buenas') border-red-500
                                         @enderror"
-                                        value="{{ $registrotermoformado->pzsbuenas }}"
+                                        value="{{ $registrotermoformado->piezas_buenas }}"
                                     />
-                                    @error('pzsbuenas')
+                                    @error('piezas_buenas')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-                    </div>
-                    <div class="flex">
+                            </div>
+                            <div class="flex">
                                 <div class="mb-5 w-1/4">
-                                    <label for="pzsmalas" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    <label for="piezas_malas" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Piezas malas
                                     </label>
                                     <input
-                                        id="pzsmalas"
-                                        name="pzsmalas" 
+                                        id="piezas_malas"
+                                        name="piezas_malas" 
                                         type="text"
                                         placeholder="Numero de piezas malas"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('pzsmalas') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('piezas_malas') border-red-500
                                         @enderror"
-                                        value="{{ $registrotermoformado->pzsmalas }}"
+                                        value="{{ $registrotermoformado->piezas_malas }}"
                                     />
-                                    @error('pzsmalas')
+                                    @error('piezas_malas')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                    <div class="ml-4 mb-5 w-1/4">
+                                        <label for="piezas_malas_nuevo" class="mb-2 block uppercase text-gray-700 font-bold">
+                                            Piezas malas / molde - materia 
+                                        </label>
+                                        <input
+                                            id="piezas_malas_nuevo"
+                                            name="piezas_malas_nuevo" 
+                                            type="text"
+                                            placeholder="Numero de piezas malas por molde nuevo o materia prima"
+                                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('piezas_malas_nuevo') border-red-500
+                                            @enderror"
+                                            value="{{ $registrotermoformado->piezas_malas_nuevo }}"
+                                        />
+                                        @error('piezas_malas_nuevo')
+                                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                <div class="mb-5 ml-4 w-1/4">
+                                    <label for="tiempo_muerto_operador" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Tiempo muerto operador 
+                                    </label>
+                                    <input
+                                        id="tiempo_muerto_operador"
+                                        name="tiempo_muerto_operador" 
+                                        type="text"
+                                        placeholder="Tiempo muerto operador"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempo_muerto_operador') border-red-500
+                                        @enderror"
+                                        value="{{ $registrotermoformado->tiempo_muerto_operador }}"
+                                    />
+                                    @error('tiempo_muerto_operador')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="mb-5 ml-4 w-1/4">
-                                    <label for="pzasmalasnuevo" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Piezas malas
+                                    <label for="tiempo_muerto_mantenimiento" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Tiempo muerto mantenimiento
                                     </label>
                                     <input
-                                        id="pzasmalasnuevo"
-                                        name="pzasmalasnuevo" 
+                                        id="tiempo_muerto_mantenimiento"
+                                        name="tiempo_muerto_mantenimiento" 
                                         type="text"
-                                        placeholder="Numero de piezas malas por cambio de molde / materia prima"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('pzasmalasnuevo') border-red-500
+                                        placeholder="Tiempo muerto mantenimiento"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempo_muerto_mantenimiento') border-red-500
                                         @enderror"
-                                        value="{{ $registrotermoformado->pzasmalasnuevo }}"
+                                        value="{{ $registrotermoformado->tiempo_muerto_mantenimiento }}"
                                     />
-                                    @error('pzsmalas')
+                                    @error('tiempo_muerto_mantenimiento')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="tiempoop" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Tiempo muerto operador
-                                    </label>
-                                    <input
-                                        id="tiempoop"
-                                        name="tiempoop" 
-                                        type="text"
-                                        placeholder="Timepo muerto operador"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempoop') border-red-500
-                                        @enderror"
-                                        value="{{ $registrotermoformado->tiempoop }}"
-                                    />
-                                    @error('tiempoop')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="tiempomtto" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Tiempo muerto mto
-                                    </label>
-                                    <input
-                                        id="tiempomtto"
-                                        name="tiempomtto" 
-                                        type="text"
-                                        placeholder="Timepo muerto mantenimiento"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('tiempomtto') border-red-500
-                                        @enderror"
-                                        value="{{ $registrotermoformado->tiempomtto }}"
-                                    />
-                                    @error('tiempomtto')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                    </div>
-                    <div class="flex">
-                                <div class="mb-5 w-3/4 ">
+                            </div>
+                            <div class="flex">
+                                <div class="mb-5  w-3/4">
                                     <label for="causa" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Causa tiempo muerto operador
+                                        Causa
                                     </label>
                                     <input
                                         id="causa"
                                         name="causa" 
                                         type="text"
-                                        placeholder="Causas de tiempo muerto operador"
+                                        placeholder="Causas de tiempo muerto mantenimiento"
                                         class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('causa') border-red-500
                                         @enderror"
                                         value="{{ $registrotermoformado->causa }}"

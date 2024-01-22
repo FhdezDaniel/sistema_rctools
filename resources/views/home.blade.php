@@ -13,7 +13,6 @@
     </head>
 
     <header>
-        @auth 
             <section>
             <nav class="flex justify-between bg-red-700 text-neutral-100 w-screen" :class="{'flex': open, 'hidden': !open}">
                 <div class="px-10 py-4 flex w-screen items-center">
@@ -33,12 +32,12 @@
                             </button>
                             <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                             <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                                <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
-                                <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                                <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
-                                <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
-                                <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
-                                <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                             </div>
                             </div>
                         </div>    
@@ -50,23 +49,23 @@
                                     </ul>
                                     
                                     <a  class="font-medium text-neutral-100" 
-                                        href="{{ route('posts.index', auth()->user()->username) }}">
-                                        USUARIO:
-                                            <span class="font-medium space-x-2 hover:text-black"> 
-                                                {{ auth()->user()->username }}
-                                            </span>
-                                    </a>
-                                
-                                    <form class="space-x-4" method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit" class="font-semibold text-white uppercase hover:text-black">
-                                            Cerrar sesión
-                                        </button>
-                                    </form>
+                                    href="{{ route('posts.index', auth()->user()->username) }}">
+                                    USUARIO:
+                                        <span class="font-medium space-x-2 hover:text-black"> 
+                                            {{ auth()->user()->username }}
+                                        </span>
+                                </a>
+                            
+                                <form class="space-x-4" method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="font-semibold text-white uppercase hover:text-black">
+                                        Cerrar sesión
+                                    </button>
+                                </form>
+                                    
                                 </div>
                             </nav>
                         </section>
-                    @endauth
     </header>
     
     <body class="bg-gray-300">

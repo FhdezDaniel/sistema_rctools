@@ -8,8 +8,8 @@
             @vite('resources/js/app.js')
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}"> 
-        <title>RC Tools - Editar registro almacen</title>
+        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
+        <title>RC Tools - Editar suaje</title>
     </head>
 
     <header>
@@ -68,73 +68,97 @@
                     </section>
                 @endauth
     </header>
-    
+
     <body class="bg-gray-300">
-            <div>
-                <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Almacen provisional</mark></h2>
-            </div>
-            <div class="w-4/12  ml-20 bg-white p-6 rounded-lg shadow-xl">
-                <form action="/almacenprovisional/{{ $almacenprovisionals->id }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="mb-5">
-                        <label for="producto_id" class="mb-2 block uppercase text-gray-700 font-bold">
-                                    NOMBRE DEL PRODUCTO
-                                </label>
-                                <select 
-                                    id="producto_id"
-                                    name="producto_id" 
-                                    type="selected"
-                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto_id') border-red-500
-                                    @enderror"
-                                    value="{{ $almacenprovisionals->producto_id }}"
-                                >
-                                    <option value="selected">Seleccione una opción</option>
-                                    <option value="1">HITACHI 30 CAV</option>
-                                    <option value="2">NSKYP11</option>
-                                    <option value="3">KATOLEC TK-R4892354</option>
-                                    <option value="5">NSKYP10</option>
-                                    <option value="6">TAX 106</option>
-                                    <option value="7">TAX 110</option>
-                                    <option value="8">CHAROLA KOLBENSCHMIDT 2.5</option>
-                                    <option value="9">PROPTECK 162 CAV TRANSP</option>
-                                    <option value="10">PROPTECK 242 CAV TRANSP</option>
-                                    <option value="11">PCK00556</option>
-                                    <option value="12">VAL 042</option>
-                                </select>
-                                @error('producto_id')
-                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                @enderror
-                        </div>
-                    <div class="mb-5">
-                        <label for="piezas" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Piezas
-                        </label>
-                        <input
-                            id="piezas"
-                            name="piezas" 
-                            type="text"
-                            placeholder="Numero de piezas"
-                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('piezas') border-red-500
-                            @enderror"
-                            value="{{ $almacenprovisionals->piezas }}"
-                        />
-                        @error('piezas')
-                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <div class="mb-10">
-                        <a href="/almacenprovisional" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg  px-20 py-3 mr-3 ">
-                            Cancelar
-                        </a>
-                        <input 
-                            type="submit"
-                            value="Crear registro"
-                            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                            uppercase mt-4 font-bold w-1/2 p-3 text-white rounded-lg"
-                        />
-                    </div>
-                </form>
-            </div>
+        <div>
+            <h2 class="mt-6 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">suajes</mark></h2>
+        </div>
+        <div class="w-4/12 h-2/3  ml-20 bg-white p-6 rounded-lg shadow-xl ">
+            <form action="/suajes/{{ $suajes->id }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="mb-5">
+                    <label for="codigo" class="mb-2 block uppercase text-gray-700 font-bold">
+                        Codigo
+                    </label>
+                    <input
+                        id="codigo"
+                        name="codigo" 
+                        type="text"
+                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('codigo') border-red-500
+                        @enderror"
+                        value="{{ $suajes->codigo }}"
+                    />
+                    @error('codigo')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
+                    <label for="activo" class="mb-2 block uppercase text-gray-700 font-bold">
+                        Estatus activo
+                    </label>
+                    <input
+                        id="activo"
+                        name="activo" 
+                        type="text"
+                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('activo') border-red-500
+                        @enderror"
+                        value="{{ $suajes->activo }}"
+                    />
+                    @error('activo')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
+                    <label for="comentarios" class="mb-2 block uppercase text-gray-700 font-bold">
+                        Comentarios
+                    </label>
+                    <input
+                        id="comentarios"
+                        name="comentarios" 
+                        type="text"
+                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('comentarios') border-red-500
+                        @enderror"
+                        value="{{ $suajes->comentarios }}"
+                    />
+                    @error('comentarios')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
+                    <label for="estatus" class="mb-2 block uppercase text-gray-700 font-bold">
+                        Estatus
+                    </label>
+                    <select
+                        id="estatus"
+                        name="estatus" 
+                        type="selected"
+                        class="border-2 font-medium text-gray-500 uppercase p-3 w-full rounded-lg @error('estatus') border-red-500
+                        @enderror"
+                        value="{{ $suajes->estatus }}"
+                    >
+                    <option selected>Seleccione una opción</option>
+                    <option value="DISPONIBLE">Disponible</option>
+                    <option value="OCUPADO">Ocupado</option>
+                    <option value="OBSOLETO">Obsoleto</option>
+                    <option value="DAÑADO">Dañado</option>
+                    </select>
+                    @error('estatus')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>    
+                <div class="mb-2">
+                    <a href="/suajes" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg  px-20 py-3 mr-3 ">
+                        Cancelar
+                    </a>
+                    <input 
+                        type="submit"
+                        value="Guardar"
+                        class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                        uppercase  font-bold w-60 p-3 text-white rounded-lg"
+                    />
+                </div>
+            </form>
+        </div>
     </body>
 </html> 

@@ -33,11 +33,11 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                         <div class="px-2 py-2 bg-gray-200 rounded-md shadow dark-mode:bg-gray-800">
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/planproduccion">Plan de producción</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registroproduccion">Registro de producción</a>
+                        <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/produccion">Producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/plan">Plan de producción</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajemodelos">Suajes</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                         </div>
                         </div>
@@ -77,41 +77,37 @@
                 <form action="/almacenprovisional" method="POST">
                     @csrf
                     <div class="mb-5">
-                        <label for="nombre" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Nombre del producto
-                        </label>
-                        <input
-                            id="nombre"
-                            name="nombre" 
-                            type="text"
-                            placeholder="Escriba el nombre del producto a almacenar"
-                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombre') border-red-500
-                            @enderror"
-                            value="{{ old('nombre') }}"
-                        />
-                        @error('nombre')
-                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                        @enderror
-                    </div>
+                        <label for="producto_id" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    NOMBRE DEL PRODUCTO
+                                </label>
+                                <select 
+                                    id="producto_id"
+                                    name="producto_id" 
+                                    type="selected"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto_id') border-red-500
+                                    @enderror"
+                                    value="{{ old('producto_id') }}"
+                                >
+                                    <option value="selected">Seleccione una opción</option>
+                                    <option value="1">HITACHI 30 CAV</option>
+                                    <option value="2">NSKYP11</option>
+                                    <option value="3">KATOLEC TK-R4892354</option>
+                                    <option value="5">NSKYP10</option>
+                                    <option value="6">TAX 106</option>
+                                    <option value="7">TAX 110</option>
+                                    <option value="8">CHAROLA KOLBENSCHMIDT 2.5</option>
+                                    <option value="9">PROPTECK 162 CAV TRANSP</option>
+                                    <option value="10">PROPTECK 242 CAV TRANSP</option>
+                                    <option value="11">PCK00556</option>
+                                    <option value="12">VAL 042</option>
+                                </select>
+                                @error('producto_id')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                        </div>
+                    
                     <div class="mb-5">
-                        <label for="materia" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Material
-                        </label>
-                        <input
-                            id="materia"
-                            name="materia" 
-                            type="text"
-                            placeholder="Escriba material del producto"
-                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('materia') border-red-500
-                            @enderror"
-                            value="{{ old('materia') }}"
-                        />
-                        @error('materia')
-                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <div class="mb-5">
-                        <label for="name" class="mb-2 block uppercase text-gray-700 font-bold">
+                        <label for="piezas" class="mb-2 block uppercase text-gray-700 font-bold">
                             Piezas
                         </label>
                         <input
