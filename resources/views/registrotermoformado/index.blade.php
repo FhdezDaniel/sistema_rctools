@@ -114,6 +114,9 @@
                                     TURNO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    LINEA
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     NOMBRE DEL PRODUCTO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -148,11 +151,12 @@
                         @foreach($registrotermoformados as $registrotermoformado)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                                     <th scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->id }}</th>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->empleado->nombres }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->empleado->nombre_completo }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->maquina}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->hora}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->fecha}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->turno}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->linea}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->producto}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->piezas_buenas}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registrotermoformado->piezas_malas}}</td>

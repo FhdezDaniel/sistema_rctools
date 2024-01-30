@@ -89,18 +89,9 @@
                                     @enderror"
                                     value="{{ $almacenprovisionals->producto_id }}"
                                 >
-                                    <option value="selected">Seleccione una opción</option>
-                                    <option value="1">HITACHI 30 CAV</option>
-                                    <option value="2">NSKYP11</option>
-                                    <option value="3">KATOLEC TK-R4892354</option>
-                                    <option value="5">NSKYP10</option>
-                                    <option value="6">TAX 106</option>
-                                    <option value="7">TAX 110</option>
-                                    <option value="8">CHAROLA KOLBENSCHMIDT 2.5</option>
-                                    <option value="9">PROPTECK 162 CAV TRANSP</option>
-                                    <option value="10">PROPTECK 242 CAV TRANSP</option>
-                                    <option value="11">PCK00556</option>
-                                    <option value="12">VAL 042</option>
+                                    <option value="{{ $almacenprovisionals->producto_id }}">{{$almacenprovisionals->producto->nombre}}</option>
+                                    <option value="1">SIIX 648</option>
+                                    
                                 </select>
                                 @error('producto_id')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

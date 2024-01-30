@@ -27,8 +27,7 @@ class PlanproduccionController extends Controller
         $planproduccions->termoformadora_id = $request->get('termoformadora_id');
         $planproduccions->producto_id = $request->get('producto_id');
         $planproduccions->cantidad = $request->get('cantidad');
-        $planproduccions->corte = $request->get('corte');
-        $planproduccions->material = $request->get('material');
+        $planproduccions->cantidad_empaquetado = $request->get('cantidad_empaquetado');
         $planproduccions->fecha_inicio = $request->get('fecha_inicio');
         $planproduccions->fecha_termino = $request->get('fecha_termino');
         $planproduccions->estatus = $request->get('estatus');
@@ -58,8 +57,7 @@ class PlanproduccionController extends Controller
         $planproduccion->termoformadora_id = $request->get('termoformadora_id');
         $planproduccion->producto_id = $request->get('producto_id');
         $planproduccion->cantidad = $request->get('cantidad');
-        $planproduccion->corte = $request->get('corte');
-        $planproduccion->material = $request->get('material');
+        $planproduccion->cantidad_empaquetado = $request->get('cantidad_empaquetado');
         $planproduccion->fecha_inicio = $request->get('fecha_inicio');
         $planproduccion->fecha_termino = $request->get('fecha_termino');
         $planproduccion->estatus = $request->get('estatus');

@@ -75,7 +75,7 @@
             <h2 class="mt-20 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Inspeccion Y Barrenado</mark></h2>
         </div>
         <div class="w-3/5 h-2/3 mt-10 ml-20 bg-white p-6 rounded-lg shadow-xl">
-            <form action="/registroinspeccionbarrenado/{{ $registroinspeccion->id }}" method="POST">
+            <form action="/registroinspeccionbarrenado/{{ $registroinspeccionbarrenado->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="flex">
@@ -108,7 +108,7 @@
                                         @enderror"
                                         value="{{ $registroinspeccionbarrenado->maquina }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroinspeccionbarrenado->maquina }}</option>
                                     <option value="Inspección 1">Inspección 1</option>
                                     <option value="Inspección 2">Inspección 2</option>
                                     <option value="Inspección 3">Inspección 3</option>
@@ -169,13 +169,36 @@
                                         @enderror"
                                         value="{{ $registroinspeccionbarrenado->turno }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroinspeccionbarrenado->turno }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     
                                     </select>
                                     @error('estatus')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-5 ml-4 w-1/4">
+                                    <label for="linea" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        LINEA
+                                    </label>
+                                    <select
+                                        id="linea"
+                                        name="linea" 
+                                        type="selected"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
+                                        @enderror"
+                                        value="{{ $registroinspeccionbarrenado->linea }}"
+                                    >
+                                    <option value="{{ $registroinspeccionbarrenado->linea }}">{{ $registroinspeccionbarrenado->linea }}</option>
+                                    <option value="LINEA 1">LINEA 1</option>
+                                    <option value="LINEA 2">LINEA 2</option>
+                                    <option value="LINEA 3">LINEA 3</option>
+                                    <option value="LINEA 4">LINEA 4</option>
+                                    <option value="LINEA 5">LINEA 5</option>
+                                    </select>
+                                    @error('linea')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -282,7 +305,7 @@
                                         @enderror"
                                         value="{{ $registroinspeccionbarrenado->limpieza }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroinspeccionbarrenado->limpieza }}</option>
                                     <option value="100%">Excelente</option>
                                     <option value="90%">Bueno</option>
                                     <option value="75%">Regular</option>

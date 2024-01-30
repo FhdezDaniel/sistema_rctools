@@ -107,7 +107,7 @@
                                         @enderror"
                                         value="{{ $registroprensa->maquina }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroprensa->maquina }}</option>
                                     <option value="Prensa 1">Prensa 1</option>
                                     <option value="Prensa 2">Prensa 2</option>
                                     <option value="Prensa 3">Prensa 3</option>
@@ -166,13 +166,37 @@
                                         @enderror"
                                         value="{{ $registroprensa->turno }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroprensa->turno }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     
                                     </select>
                                     @error('estatus')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-5 ml-4 w-1/4">
+                                    <label for="linea" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        LINEA
+                                    </label>
+                                    <select
+                                        id="linea"
+                                        name="linea" 
+                                        type="selected"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
+                                        @enderror"
+                                        value="{{ $registroprensa->linea }}"
+                                    >
+                                    <option value="{{ $registroprensa->linea }}">{{ $registroprensa->linea }}</option>
+                                    <option value="LINEA 1">LINEA 1</option>
+                                    <option value="LINEA 2">LINEA 2</option>
+                                    <option value="LINEA 3">LINEA 3</option>
+                                    <option value="LINEA 4">LINEA 4</option>
+                                    <option value="LINEA 5">LINEA 5</option>
+                                    </select>
+                                    @error('linea')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -295,7 +319,7 @@
                                         @enderror"
                                         value="{{ $registroprensa->limpieza }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroprensa->limpieza }}</option>
                                     <option value="100%">Excelente</option>
                                     <option value="90%">Bueno</option>
                                     <option value="75%">Regular</option>

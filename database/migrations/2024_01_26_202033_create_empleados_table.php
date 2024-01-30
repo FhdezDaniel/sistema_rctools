@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->integer('numero_empleado');
-            $table->string('nombres');
-            $table->string('apellido_paterno');
-            $table->string('apellido_materno');
+            $table->string('nombre_completo');
             $table->string('puesto');
             $table->date('fecha_nacimiento');
             $table->date('fecha_ingreso');

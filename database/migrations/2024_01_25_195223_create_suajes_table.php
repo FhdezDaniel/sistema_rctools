@@ -14,8 +14,11 @@ return new class extends Migration
         Schema::create('suajes', function (Blueprint $table) {
             $table->id();
             $table->char('codigo');
+            $table->unsignedBigInteger('corte_id');
+            $table->foreign('corte_id')->references('id')->on('cortes');
             $table->string('activo');
-            $table->string('comentarios',100);
+            $table->integer('cantidad')->nullable();
+            $table->string('comentarios')->nullable();
             $table->string('estatus');
             $table->timestamps();
         });

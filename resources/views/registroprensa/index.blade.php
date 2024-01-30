@@ -115,6 +115,9 @@
                                     TURNO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    LINEA
+                                </th>
+                                <th scope="col" class="px-6 py-3">
                                     NOMBRE DEL PRODUCTO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -146,11 +149,12 @@
                         @foreach($registroprensas as $registroprensa)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                                     <th scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->id }}</th>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->empleado->nombres }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->empleado->nombre_completo }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->maquina}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->hora}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->fecha}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->turno}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->linea}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->producto}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->piezas_buenas}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->piezas_malas}}</td>

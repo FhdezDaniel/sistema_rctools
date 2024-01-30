@@ -13,10 +13,26 @@ use App\Http\Controllers\RegistroprensaController;
 use App\Http\Controllers\RegistroinspeccionbarrenadoController;
 use App\Http\Controllers\RegistroempaquetadoController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\BolsaController;
+use App\Http\Controllers\CorteController;
+use App\Http\Controllers\MateriaprimaController;
+use App\Http\Controllers\CajaController;
+use App\Http\Controllers\InventarioSuajeController;
+use App\Http\Controllers\ProductoController;
 
 Route::get('/home', function () {
     return view('/home');
 });  
+
+
+// CATALOGO
+Route::resource('/bolsas','App\Http\Controllers\BolsaController');
+Route::resource('/cortes','App\Http\Controllers\CorteController');
+Route::resource('/materiaprima','App\Http\Controllers\MateriaprimaController');
+Route::resource('/cajas','App\Http\Controllers\CajaController');
+Route::Resource('/inventariosuajes','App\Http\Controllers\InventarioSuajeController');
+Route::Resource('/productos','App\Http\Controllers\ProductoController');
+
 
 
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenprovisionalController');
@@ -36,6 +52,10 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/produccion', function(){
     return view('produccion');
+});
+
+Route::get('/catalogo', function(){
+    return view('catalogo');
 });
 
 Route::get('/plan', function(){

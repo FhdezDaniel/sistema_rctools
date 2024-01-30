@@ -21,9 +21,11 @@ class AlmacenprovisionalController extends Controller
     public function store(Request $request)
     {
         $almacenprovisionals = new Almacenprovisional();
+
         $almacenprovisionals->producto_id = $request->get('producto_id');
-        $almacenprovisionals->material = $request->get('material');
+        $almacenprovisionals->materiaprima_id = $request->get('materiaprima_id');
         $almacenprovisionals->piezas = $request->get('piezas');
+        $almacenprovisionals->historial = $request->get('historial');
 
         $almacenprovisionals->save();
 
@@ -46,8 +48,9 @@ class AlmacenprovisionalController extends Controller
         $almacenprovisional = Almacenprovisional::find($id);
 
         $almacenprovisional->producto_id = $request->get('producto_id');
-        $almacenprovisional->material = $request->get('material');
+        $almacenprovisional->materiaprima_id = $request->get('materiaprima_id');
         $almacenprovisional->piezas = $request->get('piezas');
+        $almacenprovisional->historial = $request->get('historial');
 
         $almacenprovisional->save();
 

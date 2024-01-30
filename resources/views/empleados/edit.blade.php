@@ -78,84 +78,36 @@
                 @csrf
                 @method('PUT')
                 <div class="flex">
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="numero_empleado" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Numero de empleado 
+                               
+                                <div class="mb-5 ml-4 w-11/12">
+                                    <label for="nombre_completo" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Nombre completo
                                     </label>
                                     <input
-                                        id="numero_empleado"
-                                        name="numero_empleado" 
+                                        id="nombre_completo"
+                                        name="nombre_completo" 
                                         type="text"
-                                        placeholder="Escriba numero de empleado"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('numero_empleado') border-red-500
+                                        placeholder="Escriba el nombre completo del empleado"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombre_completo') border-red-500
                                         @enderror"
-                                        value="{{ $empleado->numero_empleado }}"
+                                        value="{{ $empleado->nombre_completo }}"
                                     />
-                                    @error('numero_empleado')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-3/4">
-                                    <label for="nombres" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Nombre(s)
-                                    </label>
-                                    <input
-                                        id="nombres"
-                                        name="nombres" 
-                                        type="text"
-                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombres') border-red-500
-                                        @enderror"
-                                        value="{{ $empleado->nombres }}"
-                                    />
-                                    @error('nombres')
+                                    @error('nombre_completo')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div class="flex">
-                                <div class="mb-5 w-1/2 ml-4">
-                                    <label for="apellido_paterno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Apellido Paterno 
-                                    </label>
-                                    <input
-                                        id="apellido_paterno"
-                                        name="apellido_paterno" 
-                                        type="text"
-                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fecha') border-red-500
-                                        @enderror"
-                                        value="{{ $empleado->apellido_paterno }}"
-                                    />
-                                    @error('apellido_paterno')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 w-1/2 ml-4">
-                                    <label for="apellido_materno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Apellido Materno
-                                    </label>
-                                    <input
-                                        id="apellido_materno"
-                                        name="apellido_materno" 
-                                        type="text"
-                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('apellido_materno') border-red-500
-                                        @enderror"
-                                        value="{{ $empleado->apellido_materno }}"
-                                    >
-                                    @error('apellido_materno')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <div class="mb-5 ml-4 w-1/4">
+                                <div class="mb-5 ml-4 w-1/3">
                                     <label for="puesto" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Puesto 
+                                        Puesto
                                     </label>
                                     <input
                                         id="puesto"
                                         name="puesto" 
+                                        placeholder="Puesto del empleado"
                                         type="text"
-                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto') border-red-500
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('puesto') border-red-500
                                         @enderror"
                                         value="{{ $empleado->puesto }}"
                                     />
@@ -163,14 +115,16 @@
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="mb-5 ml-4 w-1/4">
+
+                                <div class="mb-5 w-1/4 ml-4">
                                     <label for="fecha_nacimiento" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Fecha de Nacimiento
+                                        Fecha Nacimiento
                                     </label>
                                     <input
                                         id="fecha_nacimiento"
                                         name="fecha_nacimiento" 
                                         type="date"
+                                        placeholder="Fecha - nacimiento"
                                         class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fecha_nacimiento') border-red-500
                                         @enderror"
                                         value="{{ $empleado->fecha_nacimiento }}"
@@ -181,12 +135,13 @@
                                 </div>
                                 <div class="mb-5 w-1/4 ml-4">
                                     <label for="fecha_ingreso" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Fecha de ingreso 
+                                        Fecha de Ingreso
                                     </label>
                                     <input
                                         id="fecha_ingreso"
                                         name="fecha_ingreso" 
                                         type="date"
+                                        placeholder="Fecha - ingreso"
                                         class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fecha_ingreso') border-red-500
                                         @enderror"
                                         value="{{ $empleado->fecha_ingreso }}"
@@ -197,7 +152,7 @@
                                 </div>
                             </div>
                             <div class="flex">
-                                <div class="mb-5 ml-4 w-3/4">
+                                <div class="mb-5 ml-4 w-11/12">
                                     <label for="correo" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Correo
                                     </label>
@@ -205,6 +160,7 @@
                                         id="correo"
                                         name="correo" 
                                         type="text"
+                                        placeholder="Escriba el correo electronico"
                                         class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('correo') border-red-500
                                         @enderror"
                                         value="{{ $empleado->correo }}"

@@ -71,7 +71,7 @@
 
     <body class="bg-gray-300">
             <div>
-                <h2 class="mt-6 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">suajes</mark></h2>
+                <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR REGISTRO de<mark class="px-2 text-white bg-red-700 rounded ml-3">Suaje</mark></h2>
             </div>
             <div class="w-4/12 h-2/3  ml-20 bg-white p-6 rounded-lg shadow-xl ">
                 <form action="/suajes" method="POST">
@@ -93,6 +93,29 @@
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                         @enderror
                     </div>
+
+                    <div class="mb-5">
+                        <label for="corte_id" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Corte
+                        </label>
+                        <select
+                            id="corte_id"
+                            name="corte_id" 
+                            type="selected"
+                            class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('corte_id') border-red-500
+                            @enderror"
+                            value="{{ old('corte_id') }}"
+                        >
+                        <option value="selected">Seleccione una opcion</option>
+                        <option value="1">COMPLETO</option>
+                        <option value="2">S10</option>
+                        <option value="3">T15</option>
+                        </select>
+                        @error('corte_id')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
+
                     <div class="mb-5">
                         <label for="activo" class="mb-2 block uppercase text-gray-700 font-bold">
                             Estatus activo
@@ -110,6 +133,26 @@
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                         @enderror
                     </div>
+
+                    <div class="mb-5">
+                        <label for="cantidad" class="mb-2 block uppercase text-gray-700 font-bold">
+                            Cantidad
+                        </label>
+                        <input
+                            id="cantidad"
+                            name="cantidad" 
+                            type="text"
+                            placeholder="Escriba la cantidad de suajes"
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('cantidad') border-red-500
+                            @enderror"
+                            value="{{ old('cantidad') }}"
+                        />
+                        @error('cantidad')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    
                     <div class="mb-5">
                         <label for="comentarios" class="mb-2 block uppercase text-gray-700 font-bold">
                             Comentarios

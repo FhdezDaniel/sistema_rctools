@@ -77,13 +77,7 @@
             
                 <div class="ml-5 mt-12 mr-60 flex flex-row justify-end">
                 
-                    <!-- <a href="/produccion" class="text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                        <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
-	                        <path d="M13.606 3.748V2.53a1.542 1.542 0 0 0-.872-1.431 1.352 1.352 0 0 0-1.472.2L6.155 5.552a1.6 1.6 0 0 0 0 2.415l5.108 4.25a1.355 1.355 0 0 0 1.472.2 1.546 1.546 0 0 0 .872-1.428v-1.09a4.721 4.721 0 0 1 3.7 2.868 1.186 1.186 0 0 0 1.08.73 1.225 1.225 0 0 0 1.213-1.286v-1.33a6.923 6.923 0 0 0-5.994-7.133Z"/>
-                            <path d="m2.434 6.693 5.517-4.95A1 1 0 0 0 6.615.257L1.1 5.205a2.051 2.051 0 0 0-.01 3.035l5.61 5.088a1 1 0 1 0 1.344-1.482l-5.61-5.153Z"/>
-                        </svg>
-                        <span class="ml-2">REGRESAR</span>
-                    </a>        -->
+                        
                 </div>
                 <div>
                 <h1 class="mb-4 ml-20  text-4xl font-bold leading-none tracking-tight text-gray-900">Termo<mark class="ml-2 px-2 text-white bg-red-700 rounded">Formadora</mark></h1>
@@ -91,10 +85,7 @@
                 <table class="mt-4 w-full text-sm  text-left text-black">
                     <thead class="text-sm text-white uppercase bg-sky-900">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
-                                ID 
-                            </th>
-                            <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 py-3">
                                 TERMOFORMADORA
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -104,10 +95,22 @@
                                 CANTIDAD
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                SUAJE
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 CORTE
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 MATERIAL
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                CAJA
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                BOLSA
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                CANTIDAD EMPAQUETADO
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 FECHA - INICIO
@@ -118,20 +121,20 @@
                             <th scope="col" class="px-6 py-3">
                                 ESTATUS 
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                ACCIÓN
-                            </th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach ($planproduccions as $planproduccion)
                             <tr class="bg-white border-b uppercase">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->id }}</th>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->termoformadora->id }}</td>
+                            <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->termoformadora->id }}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->nombre }}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->cantidad }}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->corte }}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->material }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->caja->nombre }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->cantidad_empaquetado }}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->fecha_inicio }}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->fecha_termino}}</td>
                                 @switch(true)
@@ -151,14 +154,7 @@
                                         <td scope="row" class="px-6 py-4 font-bold text-gray-600  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
                                         @endswitch
                                 <td class="flex">
-                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
-                                    <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  flex font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                        Editar 
-                                    </a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300  font-medium rounded-lg text-sm px-5 py-2.5  mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">ELIMINAR</button>
-                                    </form>
+                                    
                                 </td>
                             </tr>
                         @endforeach

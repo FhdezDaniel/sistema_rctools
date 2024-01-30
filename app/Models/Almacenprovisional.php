@@ -12,4 +12,9 @@ class Almacenprovisional extends Model
     public function producto(){
         return $this->belongsTo(Producto::class, 'producto_id');
     }
+
+    public function materiaprima(){
+        return $this->belongsTo(Materiaprima::class, 'materiaprima_id');
+    }
+
 }

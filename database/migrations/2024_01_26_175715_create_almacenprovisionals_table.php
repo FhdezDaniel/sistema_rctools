@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('producto_id')->references('id')->on('productos');
             $table->string('material')->nullable();
             $table->integer('piezas');
+            $table->char('historial')->nullable();
             $table->timestamps();
         });
     }

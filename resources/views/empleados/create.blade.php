@@ -77,83 +77,31 @@
                 <div class=" mt-12 ml-36 flex flex-col items-center">
                     
                 </div>
-                    <div class="w-3/5 h-2/3 mt-4  ml-20 bg-white p-6 rounded-lg shadow-xl ">
+                    <div class="w-1/2 h-2/3 mt-4  ml-20 bg-white p-6 rounded-lg shadow-xl ">
                         <form action="/empleados" method="POST">
                             @csrf
                             <div class="flex">
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="numero_empleado" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Numero de empleado
+                               
+                                <div class="mb-5 ml-4 w-11/12">
+                                    <label for="nombre_completo" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        Nombre completo
                                     </label>
                                     <input
-                                        id="numero_empleado"
-                                        name="numero_empleado" 
+                                        id="nombre_completo"
+                                        name="nombre_completo" 
                                         type="text"
-                                        placeholder="Escriba el numero de empleado"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('numero_empleado') border-red-500
+                                        placeholder="Escriba el nombre completo del empleado"
+                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombre_completo') border-red-500
                                         @enderror"
-                                        value="{{ old('numero_empleado') }}"
+                                        value="{{ old('nombre_completo') }}"
                                     />
-                                    @error('numero_empleado')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-3/4">
-                                    <label for="nombres" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Nombre(s)
-                                    </label>
-                                    <input
-                                        id="nombres"
-                                        name="nombres" 
-                                        type="text"
-                                        placeholder="Escriba los nombres del empleado"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombres') border-red-500
-                                        @enderror"
-                                        value="{{ old('nombres') }}"
-                                    />
-                                    @error('nombres')
+                                    @error('nombre_completo')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div class="flex">
-                                <div class="mb-5 ml-4 w-1/2">
-                                    <label for="apellido_paterno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Apellido Paterno
-                                    </label>
-                                    <input
-                                        id="apellido_paterno"
-                                        name="apellido_paterno" 
-                                        placeholder="Escriba apellido paterno"
-                                        type="text"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('apellido_paterno') border-red-500
-                                        @enderror"
-                                        value="{{ old('apellido_paterno') }}"
-                                    />
-                                    @error('apellido_paterno')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-1/2">
-                                    <label for="apellido_materno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Apellido Materno
-                                    </label>
-                                    <input
-                                        id="apellido_materno"
-                                        name="apellido_materno" 
-                                        placeholder="Escriba apellido materno"
-                                        type="text"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('apellido_materno') border-red-500
-                                        @enderror"
-                                        value="{{ old('apellido_materno') }}"
-                                    />
-                                    @error('apellido_materno')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <div class="mb-5 ml-4 w-1/4">
+                                <div class="mb-5 ml-4 w-1/3">
                                     <label for="puesto" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Puesto
                                     </label>
@@ -170,6 +118,7 @@
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
+
                                 <div class="mb-5 w-1/4 ml-4">
                                     <label for="fecha_nacimiento" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Fecha Nacimiento
@@ -206,7 +155,7 @@
                                 </div>
                             </div>
                             <div class="flex">
-                                <div class="mb-5 ml-4 w-3/4">
+                                <div class="mb-5 ml-4 w-11/12">
                                     <label for="correo" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Correo
                                     </label>

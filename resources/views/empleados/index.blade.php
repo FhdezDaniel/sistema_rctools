@@ -97,25 +97,16 @@
                         <thead class="text-xs text-white uppercase bg-sky-900 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    ID
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     NUMERO DE TRABAJADOR 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    NOMBRE(S)
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    APELLIDO PATERNO 
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    APELLIDO MATERNO 
+                                    NOMBRE COMPLETO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     PUESTO 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    FECHA - NAC
+                                    FECHA NACIMIENTO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     FECHA INGRESO
@@ -134,10 +125,7 @@
                             @foreach ($empleados as $empleado)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                                     <th scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->id }}</th>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->numero_empleado }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->nombres }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->apellido_paterno }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->apellido_materno }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->nombre_completo }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->puesto }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fecha_nacimiento }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fecha_ingreso }}</td>

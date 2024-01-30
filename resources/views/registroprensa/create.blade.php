@@ -74,16 +74,9 @@
                     <p>.</p>
                     <h1 class="mt-20 ml-24  text-5xl font-extrabold leading-none tracking-tight text-gray-900">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Prensa</mark></h1>
                 </div>
-                <div class="ml-64 flex flex-col items-center">
-                    <a href="/registroprensa" class="text-black mt-4 ml-20 hover:text-white bg-gray-200 shadow hover:bg-gray-500 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-                        </svg>
-                        <span class="hover:text-white ml-2">REGISTROS PRENSA</span>
-                    <a>
-                </div>
+               
                 
-                    <div class="w-3/5 h-2/3 mt-2 ml-20 bg-white p-6 rounded-lg shadow-xl ">
+                    <div class="w-3/5 h-2/3 mt-8 ml-20 bg-white p-6 rounded-lg shadow-xl ">
                         <form action="/registroprensa" method="POST">
                             @csrf
 
@@ -183,6 +176,29 @@
                                     
                                     </select>
                                     @error('estatus')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-5 ml-4 w-1/4">
+                                    <label for="linea" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        LINEA
+                                    </label>
+                                    <select
+                                        id="linea"
+                                        name="linea" 
+                                        type="selected"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
+                                        @enderror"
+                                        value="{{ old('linea') }}"
+                                    >
+                                    <option selected>Seleccione una opción</option>
+                                    <option value="LINEA 1">LINEA 1</option>
+                                    <option value="LINEA 2">LINEA 2</option>
+                                    <option value="LINEA 3">LINEA 3</option>
+                                    <option value="LINEA 4">LINEA 4</option>
+                                    <option value="LINEA 5">LINEA 5</option>
+                                    </select>
+                                    @error('linea')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>

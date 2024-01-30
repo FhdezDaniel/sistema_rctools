@@ -100,7 +100,7 @@
                                     ID
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    ID DEL OPERADOR
+                                    NOMBRE DEL OPERADOR
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     MAQUINA
@@ -113,6 +113,9 @@
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     TURNO 
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    LINEA
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     NOMBRE DEL PRODUCTO  
@@ -143,11 +146,12 @@
                         @foreach($registroempaquetados as $registroempaquetado)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                                     <th scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->id }}</th>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->empleado->nombres }}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->empleado->nombre_completo }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->maquina}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->hora}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->fecha}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->turno}}</td>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->linea}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->producto}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->cajas_rechazadas}}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroempaquetado->total_cajas}}</td>

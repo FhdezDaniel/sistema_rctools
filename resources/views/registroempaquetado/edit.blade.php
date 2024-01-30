@@ -107,7 +107,7 @@
                                         @enderror"
                                         value="{{ $registroempaquetado->maquina }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroempaquetado->maquina }}</option>
                                     <option value="Empaquetado 1">Empaquetado 1</option>
                                     <option value="Empaquetado 2">Empaquetado 2</option>
                                     <option value="Empaquetado 3">Empaquetado 3</option>
@@ -166,13 +166,36 @@
                                         @enderror"
                                         value="{{ $registroempaquetado->turno }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroempaquetado->turno }}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     
                                     </select>
                                     @error('estatus')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-5 ml-4 w-1/4">
+                                    <label for="linea" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        LINEA
+                                    </label>
+                                    <select
+                                        id="linea"
+                                        name="linea" 
+                                        type="selected"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
+                                        @enderror"
+                                        value="{{ $registroempaquetado->linea }}"
+                                    >
+                                    <option value="{{ $registroempaquetado->linea }}">{{ $registroempaquetado->linea }}</option>
+                                    <option value="LINEA 1">LINEA 1</option>
+                                    <option value="LINEA 2">LINEA 2</option>
+                                    <option value="LINEA 3">LINEA 3</option>
+                                    <option value="LINEA 4">LINEA 4</option>
+                                    <option value="LINEA 5">LINEA 5</option>
+                                    </select>
+                                    @error('linea')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -278,7 +301,7 @@
                                         @enderror"
                                         value="{{ $registroempaquetado->limpieza }}"
                                     >
-                                    <option selected>Seleccione una opción</option>
+                                    <option selected>{{ $registroempaquetado->limpieza }}</option>
                                     <option value="100%">Excelente</option>
                                     <option value="90%">Bueno</option>
                                     <option value="75%">Regular</option>

@@ -22,10 +22,7 @@ class EmpleadoController extends Controller
     {
         $empleados = new Empleado();
 
-        $empleados->numero_empleado = $request->get('numero_empleado');
-        $empleados->nombres = $request->get('nombres');
-        $empleados->apellido_paterno = $request->get('apellido_paterno');
-        $empleados->apellido_materno = $request->get('apellido_materno');
+        $empleados->nombre_completo = $request->get('nombre_completo');
         $empleados->puesto = $request->get('puesto');
         $empleados->fecha_nacimiento = $request->get('fecha_nacimiento');
         $empleados->fecha_ingreso = $request->get('fecha_ingreso');
@@ -54,10 +51,7 @@ class EmpleadoController extends Controller
     {
         $empleado = Empleado::find($id);
 
-        $empleado->numero_empleado = $request->get('numero_empleado');
-        $empleado->nombres = $request->get('nombres');
-        $empleado->apellido_paterno = $request->get('apellido_paterno');
-        $empleado->apellido_materno = $request->get('apellido_materno');
+        $empleado->nombre_completo = $request->get('nombre_completo');
         $empleado->puesto = $request->get('puesto');
         $empleado->fecha_nacimiento = $request->get('fecha_nacimiento');
         $empleado->fecha_ingreso = $request->get('fecha_ingreso');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Suaje;
+use App\Models\Corte;
 
 class SuajeController extends Controller
 {
@@ -23,11 +24,12 @@ class SuajeController extends Controller
         $suajes = new Suaje();
 
         $suajes->codigo = $request->get('codigo');
+        $suajes->corte_id = $request->get('corte_id');
         $suajes->activo = $request->get('activo');
+        $suajes->cantidad = $request->get('cantidad');
         $suajes->comentarios = $request->get('comentarios');
         $suajes->estatus = $request->get('estatus');
         
-
         $suajes->save();
 
         return redirect('/suajes');
@@ -49,7 +51,9 @@ class SuajeController extends Controller
         $suaje = Suaje::find($id);
 
         $suaje->codigo = $request->get('codigo');
+        $suaje->corte_id = $request->get('corte_id');
         $suaje->activo = $request->get('activo');
+        $suaje->cantidad = $request->get('cantidad');
         $suaje->comentarios = $request->get('comentarios');
         $suaje->estatus = $request->get('estatus');
 

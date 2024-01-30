@@ -83,9 +83,6 @@
                     <thead class="text-sm text-white uppercase bg-sky-900">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                ID 
-                            </th>
-                            <th scope="col" class="px-6 py-3">
                                 TERMOFORMADORA
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -95,10 +92,22 @@
                                 CANTIDAD
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                SUAJE
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 CORTE
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 MATERIAL
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                CAJA
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                BOLSA
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                CANTIDAD EMPAQUETADO
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 FECHA - INICIO
@@ -117,12 +126,15 @@
                     <tbody>
                     @foreach ($planproduccions as $planproduccion)
                             <tr class="bg-white border-b uppercase">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->id }}</th>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->termoformadora->id }}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->nombre }}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->cantidad }}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->corte }}</td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->material }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->caja->nombre }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->cantidad_empaquetado }}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->fecha_inicio }}</td>
                                 <td scope="row" class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap dark:text-white">{{ $planproduccion->fecha_termino}}</td>
                                 @switch(true)

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->char('hora');
             $table->date('fecha');
             $table->integer('turno');
+            $table->string('linea');
             $table->char('producto');
             $table->integer('cajas_rechazadas');
             $table->integer('total_cajas');

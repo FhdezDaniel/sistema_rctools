@@ -20,6 +20,9 @@ return new class extends Migration
             $table->integer('cantidad');
             $table->string('corte')->nullable();
             $table->string('material')->nullable();
+            $table->string('caja')->nullable();
+            $table->string('bolsa')->nullable();
+            $table->integer('cantidad_empaquetado')->nullable();
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->string('estatus');

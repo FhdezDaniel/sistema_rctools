@@ -15,10 +15,16 @@ return new class extends Migration
             $table->id();
             $table->char('clave');
             $table->string('nombre');
-            $table->string('corte');
-            $table->string('material');
+            $table->unsignedBigInteger('suaje_id');
+            $table->foreign('suaje_id')->references('id')->on('suajes');
+            $table->unsignedBigInteger('materiaprima_id');
+            $table->foreign('materiaprima_id')->references('id')->on('materiaprimas');
+            $table->unsignedBigInteger('caja_id');
+            $table->foreign('caja_id')->references('id')->on('cajas');
+            $table->unsignedBigInteger('bolsa_id');
+            $table->foreign('bolsa_id')->references('id')->on('bolsas');
             $table->date('fecha_registro');
-            $table->timestamps();   
+            $table->timestamps();
         });
     }
 

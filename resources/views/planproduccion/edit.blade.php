@@ -75,7 +75,7 @@
                                     @enderror"
                                     value="{{ $planproduccion->termoformadora_id }}"
                                 >
-                                    <option value="selected">Seleccione una opción</option>
+                                    <option value="{{ $planproduccion->termoformadora_id }}">{{ $planproduccion->termoformadora_id}}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -99,25 +99,19 @@
                                     @enderror"
                                     value="{{ $planproduccion->producto_id }}"
                                 >
-                                    <option value="selected">Seleccione una opción</option>
-                                    <option value="1">HITACHI 30 CAV</option>
-                                    <option value="2">NSKYP11</option>
-                                    <option value="3">KATOLEC TK-R4892354</option>
-                                    <option value="5">NSKYP10</option>
-                                    <option value="6">TAX 106</option>
-                                    <option value="7">TAX 110</option>
-                                    <option value="8">CHAROLA KOLBENSCHMIDT 2.5</option>
-                                    <option value="9">PROPTECK 162 CAV TRANSP</option>
-                                    <option value="10">PROPTECK 242 CAV TRANSP</option>
-                                    <option value="11">PCK00556</option>
-                                    <option value="12">VAL 042</option>
+                                    <option value="{{ $planproduccion->producto_id }}">{{ $planproduccion->producto->nombre}}</option>
+                                    <option value="1">FRIGOCEL</option>
+                                    <option value="2">PCK0054</option>
                                 </select>
                                 @error('producto_id')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                 @enderror
                             </div>
+                        </div>
+
+                        <div class="flex">
                             
-                            <div class="mb-5 ml-6 w-3/5">
+                            <div class="mb-5  w-1/2">
                                 <label for="cantidad" class="mb-2 block uppercase text-gray-700 font-bold">
                                     Cantidad
                                 </label>
@@ -131,6 +125,24 @@
                                     value="{{ $planproduccion->cantidad }}"
                                 />
                                 @error('cantidad')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="mb-5 ml-6  w-1/2">
+                                <label for="cantidad_empaquetado" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Cantidad empaquetado
+                                </label>
+                                <input
+                                    id="cantidad_empaquetado"
+                                    name="cantidad_empaquetado" 
+                                    type="text"
+                                    placeholder="Cantidad de piezas a empaquetar"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('cantidad_empaquetado') border-red-500
+                                    @enderror"
+                                    value="{{ $planproduccion->cantidad_empaquetado }}"
+                                />
+                                @error('cantidad_empaquetado')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -185,7 +197,7 @@
                                     @enderror"
                                     value="{{ $planproduccion->estatus }}"
                                 >
-                                <option selected>Seleccione una opción</option>
+                                <option value="{{$planproduccion->estatus}}">{{ $planproduccion->estatus }}</option>
                                 <option value="Completado">Completado</option>
                                 <option value="Proceso">En proceso</option>
                                 <option value="Pausado">Pausado</option>

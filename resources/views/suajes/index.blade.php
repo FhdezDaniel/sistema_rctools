@@ -39,6 +39,7 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
                         </div>
                         </div>
                     </div>    
@@ -73,7 +74,7 @@
     <body class="bg-gray-300">
         <div class="w-screen h-screen bg-gray-300">
             <div>
-                <h1 class="mt-20 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Suajes</mark></h1>
+                <h1 class="mt-20 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">REGISTRO de<mark class="px-2 text-white bg-red-700 rounded ml-3">Suajes</mark></h1>
             </div>
         <div>
 
@@ -103,10 +104,16 @@
                             ID
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           CODIGO
+                            CODIGO
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           ACTIVO
+                            CORTE
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            ACTIVO
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            CANTIDAD
                         </th>
                         <th scope="col" class="px-6 py-3">
                             COMENTARIOS
@@ -126,8 +133,10 @@
                         <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
                             <th scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->id }} </th>
                             <td scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->codigo}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->activo}}</td>
-                            <td scope="row" class="px-6 py-4 font-bold text-gray-700 whitespace-nowrap dark:text-white">{{ $suaje->comentarios}}</td>
+                            <td scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->corte->nombre}}</td>
+                            <td scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->activo}}</td>
+                            <td scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->cantidad}}</td>
+                            <td scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->comentarios}}</td>
                             @switch(true)
                                 @case($suaje->estatus == 'DISPONIBLE') 
                                 <td scope="row" class="px-6 py-4 font-bold text-green-600  whitespace-nowrap  bg-white"> {{ $suaje->estatus}}</td> 
