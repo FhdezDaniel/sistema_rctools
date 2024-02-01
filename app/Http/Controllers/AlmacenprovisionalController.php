@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Almacenprovisional;
+use App\Models\Materiaprima;
 
 class AlmacenprovisionalController extends Controller
 {
@@ -23,9 +24,10 @@ class AlmacenprovisionalController extends Controller
         $almacenprovisionals = new Almacenprovisional();
 
         $almacenprovisionals->producto_id = $request->get('producto_id');
-        $almacenprovisionals->materiaprima_id = $request->get('materiaprima_id');
+        $almacenprovisionals->material = $request->get('material');
         $almacenprovisionals->piezas = $request->get('piezas');
         $almacenprovisionals->historial = $request->get('historial');
+        
 
         $almacenprovisionals->save();
 
@@ -48,10 +50,10 @@ class AlmacenprovisionalController extends Controller
         $almacenprovisional = Almacenprovisional::find($id);
 
         $almacenprovisional->producto_id = $request->get('producto_id');
-        $almacenprovisional->materiaprima_id = $request->get('materiaprima_id');
+        $almacenprovisional->material = $request->get('material');
         $almacenprovisional->piezas = $request->get('piezas');
         $almacenprovisional->historial = $request->get('historial');
-
+        
         $almacenprovisional->save();
 
         return redirect('/almacenprovisional');

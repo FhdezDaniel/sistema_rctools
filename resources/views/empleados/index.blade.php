@@ -39,6 +39,7 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
                         </div>
                         </div>
                     </div>    
@@ -71,7 +72,7 @@
 
     <body class="bg-gray-300">
         <div>
-            <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900"><mark class="px-2 text-white bg-red-700 rounded ml-3">Empleados</mark></h1>
+            <h1 class="mt-20 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900"><mark class="px-2 text-white bg-red-700 rounded ml-3">Empleados</mark></h1>
 
             <div class="mt-12 mr-20 flex flex-row justify-end">
                 @role(['Admin'])

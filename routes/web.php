@@ -24,7 +24,6 @@ Route::get('/home', function () {
     return view('/home');
 });  
 
-
 // CATALOGO
 Route::resource('/bolsas','App\Http\Controllers\BolsaController');
 Route::resource('/cortes','App\Http\Controllers\CorteController');
@@ -32,7 +31,6 @@ Route::resource('/materiaprima','App\Http\Controllers\MateriaprimaController');
 Route::resource('/cajas','App\Http\Controllers\CajaController');
 Route::Resource('/inventariosuajes','App\Http\Controllers\InventarioSuajeController');
 Route::Resource('/productos','App\Http\Controllers\ProductoController');
-
 
 
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenprovisionalController');
@@ -64,6 +62,10 @@ Route::get('/plan', function(){
 
 Route::get('/registrosproduccion', function(){
     return view('registrosproduccion');
+});
+
+Route::get('/prueba', function(){
+    return view('prueba');
 });
 
 // REGISTROS
