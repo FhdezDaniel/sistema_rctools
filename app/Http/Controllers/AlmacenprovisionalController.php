@@ -28,7 +28,6 @@ class AlmacenprovisionalController extends Controller
         $almacenprovisionals->piezas = $request->get('piezas');
         $almacenprovisionals->historial = $request->get('historial');
         
-
         $almacenprovisionals->save();
 
         return redirect('/almacenprovisional');

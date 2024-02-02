@@ -28,7 +28,7 @@ class RegistrotermoformadoController extends Controller
         $registrotermoformados->fecha = $request->get('fecha');
         $registrotermoformados->turno = $request->get('turno');
         $registrotermoformados->linea = $request->get('linea');
-        $registrotermoformados->producto = $request->get('producto');
+        $registrotermoformados->producto_id = $request->get('producto_id');
         $registrotermoformados->piezas_buenas = $request->get('piezas_buenas');
         $registrotermoformados->piezas_malas = $request->get('piezas_malas');
         $registrotermoformados->piezas_malas_nuevo = $request->get('piezas_malas_nuevo');
@@ -64,7 +64,7 @@ class RegistrotermoformadoController extends Controller
         $registrotermoformado->fecha = $request->get('fecha');
         $registrotermoformado->turno = $request->get('turno');
         $registrotermoformado->linea = $request->get('linea');
-        $registrotermoformado->producto = $request->get('producto');
+        $registrotermoformado->producto_id = $request->get('producto_id');
         $registrotermoformado->piezas_buenas = $request->get('piezas_buenas');
         $registrotermoformado->piezas_malas = $request->get('piezas_malas');
         $registrotermoformado->piezas_malas_nuevo = $request->get('piezas_malas_nuevo');

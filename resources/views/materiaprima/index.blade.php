@@ -77,7 +77,7 @@
                 <h1 class="mt-20 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Materia prima</mark></h1>
             </div>
         <div>
-
+        
         <div class="ml-5 mt-16 mr-20 flex flex-row justify-end">
                 @role(['Admin','Supervisor'])
                 <a href="materiaprima/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">

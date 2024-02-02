@@ -38,6 +38,9 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
+                            @role(['Admin','GerenteProduccion'])
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold rounded-lg  hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
+                            @endrole
                             </div>
                             </div>
                         </div>    
@@ -96,6 +99,9 @@
                             <th scope="col" class=" px-6 py-4">FECHA INICIO</th>
                             <th scope="col" class=" px-6 py-4">FECHA TERMINO</th>
                             <th scope="col" class=" px-6 py-4">ESTATUS</th>
+                            @role(['Supervisor'])
+                            <th scope="col" class=" px-6 py-4">ACCION</th>
+                            @endrole
                             </tr>
                         </thead>
                         <tbody>
@@ -128,6 +134,14 @@
                                     @case($planproduccion->estatus == 'Proceso') 
                                         <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-gray-600 text-white">EN PROCESO</td>
                                     @endswitch
+                                <td>
+                                    @role(['Supervisor'])
+                                        <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                            <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                EDITAR
+                                            </a>
+                                    @endrole
+                                </td>
                                 </tr>
                             @endforeach
                     </tbody>

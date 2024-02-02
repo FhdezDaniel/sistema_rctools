@@ -28,7 +28,7 @@ class InventarioSuajeController extends Controller
         $inventariosuajes->fecha_evento = $request->get('fecha_evento');
         $inventariosuajes->fecha_baja = $request->get('fecha_baja');
         $inventariosuajes->historial = $request->get('historial');
-
+        
         $inventariosuajes->save();
 
         return redirect('/inventariosuajes');
@@ -55,7 +55,7 @@ class InventarioSuajeController extends Controller
         $inventariosuaje->fecha_evento = $request->get('fecha_evento');
         $inventariosuaje->fecha_baja = $request->get('fecha_baja');
         $inventariosuaje->historial = $request->get('historial');
-
+        
         $inventariosuaje->save();
 
         return redirect('/inventariosuajes');

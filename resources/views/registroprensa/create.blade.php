@@ -39,6 +39,9 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
+                            @role(['Admin'])
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
+                            @endrole
                         </div>
                         </div>
                     </div>    
@@ -72,95 +75,102 @@
     <body class="bg-gray-300">
                 <div class="bg-gray-300">
                     <p>.</p>
-                    <h1 class="mt-20 ml-24  text-5xl font-extrabold leading-none tracking-tight text-gray-900">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Prensa</mark></h1>
+                    <h1 class="mt-16 ml-24  text-4xl font-extrabold leading-none tracking-tight text-gray-900">CREAR NUEVO REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Prensa</mark></h1>
                 </div>
                
-                
-                    <div class="w-3/5 h-2/3 mt-8 ml-20 bg-white p-6 rounded-lg shadow-xl ">
-                        <form action="/registroprensa" method="POST">
+                <div class="flex flex-col">
+                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                            <div class="overflow-hidden">
+                            <table class="min-w-full  mt-4 text-center text-sm font-light">
+                                <thead
+                                    class="border-b bg-sky-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
+                                 <tr>
+                                    <th scope="col" class=" px-6 py-4">Empleado ID</th>
+                                    <th scope="col" class=" px-6 py-4">Maquina</th>
+                                    <th scope="col" class=" px-6 py-4">Hora</th>
+                                    <th scope="col" class=" px-6 py-4">Fecha</th>
+                                    <th scope="col" class=" px-6 py-4">Turno</th>
+                                    <th scope="col" class=" px-6 py-4">Linea</th>
+                                    <th scope="col" class=" px-6 py-4">Producto</th>
+                                    <th scope="col" class=" px-6 py-4">Piezas buenas</th>
+                                    <th scope="col" class=" px-6 py-4">Piezas malas</th>
+                                    <th scope="col" class=" px-6 py-4">Tiempo muerto operador</th>
+                                    <th scope="col" class=" px-6 py-4">Tiempo muerto mantenimiento</th>
+                                    <th scope="col" class=" px-6 py-4">Causa</th>
+                                    <th scope="col" class=" px-6 py-4">Limpieza</th>
+                                 </tr>
+                            </thead>
+                            <form action="/registroprensa" method="POST">
                             @csrf
-
-                            <div class="flex">
-                                <div class="mb-5 w-3/4">
-                                    <label for="empleado_id" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Empleado ID
-                                    </label>
+                            <tbody>
+                                <tr class="border-b bg-white dark:border-neutral-500">
+                                <td class="whitespace-nowrap w-7  px-6 py-4 font-medium">
                                     <input
                                         id="empleado_id"
-                                        name="empleado_id" 
+                                        name="empleado_id"  
                                         type="text"
                                         placeholder="Escriba su id de empleado"
                                         class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('empleado_id') border-red-500
                                         @enderror"
                                         value="{{ old('empleado_id') }}"
                                     />
-                                    @error('empleado_id')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="maquina" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Maquina
-                                    </label>
-                                    <select
+                                        @error('empleado_id')
+                                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                        @enderror
+                                </td>
+
+                                <td class="whitespace-nowrap w-64 px-6 py-4">
+                                <select
                                         id="maquina"
                                         name="maquina" 
                                         type="selected"
                                         class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('maquina') border-red-500
                                         @enderror"
                                         value="{{ old('maquina') }}"
-                                    >
-                                    <option selected>Seleccione una opción</option>
-                                    <option value="Prensa 1">Prensa 1</option>
-                                    <option value="Prensa 2">Prensa 2</option>
-                                    <option value="Prensa 3">Prensa 3</option>
-                                    <option value="Prensa 4">Prensa 4</option>
-                                    <option value="Prensa 5">Prensa 5</option>
-                                    </select>
-                                    @error('maquina')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 w-3/4 ml-4">
-                                    <label for="hora" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Hora
-                                    </label>
+                                        >
+                                        <option selected>Seleccione una opción</option>
+                                        <option value="prensa 1">Prensa 1</option>
+                                        <option value="prensa 2">Prensa 2</option>
+                                        <option value="prensa 3">Prensa 3</option>
+                                        <option value="prensa 4">Prensa 4</option>
+                                        <option value="prensa 5">Prensa 5</option>
+                                        </select>
+                                        @error('maquina')
+                                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                        @enderror
+                                </td>
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <input
                                         id="hora"
                                         name="hora" 
                                         type="text"
                                         placeholder="Escriba la hora de registro"
-                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('hora') border-red-500
+                                        class="font-medium border-2 text-gray-500 p-3 w-full rounded-lg @error('hora') border-red-500
                                         @enderror"
                                         value="{{ old('hora') }}"
-                                    />
-                                    @error('hora')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 w-1/4 ml-4">
-                                    <label for="fecha" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Fecha 
-                                    </label>
+                                        />
+                                        @error('hora')
+                                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                         @enderror
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <input
-                                        id="fecha"
+                                        id="fecha"                        
                                         name="fecha" 
                                         type="date"
                                         placeholder="Fecha - inicio de producción"
                                         class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fecha') border-red-500
                                         @enderror"
                                         value="{{ old('fecha') }}"
-                                    />
-                                    @error('fecha')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <div class="mb-5 w-1/4">
-                                    <label for="turno" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Turno
-                                    </label>
+                                        />
+                                        @error('fecha')
+                                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                        @enderror
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <select
                                         id="turno"
                                         name="turno" 
@@ -168,21 +178,19 @@
                                         class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('turno') border-red-500
                                         @enderror"
                                         value="{{ old('turno') }}"
-                                    >
-                                    <option selected>Seleccione una opción</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    
-                                    </select>
-                                    @error('estatus')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="linea" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        LINEA
-                                    </label>
+                                        >
+                                        <option selected>Seleccione una opción</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                                    
+                                        </select>
+                                        @error('estatus')
+                                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                        @enderror
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <select
                                         id="linea"
                                         name="linea" 
@@ -201,28 +209,27 @@
                                     @error('linea')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-2/4">
-                                    <label for="producto" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Producto
-                                    </label>
-                                    <input
-                                        id="producto"
-                                        name="producto" 
-                                        type="text"
-                                        placeholder="Escriba el nombre del producto"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('producto') border-red-500
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
+                                    <select 
+                                        id="producto_id"
+                                        name="producto_id" 
+                                        type="selected"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto_id') border-red-500
                                         @enderror"
-                                        value="{{ old('producto') }}"
-                                    />
-                                    @error('producto')
-                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="piezas_buenas" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Piezas buenas
-                                    </label>
+                                        value="{{ old('producto_id') }}"
+                                    >
+                                        <option value="selected">Seleccione una opción</option>
+                                        <option value="1">FRIGOCEL</option>
+                                        <option value="2">PCK0054</option>
+                                    </select>
+                                        @error('producto_id')
+                                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                         @enderror
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <input
                                         id="piezas_buenas"
                                         name="piezas_buenas" 
@@ -235,13 +242,9 @@
                                     @error('piezas_buenas')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <div class="mb-5 w-1/4">
-                                    <label for="piezas_malas" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Piezas malas
-                                    </label>
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <input
                                         id="piezas_malas"
                                         name="piezas_malas" 
@@ -254,12 +257,9 @@
                                     @error('piezas_malas')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
-                                </div>
-                                    
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="tiempo_muerto_operador" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Tiempo muerto operador 
-                                    </label>
+                                </td>
+              
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <input
                                         id="tiempo_muerto_operador"
                                         name="tiempo_muerto_operador" 
@@ -272,11 +272,9 @@
                                     @error('tiempo_muerto_operador')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="tiempo_muerto_mantenimiento" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Tiempo muerto mantenimiento
-                                    </label>
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <input
                                         id="tiempo_muerto_mantenimiento"
                                         name="tiempo_muerto_mantenimiento" 
@@ -289,13 +287,9 @@
                                     @error('tiempo_muerto_mantenimiento')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <div class="mb-5  w-3/4">
-                                    <label for="causa" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Causa
-                                    </label>
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <input
                                         id="causa"
                                         name="causa" 
@@ -308,11 +302,9 @@
                                     @error('causa')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
-                                </div>
-                                <div class="mb-5 ml-4 w-1/4">
-                                    <label for="limpieza" class="mb-2 block uppercase text-gray-700 font-bold">
-                                        Limpieza
-                                    </label>
+                                </td>
+
+                                <td class="whitespace-nowrap  px-6 py-4">
                                     <select
                                         id="limpieza"
                                         name="limpieza" 
@@ -331,24 +323,26 @@
                                     @error('limpieza')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
-                                </div>
-                            </div>
-                            <div class="flex flex-row justify-end">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                            <div class="flex flex-row justify-end mt-4">
                                 <div class="mt-3">
                                     <a href="/registroprensa" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
-                                        Cancelar 
+                                        Cancelar
                                     </a>
                                 </div>
                                 <div class="">
                                     <input 
                                         type="submit"
-                                        value="Crear nuevo registro"
+                                        value="Crear registro"
                                         class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                                         uppercase font-bold w-60 p-3 text-white rounded-lg"
                                     />
                                 </div>
-                            </div>
-                        </form>
-                    </div>        
+                            </div>            
+                    </form>
+        </div>        
     </body>
 </html>

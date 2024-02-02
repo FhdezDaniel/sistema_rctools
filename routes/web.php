@@ -32,7 +32,6 @@ Route::resource('/cajas','App\Http\Controllers\CajaController');
 Route::Resource('/inventariosuajes','App\Http\Controllers\InventarioSuajeController');
 Route::Resource('/productos','App\Http\Controllers\ProductoController');
 
-
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenprovisionalController');
 Route::resource('/planproduccion','App\Http\Controllers\PlanproduccionController');
 Route::resource('/suajes','App\Http\Controllers\SuajeController');

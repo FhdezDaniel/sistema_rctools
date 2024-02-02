@@ -80,7 +80,7 @@
                 @method('PUT')
                     <div class="mb-5">
                         <label for="suaje_id" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Suaje 
+                            Suaje
                         </label>
                         <input
                             id="suaje_id"
@@ -170,7 +170,7 @@
 
                     <div class="mb-5">
                         <label for="historial" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Historial
+                            Historial 
                         </label>
                            <input
                                 id="historial"

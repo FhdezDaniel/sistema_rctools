@@ -9,7 +9,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
-        <title>RC Tools - Crear nuevo registro almacen</title>
+        <title>RC Tools - Crear nuevo registro almacen provisional</title>
     </head>
     
     <header>
@@ -39,6 +39,9 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
+                            @role(['Admin','GerenteProduccion','DireccionGeneral'])
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
+                            @endrole
                         </div>
                         </div>
                     </div>    
@@ -98,7 +101,7 @@
                     
                     <div class="mb-5">
                         <label for="piezas" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Piezas
+                            Piezas 
                         </label>
                         <input
                             id="piezas"

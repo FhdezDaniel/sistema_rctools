@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('empleado_id');
             $table->foreign('empleado_id')->references('id')->on('empleados');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
             $table->char('maquina');
             $table->char('hora');
             $table->date('fecha');

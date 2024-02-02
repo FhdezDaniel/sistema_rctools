@@ -129,6 +129,7 @@
                         <option value="{{ $producto->suaje_id }}">{{ $producto->suaje->codigo}}</option>
                         <option value="1">S10</option>
                         <option value="2">T15</option>
+                        <option value="3">3X3</option>
                         </select>
                         @error('suaje_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -148,8 +149,9 @@
                             value="{{ $producto->materiaprima_id }}"
                         >
                         <option value="{{ $producto->materiaprima_id }}">{{ $producto->materiaprima->descripcion }}</option>
-                        <option value="1">FRIGOCEL</option>
-                        <option value="2">PCK0054</option>
+                        <option value="1">TAX 120</option>
+                        <option value="2">FRIGOCEL</option>
+                        <option value="3">AYE 128</option>
                         </select>
                         @error('materiaprima_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -169,9 +171,12 @@
                             value="{{ $producto->caja_id }}"
                         >
                         <option value="{{ $producto->caja_id }}">{{ $producto->caja->nombre}}</option>
-                        <option value="1">TAX 1</option>
-                        <option value="2">TAX 2</option>
-                        <option value="3">SEMILLERA</option>
+                        <option value="1">FORD</option>
+                        <option value="2">HITACHI</option>
+                        <option value="3">HONDA</option>
+                        <option value="4">TK R002 (Hamburguesa)</option>
+                        <option value="5">INVERNADERO</option>
+                        <option value="6">JAE</option>
                         </select>
                         @error('caja_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -193,6 +198,7 @@
                         <option value="{{ $producto->bolsa_id}}">{{ $producto->bolsa->nombre}}</option>
                         <option value="1">SIIX</option>
                         <option value="2">CHICA</option>
+                        <option value="3">GRANDE</option>
                         </select>
                         @error('bolsa_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

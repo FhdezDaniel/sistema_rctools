@@ -42,7 +42,7 @@
                     name="password" 
                     type="password"
                     placeholder="Contraseña de registro"
-                    class="border p-3 w-full rounded-lg @error('password') border-red-500
+                    class="border p-3 w-full rounded-lg @error('passwrord') border-red-500
                     @enderror"
                    
                 />

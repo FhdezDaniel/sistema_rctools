@@ -39,7 +39,9 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
+                            @role(['Admin','GerenteProduccion'])
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
+                            @endrole
                         </div>
                         </div>
                     </div>    
@@ -108,15 +110,16 @@
                             value="{{ $suajes->corte_id }}"
                         >
                         <option value="{{ $suajes->corte_id }}">{{ $suajes->corte->nombre}}</option>
-                        <option value="1">COMPLETO</option>
-                        <option value="2">S10</option>
-                        <option value="3">T15</option>
+                        <option value="1">S10</option>
+                        <option value="2">T15</option>
+                        <option value="3">3X3</option>
+                        <option value="4">9X9</option>
+                        <option value="5">SM1</option>
                         </select>
                         @error('corte_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                         @enderror
                     </div>
-
                 <div class="mb-5">
                     <label for="activo" class="mb-2 block uppercase text-gray-700 font-bold">
                         Estatus activo
@@ -134,6 +137,7 @@
                     @enderror
                 </div>
 
+      
                 <div class="mb-5">
                         <label for="cantidad" class="mb-2 block uppercase text-gray-700 font-bold">
                             Cantidad
@@ -151,7 +155,7 @@
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                         @enderror
                     </div>
-
+       
 
                 <div class="mb-5">
                     <label for="comentarios" class="mb-2 block uppercase text-gray-700 font-bold">

@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('empleado_id');
             $table->foreign('empleado_id')->references('id')->on('empleados');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
             $table->char('maquina');
             $table->char('hora');
             $table->date('fecha');
             $table->integer('turno');
             $table->string('linea');
-            $table->char('producto');
             $table->integer('total_piezas');
             $table->integer('piezas_malas');
             $table->char('tiempo_muerto_operador');
