@@ -122,7 +122,7 @@
                                 FECHA - TERMINO 
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                ESTATUS 
+                                ESTATUS
                             </th>
                             @role(['Admin','GerenteProduccion'])
                             <th scope="col" class="px-6 py-3">
@@ -148,7 +148,7 @@
                                 @switch(true)
                                         @case($planproduccion->estatus == 'Completado') 
                                         <td scope="row" class="px-6 py-4 font-bold text-green-600  whitespace-nowrap  bg-white"> {{ $planproduccion->estatus}}</td> 
-                                        @break
+                                        @break 
 
                                         @case($planproduccion->estatus == 'Problemas') 
                                         <td scope="row" class="px-6 py-4 font-bold text-red-600  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
@@ -163,16 +163,16 @@
                                         @endswitch
 
                                 @role(['Admin','GerenteProduccion'])
-                                <td class="">
-                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
-                                    <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  flex font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                        Editar 
-                                    </a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300  font-medium rounded-lg text-sm px-5 py-2.5  mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">ELIMINAR</button>
-                                    </form>
-                                </td>
+                                    <td class="">
+                                        <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  flex font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                            Editar 
+                                        </a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300  font-medium rounded-lg text-sm px-5 py-2.5  mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">ELIMINAR</button>
+                                        </form>
+                                    </td>
                                 @endrole
                             </tr>
                         @endforeach

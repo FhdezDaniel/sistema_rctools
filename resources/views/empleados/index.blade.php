@@ -104,7 +104,7 @@
                                     NOMBRE COMPLETO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    PUESTO 
+                                    PUESTO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     FECHA NACIMIENTO
@@ -131,7 +131,6 @@
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fecha_nacimiento }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->fecha_ingreso }}</td>
                                     <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $empleado->correo }}</td>  
-                                    
                                     <td>
                                         <form action="{{ route ('empleados.destroy',$empleado->id)}}" method="POST">
                                             @role(['Admin'])

@@ -262,7 +262,7 @@
                                     <td class="whitespace-nowrap  px-6 py-4">
                                         <input
                                             id="piezas_malas_nuevo"
-                                            name="piezas_malas_nuevo" 
+                                            name="piezas_malas_nuevo"
                                             type="text"
                                             placeholder="Numero de piezas malas por molde nuevo o materia prima"
                                             class="border-2 font-medium text-black p-3 w-full rounded-lg @error('piezas_malas_nuevo') border-red-500

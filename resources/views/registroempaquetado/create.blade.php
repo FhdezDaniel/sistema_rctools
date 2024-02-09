@@ -79,7 +79,6 @@
                 <h1 class="mt-20 ml-20 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900">CREAR NUEVO REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Empaquetado</mark></h1>
                
                 
-                  
                 <div class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
@@ -264,7 +263,7 @@
                                     <td class="whitespace-nowrap  px-6 py-4">
                                         <input
                                             id="tiempo_muerto_operador"
-                                            name="tiempo_muerto_operador" 
+                                            name="tiempo_muerto_operador"
                                             type="text"
                                             placeholder="Tiempo muerto operador"
                                             class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('tiempo_muerto_operador') border-red-500
@@ -276,7 +275,7 @@
                                         @enderror
                                     </td>
             
-                                    <td class="whitespace-nowrap  px-6 py-4">
+                                    <td class="whitespace-nowrap px-6 py-4">
                                         <input
                                             id="causa"
                                             name="causa" 

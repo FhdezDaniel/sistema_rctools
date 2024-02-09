@@ -80,73 +80,132 @@
                 <h1 class="mt-14 ml-20 mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción Linea</mark></h1>
           
                 <div class="flex flex-col">
-                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div class="inline-block min-w-full mt-4 py-2 sm:px-6 lg:px-8">
-                    <div class="overflow-hidden">
-                        <table class="min-w-full text-center text-base font-light">
-                        <thead
-                            class="border-b bg-sky-900 text-white font-medium dark:border-neutral-500 dark:text-neutral-800">
-                            <tr>
-                            <th scope="col" class=" px-6 py-4">TERMOFORMADORA</th>
-                            <th scope="col" class=" px-6 py-4">PRODUCTO</th>
-                            <th scope="col" class=" px-6 py-4">CANTIDAD</th>
-                            <th scope="col" class=" px-6 py-4">SUAJE</th>
-                            <th scope="col" class=" px-6 py-4">CORTE</th>
-                            <th scope="col" class=" px-6 py-4">MATERIAL</th>
-                            <th scope="col" class=" px-6 py-4">CAJA</th>
-                            <th scope="col" class=" px-6 py-4">BOLSA</th>
-                            <th scope="col" class=" px-6 py-4">CANTIDAD EMPAQUETADO</th>
-                            <th scope="col" class=" px-6 py-4">FECHA INICIO</th>
-                            <th scope="col" class=" px-6 py-4">FECHA TERMINO</th>
-                            <th scope="col" class=" px-6 py-4">ESTATUS</th>
-                            @role(['Supervisor'])
-                            <th scope="col" class=" px-6 py-4">ACCION</th>
-                            @endrole
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($planproduccions as $planproduccion)
-                                <tr class="border-b dark:border-neutral-500 bg-white">
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
-                                <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
-                                 @switch(true)
-                                    @case($planproduccion->estatus == 'Completado') 
-                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-green-700 text-white">COMPLETADO</td>
-                                    @break
+                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="inline-block min-w-full mt-4 py-2 sm:px-6 lg:px-8">
+                            <div class="overflow-hidden">
+                                <table class="min-w-full text-center text-base font-light">
+                                    <thead
+                                        class="border-b bg-sky-900 text-white font-medium dark:border-neutral-500 dark:text-neutral-800">
+                                    <tr>
+                                    <th scope="col" class=" px-6 py-4">TERMOFORMADORA</th>
+                                    <th scope="col" class=" px-6 py-4">PRODUCTO</th>
+                                    <th scope="col" class=" px-6 py-4">CANTIDAD</th>
+                                    <th scope="col" class=" px-6 py-4">SUAJE</th>
+                                    <th scope="col" class=" px-6 py-4">CORTE</th>
+                                    <th scope="col" class=" px-6 py-4">MATERIAL</th>
+                                    <th scope="col" class=" px-6 py-4">CAJA</th>
+                                    <th scope="col" class=" px-6 py-4">BOLSA</th>
+                                    <th scope="col" class=" px-6 py-4">CANTIDAD EMPAQUETADO</th>
+                                    <th scope="col" class=" px-6 py-4">FECHA INICIO</th>
+                                    <th scope="col" class=" px-6 py-4">FECHA TERMINO</th>
+                                    <th scope="col" class=" px-6 py-4">ESTATUS</th>
+                                        @role(['Supervisor'])
+                                    <th scope="col" class=" px-6 py-4">ACCION</th>
+                                        @endrole
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($planproduccions as $planproduccion)
+                                            <tr class="border-b dark:border-neutral-500 bg-white">
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                @switch(true)
+                                                    @case($planproduccion->estatus == 'Completado') 
+                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-green-700 text-white">COMPLETADO</td>
+                                                    @break
 
-                                    @case($planproduccion->estatus == 'Problemas') 
-                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-red-600 text-white">PROBLEMAS</td>
-                                    @break
+                                                    @case($planproduccion->estatus == 'Problemas') 
+                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-red-600 text-white">PROBLEMAS</td>
+                                                    @break
 
-                                    @case($planproduccion->estatus == 'Pausado') 
-                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-600 text-white">PAUSADO</td>
-                                    @break
+                                                    @case($planproduccion->estatus == 'Pausado') 
+                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-600 text-white">PAUSADO</td>
+                                                    @break
 
-                                    @case($planproduccion->estatus == 'Proceso') 
-                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-gray-600 text-white">EN PROCESO</td>
-                                    @endswitch
-                                <td>
-                                    @role(['Supervisor'])
-                                        <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
-                                            <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                                EDITAR
-                                            </a>
-                                    @endrole
-                                </td>
-                                </tr>
-                            @endforeach
-                    </tbody>
-                </table>
+                                                    @case($planproduccion->estatus == 'Proceso') 
+                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-gray-600 text-white">EN PROCESO</td>
+                                                    @endswitch
+                                            <td>
+                                                @role(['Supervisor'])
+                                                <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                    <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                        EDITAR
+                                                    </a>
+                                                @endrole
+                                            </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <div>
+                <div class="flex flex-col">
+                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="inline-block min-w-full mt-4 py-2 sm:px-6 lg:px-8">
+                            <div class="overflow-hidden">
+                                <table class="w-2/5 text-center text-base font-light">
+                                    <thead class="border-b bg-stone-400 text-white font-medium dark:border-neutral-500 dark:text-neutral-800">
+                                        <tr>
+                                            <th scope="col" class=" px-6 py-4">PRODUCTO</th>
+                                            <th scope="col" class=" px-6 py-4">PIEZAS TERMOFORMADO</th>
+                                            <th scope="col" class=" px-6 py-4">PIEZAS EMPAQUETADO</th>
+                                            <th scope="col" class=" px-6 py-4">ESTATUS</th>
+                                            @role(['Admin'])
+                                            <th scope="col" class=" px-6 py-4">ACCION</th>
+                                            @endrole
+                                        </tr>
+                                     </thead>
+                                    <tbody>
+                                        @foreach ($planproduccions as $planproduccion)
+                                            <tr class="border-b dark:border-neutral-500 bg-white">
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->piezas_termoformado}}</td>
+                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->piezas_empaquetado }}</td>
+                                            @switch(true)
+                                                @case($planproduccion->estatus == 'Completado') 
+                                                    <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-green-700 text-white">COMPLETADO</td>
+                                                @break
+
+                                                @case($planproduccion->estatus == 'Problemas') 
+                                                    <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-red-600 text-white">PROBLEMAS</td>
+                                                @break
+
+                                                @case($planproduccion->estatus == 'Pausado') 
+                                                    <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-600 text-white">PAUSADO</td>
+                                                @break
+
+                                                @case($planproduccion->estatus == 'Proceso') 
+                                                    <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-gray-600 text-white">EN PROCESO</td>
+                                                @endswitch
+                                            <td>
+                                                @role(['Supervisor','Admin'])
+                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                            EDITAR
+                                                        </a>
+                                                @endrole
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
     </body>
 </html>

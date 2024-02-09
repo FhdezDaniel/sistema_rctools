@@ -104,7 +104,7 @@
                             ID
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            NOMBRE 
+                            NOMBRE
                         </th>
                         <th scope="col" class="px-6 py-3">
                             EXISTENCIA
@@ -116,9 +116,9 @@
                             FECHA BAJA
                         </th>
                         @role(['Admin','Supervisor'])
-                        <th scope="col" class="px-6 py-3">
-                            ACCION
-                        </th>
+                            <th scope="col" class="px-6 py-3">
+                                ACCION
+                            </th>
                         @endrole
                     </tr>
                 </thead>

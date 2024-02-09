@@ -81,7 +81,7 @@
                     @csrf
                     <div class="mb-5">
                         <label for="producto_id" class="mb-2 block uppercase text-gray-700 font-bold">
-                                    NOMBRE DEL PRODUCTO
+                                    Nombre del producto
                                 </label>
                                 <select 
                                     id="producto_id"
@@ -101,7 +101,7 @@
                     
                     <div class="mb-5">
                         <label for="piezas" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Piezas 
+                            Piezas
                         </label>
                         <input
                             id="piezas"

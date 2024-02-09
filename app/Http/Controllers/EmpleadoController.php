@@ -22,6 +22,7 @@ class EmpleadoController extends Controller
     {
         $empleados = new Empleado();
 
+        $empleados->id = $request->get('id');
         $empleados->nombre_completo = $request->get('nombre_completo');
         $empleados->puesto = $request->get('puesto');
         $empleados->fecha_nacimiento = $request->get('fecha_nacimiento');
@@ -51,6 +52,7 @@ class EmpleadoController extends Controller
     {
         $empleado = Empleado::find($id);
 
+        $empleado->id = $request->get('id');
         $empleado->nombre_completo = $request->get('nombre_completo');
         $empleado->puesto = $request->get('puesto');
         $empleado->fecha_nacimiento = $request->get('fecha_nacimiento');

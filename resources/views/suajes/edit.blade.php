@@ -88,7 +88,7 @@
                         id="codigo"
                         name="codigo" 
                         type="text"
-                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('codigo') border-red-500
+                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('codigo') border-red-500
                         @enderror"
                         value="{{ $suajes->codigo }}"
                     />
@@ -105,7 +105,7 @@
                             id="corte_id"
                             name="corte_id" 
                             type="selected"
-                            class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('corte_id') border-red-500
+                            class="border-2 font-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('corte_id') border-red-500
                             @enderror"
                             value="{{ $suajes->corte_id }}"
                         >
@@ -154,7 +154,7 @@
                         @error('cantidad')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                         @enderror
-                    </div>
+                </div>
        
 
                 <div class="mb-5">

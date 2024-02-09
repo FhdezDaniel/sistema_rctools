@@ -44,7 +44,7 @@
                     placeholder="Contraseña de registro"
                     class="border p-3 w-full rounded-lg @error('passwrord') border-red-500
                     @enderror"
-                   
+                    
                 />
                 @error('password')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

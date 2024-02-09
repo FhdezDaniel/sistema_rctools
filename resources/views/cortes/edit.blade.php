@@ -80,7 +80,7 @@
                 @method('PUT')
                     <div class="mb-5">
                         <label for="nombre" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Tipo de corte 
+                            Tipo de corte
                         </label>
                         <input
                             id="nombre"

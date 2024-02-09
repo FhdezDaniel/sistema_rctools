@@ -66,7 +66,7 @@
 
                             <div class="mb-5 w-3/5">
                                 <label for="termoformadora_id" class="mb-2 block uppercase text-gray-700 font-bold">
-                                   Termoformadora 
+                                   Termoformadora
                                 </label>
                                 <select 
                                     id="termoformadora_id"
@@ -101,8 +101,9 @@
                                     value="{{ old('producto_id') }}"
                                 >
                                     <option value="selected">Seleccione una opción</option>
-                                    <option value="1">TAX 120</option>
+                                    <option value="9">TAX 120</option>
                                     <option value="2">PCK0054</option>
+                                    <option value="3">Frigocel</option>
                                 </select>
                                 @error('producto_id')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -193,7 +194,7 @@
                                     id="estatus"
                                     name="estatus" 
                                     type="selected"
-                                    class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('estatus') border-red-500
+                                    class="border-2 font-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('estatus') border-red-500
                                     @enderror"
                                     value="{{ old('estatus') }}"
                                 >
@@ -224,5 +225,7 @@
                     </div>
                 </form>
             </div>
+
+            
     </body>
 </html> 

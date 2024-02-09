@@ -115,7 +115,7 @@
                                     FECHA
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    TURNO 
+                                    TURNO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     LINEA

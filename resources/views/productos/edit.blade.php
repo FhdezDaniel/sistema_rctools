@@ -177,6 +177,17 @@
                         <option value="4">TK R002 (Hamburguesa)</option>
                         <option value="5">INVERNADERO</option>
                         <option value="6">JAE</option>
+                        <option value="7">MATSUJU</option>
+                        <option value="8">SEMILLERO</option>
+                        <option value="9">SIIX</option>
+                        <option value="10">TETELA</option>
+                        <option value="11">TIJUANA</option>
+                        <option value="12">TAXAN 1</option>
+                        <option value="13">TAXAN 2</option>
+                        <option value="14">VALEO</option>
+                        <option value="15">MPG (Caja solo impresión de etiqueta)</option>
+                        <option value="16">NAL 1</option>
+                        <option value="17">MPG2</option>
                         </select>
                         @error('caja_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

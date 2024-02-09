@@ -73,7 +73,6 @@ class RegistrotermoformadoController extends Controller
         $registrotermoformado->causa = $request->get('causa');
         $registrotermoformado->limpieza = $request->get('limpieza');
 
-
         $registrotermoformado->save();
 
         return redirect('/registrotermoformado');
@@ -82,9 +81,9 @@ class RegistrotermoformadoController extends Controller
     
     public function destroy(string $id)
     {
-        $registrotermoformado = Registrotermoformadora::find($id);
+        $registrotermoformado = Registrotermoformado::find($id);
         $registrotermoformado->delete();
 
-        return redirect('/registrotermoformadora');
+        return redirect('/registrotermoformado');
     }
 }

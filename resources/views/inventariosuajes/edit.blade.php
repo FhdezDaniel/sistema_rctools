@@ -98,7 +98,7 @@
 
                     <div class="mb-5">
                         <label for="contador_uso" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Contador 
+                            Contador
                         </label>
                         <input
                             id="contador_uso"

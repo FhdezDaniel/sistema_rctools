@@ -17,12 +17,14 @@ return new class extends Migration
             $table->foreign('termoformadora_id')->references('id')->on('termoformadoras');
             $table->unsignedBigInteger('producto_id');
             $table->foreign('producto_id')->references('id')->on('productos');
-            $table->integer('cantidad');
+            $table->integer('cantidad')->nullable();
             $table->string('corte')->nullable();
             $table->string('material')->nullable();
             $table->string('caja')->nullable();
             $table->string('bolsa')->nullable();
             $table->integer('cantidad_empaquetado')->nullable();
+            $table->integer('piezas_termoformado')->nullable();
+            $table->integer('piezas_empaquetado')->nullable();
             $table->date('fecha_inicio');
             $table->date('fecha_termino');
             $table->string('estatus');

@@ -58,10 +58,12 @@ class PlanproduccionController extends Controller
         $planproduccion->producto_id = $request->get('producto_id');
         $planproduccion->cantidad = $request->get('cantidad');
         $planproduccion->cantidad_empaquetado = $request->get('cantidad_empaquetado');
+        $planproduccion->piezas_termoformado = $request->get('piezas_termoformado');
+        $planproduccion->piezas_empaquetado = $request->get('piezas_empaquetado');
         $planproduccion->fecha_inicio = $request->get('fecha_inicio');
         $planproduccion->fecha_termino = $request->get('fecha_termino');
         $planproduccion->estatus = $request->get('estatus');
-
+    
         $planproduccion->save();
 
         return redirect('/planproduccion');

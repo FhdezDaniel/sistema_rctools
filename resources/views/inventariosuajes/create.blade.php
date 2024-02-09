@@ -74,7 +74,7 @@
             <div>
                 <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR REGISTRO INVENTARIO de<mark class="px-2 text-white bg-red-700 rounded ml-3">Suaje</mark></h2>
             </div>
-            <div class="w-4/12 h-2/3  ml-20 bg-white p-6 rounded-lg shadow-xl ">
+            <div class="w-4/12 h-2/3 ml-20 bg-white p-6 rounded-lg shadow-xl ">
                 <form action="/inventariosuajes" method="POST">
                     @csrf
                     <div class="mb-5">
@@ -86,7 +86,7 @@
                             name="suaje_id" 
                             type="text"
                             placeholder="Escriba el id del suaje que desea registrar"
-                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('suaje_id') border-red-500
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('suaje_id') border-red-500
                             @enderror"
                             value="{{ old('suaje_id') }}"
                         />
@@ -97,14 +97,14 @@
 
                     <div class="mb-5">
                         <label for="contador_uso" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Contador 
+                            Contador
                         </label>
                         <input
                             id="contador_uso"
                             name="contador_uso" 
                             type="text"
                             placeholder="Contador de uso de suaje"
-                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('contador_uso') border-red-500
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('contador_uso') border-red-500
                             @enderror"
                             value="{{ old('contador_uso') }}"
                         />

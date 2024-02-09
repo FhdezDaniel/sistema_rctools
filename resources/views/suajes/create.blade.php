@@ -111,10 +111,10 @@
                         >
                         <option value="selected">Seleccione una opcion</option>
                         <option value="1">S10</option>
-                        <option value="2">T15</option>
-                        <option value="3">3X3</option>
-                        <option value="4">9X9</option>
-                        <option value="5">SM1</option>
+                        <option value="2">SKC</option>
+                        <option value="3">SKC-X2</option>
+                        <option value="4">NY7</option>
+                        <option value="5">KSE</option>
                         </select>
                         @error('corte_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

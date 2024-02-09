@@ -223,7 +223,7 @@
                                             value="{{ old('producto_id') }}"
                                         >
                                             <option value="selected">Seleccione una opción</option>
-                                            <option value="1">TAX 120</option>
+                                            <option value="9">TAX 120</option>
                                             <option value="2">PCK0054</option>
                                         </select>
                                             @error('producto_id')

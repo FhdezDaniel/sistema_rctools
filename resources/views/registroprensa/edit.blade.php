@@ -110,7 +110,7 @@
                                         id="empleado_id"
                                         name="empleado_id"  
                                         type="text"
-                                        placeholder="Escriba su id de empleado"
+                                        placeholder="Escriba su id empleado"
                                         class="border-2 font-medium text-black p-3 w-full rounded-lg @error('empleado_id') border-red-500
                                         @enderror"
                                         value="{{ $registroprensa->empleado_id }}"

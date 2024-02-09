@@ -121,7 +121,7 @@
                                 </td>
 
                                 <td class="whitespace-nowrap w-64 px-6 py-4">
-                                <select
+                                    <select
                                         id="maquina"
                                         name="maquina" 
                                         type="selected"
@@ -135,11 +135,12 @@
                                         <option value="prensa 3">Prensa 3</option>
                                         <option value="prensa 4">Prensa 4</option>
                                         <option value="prensa 5">Prensa 5</option>
-                                        </select>
+                                    </select>
                                         @error('maquina')
                                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                         @enderror
                                 </td>
+
                                 <td class="whitespace-nowrap  px-6 py-4">
                                     <input
                                         id="hora"
@@ -152,7 +153,7 @@
                                         />
                                         @error('hora')
                                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                                         @enderror
+                                        @enderror
                                 </td>
 
                                 <td class="whitespace-nowrap  px-6 py-4">
@@ -222,7 +223,7 @@
                                     >
                                         <option value="selected">Seleccione una opción</option>
                                         <option value="1">FRIGOCEL</option>
-                                        <option value="2">PCK0054</option>
+                                        <option value="2">PCK00054</option>
                                     </select>
                                         @error('producto_id')
                                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

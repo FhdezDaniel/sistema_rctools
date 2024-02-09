@@ -107,7 +107,7 @@
                             ID SUAJE 
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            CONTADOR 
+                            CONTADOR
                         </th>
                         <th scope="col" class="px-6 py-3">
                             FECHA REGISTRO
@@ -119,7 +119,7 @@
                             FECHA BAJA
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            HISTORIAL
+                            HISTORIAL 
                         </th>
                         @role(['Admin','Supervisor'])
                         <th scope="col" class="px-6 py-3">

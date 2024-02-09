@@ -61,11 +61,13 @@
             <div>
                 <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO PLAN DE <mark class="px-2 text-white bg-red-700 rounded ml-3">Producción</mark></h2>
             </div>
+
+         
             <div class="w-6/12  ml-20 bg-white p-6 rounded-lg shadow-xl flex flex-col">
                 <form action="/planproduccion/{{ $planproduccion->id }}" method="POST">
                     @csrf
                     @method('PUT')
-                    <div class="flex">
+                        <div class="flex">
                             <div class="mb-5 w-3/5">
                                 <label for="termoformadora_id" class="mb-2 block uppercase text-gray-700 font-bold">
                                    Termoformadora ID
@@ -89,7 +91,6 @@
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                 @enderror
                             </div>
-                           
                             <div class="mb-5 ml-6 w-3/5">
                                 <label for="producto_id" class="mb-2 block uppercase text-gray-700 font-bold">
                                     Producto ID
@@ -134,7 +135,7 @@
 
                             <div class="mb-5 ml-6  w-1/2">
                                 <label for="cantidad_empaquetado" class="mb-2 block uppercase text-gray-700 font-bold">
-                                    Cantidad empaquetado
+                                    Cantidad empaque
                                 </label>
                                 <input
                                     id="cantidad_empaquetado"
@@ -149,12 +150,8 @@
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                 @enderror
                             </div>
-                    </div>
-                    <div class="flex">
-                           
-                    </div>
-                    <div class="flex">
-                            <div class="mb-5 w-3/5">
+                   
+                            <div class="mb-5 w-3/5 ml-6">
                                 <label for="fecha_inicio" class="mb-2 block uppercase text-gray-700 font-bold">
                                     Fecha - Inicio
                                 </label>
@@ -171,6 +168,7 @@
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                 @enderror
                             </div>
+
                             <div class="mb-5 w-3/5 ml-6">
                                 <label for="fecha_termino" class="mb-2 block uppercase text-gray-700 font-bold">
                                     Fecha - Termino
@@ -188,7 +186,11 @@
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                 @enderror
                             </div>
-                            <div class="mb-5 w-3/5 ml-6">
+
+                        </div>
+
+                        <div class="flex">
+                            <div class="mb-5 w-3/5 ">
                                 <label for="estatus" class="mb-2 block uppercase text-gray-700 font-bold">
                                     Estatus
                                 </label>
@@ -211,21 +213,76 @@
                                 @enderror
                             </div>
                     </div>
-                    <div class="flex flex-row justify-end">
-                        <div class="mt-3">
-                            <a href="/planproduccion" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
-                                Cancelar
-                            </a>
-                        </div>
-                        <div class="">
-                            <input 
-                                type="submit"
-                                value="Guardar"
-                                class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
-                                uppercase font-bold w-60 p-3 text-white rounded-lg"
-                            />
-                        </div>
-                    </div>
+                            <div class="mb-5 w-1/2">
+                                <label for="piezas_termoformado" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Piezas termoformado
+                                </label>
+                                <input
+                                    id="piezas_termoformado"
+                                    name="piezas_termoformado" 
+                                    type="text"
+                                    placeholder="Cantidad de piezas producidas de termoformado"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('piezas_termoformado') border-red-500
+                                    @enderror"
+                                    value="{{ $planproduccion->piezas_termoformado }}"
+                                />
+                                @error('cantidad_empaquetado')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="mb-5 w-1/2">
+                                <label for="piezas_empaquetado" class="mb-2 block uppercase text-gray-700 font-bold">
+                                    Piezas empaquetado 
+                                </label>
+                                <input
+                                    id="piezas_empaquetado"
+                                    name="piezas_empaquetado" 
+                                    type="text"
+                                    placeholder="Cantidad de piezas producidas empaquetadas"
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('piezas_empaquetado') border-red-500
+                                    @enderror"
+                                    value="{{ $planproduccion->piezas_empaquetado }}"
+                                />
+                                @error('piezas_empaquetado')
+                                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            @role(['Supervisor'])        
+                                <div class="flex flex-row justify-end">
+                                    <div class="mt-3">
+                                        <a href="/produccion" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
+                                            Cancelar
+                                        </a>
+                                    </div>
+                                    <div class="">
+                                        <input 
+                                            type="submit"
+                                            value="Guardar"
+                                            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                                            uppercase font-bold w-60 p-3 text-white rounded-lg"
+                                        />
+                                    </div>
+                                </div>
+                            @endrole(['Admin'])
+
+                            @role(['Admin'])        
+                            <div class="flex flex-row justify-end">
+                                <div class="mt-3">
+                                    <a href="/planproduccion" class="text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:ring-red-400 font-bold uppercase rounded-lg px-20 py-3 mr-2 ">
+                                        Cancelar
+                                    </a>
+                                </div>
+                                <div class="">
+                                    <input 
+                                        type="submit"
+                                        value="Guardar"
+                                        class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                                        uppercase font-bold w-60 p-3 text-white rounded-lg"
+                                    />
+                                </div>
+                            </div>
+                            @endrole(['Admin'])
                 </form>
             </div>
     </body>

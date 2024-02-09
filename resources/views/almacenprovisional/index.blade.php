@@ -122,7 +122,7 @@
                                     NOMBRE DEL PRODUCTO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    MATERIAL 
+                                    MATERIAL
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     PIEZAS

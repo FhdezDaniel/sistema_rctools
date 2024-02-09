@@ -40,7 +40,7 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                             @role(['Admin','GerenteProduccion'])
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catologo">Catalogo</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
                             @endrole
                         </div>
                         </div>
@@ -114,13 +114,13 @@
                                     FECHA
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    TURNO 
+                                    TURNO  
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     LINEA
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    NOMBRE DEL PRODUCTO 
+                                    NOMBRE DEL PRODUCTO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     PIEZAS BUENAS
@@ -200,7 +200,7 @@
                 <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
                     <div>
                     <p class="text-sm text-gray-700">
-                        Resultados 
+                        Resultados
                         <span class="font-medium">1</span>
                         de
                         <span class="font-medium">10</span>

@@ -141,7 +141,17 @@
                             <td scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $suaje->comentarios}}</td>
                             @switch(true)
                                 @case($suaje->estatus == 'DISPONIBLE') 
-                                <td scope="row" class="px-6 py-4 font-bold text-green-600  whitespace-nowrap  bg-white"> {{ $suaje->estatus}}</td> 
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Completados</th>
+                                            <th>Estatus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td scope="row" class="px-6 py-4 font-bold text-green-600  whitespace-nowrap  bg-white"> {{ $suaje->estatus}}</td> 
+                                    </tbody>
+                                </table>
                                  @break
 
                                  @case($suaje->estatus == 'OCUPADO') 

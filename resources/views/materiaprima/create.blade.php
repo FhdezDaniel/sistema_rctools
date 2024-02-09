@@ -139,7 +139,7 @@
                                 id="fecha_registro"
                                 name="fecha_registro" 
                                 type="date"
-                                placeholder="Fecha registro de corte"
+                                placeholder="Fecha registro corte"
                                 class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fecha_registro') border-red-500
                                 @enderror"
                                 value="{{ old('fecha_registro') }}"

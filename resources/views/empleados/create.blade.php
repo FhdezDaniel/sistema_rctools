@@ -81,6 +81,24 @@
                         <form action="/empleados" method="POST">
                             @csrf
                             <div class="flex">
+
+                                <div class="mb-5 ml-4 w-11/12">
+                                    <label for="id" class="mb-2 block uppercase text-gray-700 font-bold">
+                                        ID
+                                    </label>
+                                    <input
+                                        id="id"
+                                        name="id" 
+                                        type="text"
+                                        placeholder="Escriba el numero de trabajador del empleado"
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('id') border-red-500
+                                        @enderror"
+                                        value="{{ old('id') }}"
+                                    />
+                                    @error('id')
+                                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                                    @enderror
+                                </div>
                                
                                 <div class="mb-5 ml-4 w-11/12">
                                     <label for="nombre_completo" class="mb-2 block uppercase text-gray-700 font-bold">
@@ -91,7 +109,7 @@
                                         name="nombre_completo" 
                                         type="text"
                                         placeholder="Escriba el nombre completo del empleado"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombre_completo') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombre_completo') border-red-500
                                         @enderror"
                                         value="{{ old('nombre_completo') }}"
                                     />
@@ -110,7 +128,7 @@
                                         name="puesto" 
                                         placeholder="Puesto del empleado"
                                         type="text"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('puesto') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('puesto') border-red-500
                                         @enderror"
                                         value="{{ old('puesto') }}"
                                     />
@@ -136,6 +154,7 @@
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
+
                                 <div class="mb-5 w-1/4 ml-4">
                                     <label for="fecha_ingreso" class="mb-2 block uppercase text-gray-700 font-bold">
                                         Fecha de Ingreso
@@ -149,6 +168,7 @@
                                         @enderror"
                                         value="{{ old('fecha_ingreso') }}"
                                     />
+                               
                                     @error('fecha_ingreso')
                                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                     @enderror
