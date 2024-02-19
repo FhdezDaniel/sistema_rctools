@@ -38,8 +38,10 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
+                            @role(['Admin','GerenteProduccion'])
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/consultas">Consultas</a>
+                            @endrole
                         </div>
                         </div>
                     </div>    
@@ -104,7 +106,7 @@
                             ID
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            NOMBRE 
+                            NOMBRE
                         </th>
                         <th scope="col" class="px-6 py-3">
                             EXISTENCIA
@@ -134,7 +136,7 @@
                                 @role(['Admin','Supervisor'])
                                 <form action="{{ route ('cajas.destroy',$caja->id)}}" method="POST">
                                 <a href="/cajas/{{ $caja->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                    EDITAR 
+                                    EDITAR
                                 </a>
                                 @csrf
                                 @method('DELETE')

@@ -37,9 +37,11 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                             @role(['Admin','GerenteProduccion'])
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold rounded-lg  hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
+                            @endrole
+                            @role(['Admin','GerenteProduccion'])
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/consultas">Consultas</a>
                             @endrole
                             </div>
                             </div>
@@ -77,7 +79,15 @@
         
             <div>
 
-                <h1 class="mt-14 ml-20 mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción Linea</mark></h1>
+                <h1 class="mt-14 ml-20 mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción Linea
+                @foreach ($planproduccions as $planproduccion)
+                    @switch(true)
+                            @case($planproduccion->estatus == 'Prioridad 1')
+                            {{ $planproduccion->termoformadora->id }}
+                    @endswitch
+                @endforeach
+
+                </mark></h1>
           
                 <div class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -87,7 +97,7 @@
                                     <thead
                                         class="border-b bg-sky-900 text-white font-medium dark:border-neutral-500 dark:text-neutral-800">
                                     <tr>
-                                    <th scope="col" class=" px-6 py-4">TERMOFORMADORA</th>
+                                    <th scope="col" class=" px-4 py-4">TERMOFORMADORA</th>
                                     <th scope="col" class=" px-6 py-4">PRODUCTO</th>
                                     <th scope="col" class=" px-6 py-4">CANTIDAD</th>
                                     <th scope="col" class=" px-6 py-4">SUAJE</th>
@@ -99,50 +109,216 @@
                                     <th scope="col" class=" px-6 py-4">FECHA INICIO</th>
                                     <th scope="col" class=" px-6 py-4">FECHA TERMINO</th>
                                     <th scope="col" class=" px-6 py-4">ESTATUS</th>
-                                        @role(['Supervisor'])
+                                        @role(['Supervisor','Admin'])
                                     <th scope="col" class=" px-6 py-4">ACCION</th>
                                         @endrole
                                     </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($planproduccions as $planproduccion)
-                                            <tr class="border-b dark:border-neutral-500 bg-white">
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
-                                                @switch(true)
-                                                    @case($planproduccion->estatus == 'Completado') 
-                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-green-700 text-white">COMPLETADO</td>
-                                                    @break
+                                            @switch(true)
+                                                    @case($planproduccion->estatus == 'Completado')
 
+                                                    @break
                                                     @case($planproduccion->estatus == 'Problemas') 
-                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-red-600 text-white">PROBLEMAS</td>
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-red-600 text-white">PROBLEMAS</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
                                                     @break
 
                                                     @case($planproduccion->estatus == 'Pausado') 
-                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-600 text-white">PAUSADO</td>
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-amber-500 text-white">PAUSADO</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
                                                     @break
 
-                                                    @case($planproduccion->estatus == 'Proceso') 
-                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-gray-600 text-white">EN PROCESO</td>
-                                                    @endswitch
-                                            <td>
-                                                @role(['Supervisor'])
-                                                <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
-                                                    <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                                        EDITAR
-                                                    </a>
-                                                @endrole
-                                            </td>
-                                            </tr>
+                                                    @case($planproduccion->estatus == 'En proceso') 
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-gray-600 text-white">EN PROCESO</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
+                                                    @break
+
+                                                    @case($planproduccion->estatus == 'Prioridad 1') 
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-600 text-white">PRIORIDAD 1</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
+                                                    @break
+
+                                                    @case($planproduccion->estatus == 'Prioridad 2') 
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-500 text-white">PRIORIDAD 2</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
+                                                    @break
+
+                                                    @case($planproduccion->estatus == 'Prioridad 3') 
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-400 text-white">PRIORIDAD 3</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
+                                                    @break
+
+                                                    @case($planproduccion->estatus == 'Prioridad 4') 
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-300 text-white">PRIORIDAD 4</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
+                                                    @break
+
+                                                    @case($planproduccion->estatus == 'Prioridad 5') 
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-200 text-black">PRIORIDAD 5</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
+                                            @endswitch
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -170,35 +346,23 @@
                                      </thead>
                                     <tbody>
                                         @foreach ($planproduccions as $planproduccion)
-                                            <tr class="border-b dark:border-neutral-500 bg-white">
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->piezas_termoformado}}</td>
-                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->piezas_empaquetado }}</td>
                                             @switch(true)
                                                 @case($planproduccion->estatus == 'Completado') 
-                                                    <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-green-700 text-white">COMPLETADO</td>
-                                                @break
-
-                                                @case($planproduccion->estatus == 'Problemas') 
-                                                    <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-red-600 text-white">PROBLEMAS</td>
-                                                @break
-
-                                                @case($planproduccion->estatus == 'Pausado') 
-                                                    <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-600 text-white">PAUSADO</td>
-                                                @break
-
-                                                @case($planproduccion->estatus == 'Proceso') 
-                                                    <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-gray-600 text-white">EN PROCESO</td>
+                                                    <tr class="border-b dark:border-neutral-500 bg-white">
+                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->piezas_termoformado}}</td>
+                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->piezas_empaquetado }}</td>
+                                                        <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-green-700 text-white">COMPLETADO</td>
+                                                        <td>
+                                                            @role(['Supervisor','Admin'])
+                                                                <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                    <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                        EDITAR
+                                                                    </a>
+                                                            @endrole
+                                                        </td>
+                                                    </tr>
                                                 @endswitch
-                                            <td>
-                                                @role(['Supervisor','Admin'])
-                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
-                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                                            EDITAR
-                                                        </a>
-                                                @endrole
-                                            </td>
-                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>

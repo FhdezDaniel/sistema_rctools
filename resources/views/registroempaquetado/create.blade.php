@@ -222,8 +222,11 @@
                                             value="{{ old('producto_id') }}"
                                         >
                                             <option value="selected">Seleccione una opción</option>
-                                            <option value="1">FRIGOCEL</option>
-                                            <option value="2">PCK0054</option>
+                                            <option value="1">NSKYP10</option>
+                                            <option value="2">TAX 106</option>
+                                            <option value="3">PROPTECK 162</option>
+                                            <option value="4">PCK00558</option>
+                                            <option value="5">TAX 950</option>
                                         </select>
                                             @error('producto_id')
                                                 p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

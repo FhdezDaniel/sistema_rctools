@@ -28,7 +28,7 @@ class RegistroempaquetadoController extends Controller
         $registroempaquetados->fecha = $request->get('fecha');
         $registroempaquetados->turno = $request->get('turno');
         $registroempaquetados->linea = $request->get('linea');
-        $registroempaquetados->producto = $request->get('producto');
+        $registroempaquetados->producto_id = $request->get('producto_id');
         $registroempaquetados->cajas_rechazadas = $request->get('cajas_rechazadas');
         $registroempaquetados->total_cajas = $request->get('total_cajas');
         $registroempaquetados->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
@@ -62,7 +62,7 @@ class RegistroempaquetadoController extends Controller
         $registroempaquetado->fecha = $request->get('fecha');
         $registroempaquetado->turno = $request->get('turno');
         $registroempaquetado->linea = $request->get('linea');
-        $registroempaquetado->producto = $request->get('producto');
+        $registroempaquetado->producto_id = $request->get('producto_id');
         $registroempaquetado->cajas_rechazadas = $request->get('cajas_rechazadas');
         $registroempaquetado->total_cajas = $request->get('total_cajas');
         $registroempaquetado->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');

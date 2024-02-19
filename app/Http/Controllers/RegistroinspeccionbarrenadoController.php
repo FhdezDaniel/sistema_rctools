@@ -28,7 +28,7 @@ class RegistroinspeccionbarrenadoController extends Controller
         $registroinspeccionbarrenados->fecha = $request->get('fecha');
         $registroinspeccionbarrenados->turno = $request->get('turno');
         $registroinspeccionbarrenados->linea = $request->get('linea');
-        $registroinspeccionbarrenados->producto = $request->get('producto');
+        $registroinspeccionbarrenados->producto_id = $request->get('producto_id');
         $registroinspeccionbarrenados->total_piezas = $request->get('total_piezas');
         $registroinspeccionbarrenados->piezas_malas = $request->get('piezas_malas');
         $registroinspeccionbarrenados->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
@@ -62,7 +62,7 @@ class RegistroinspeccionbarrenadoController extends Controller
         $registroinspeccionbarrenado->fecha = $request->get('fecha');
         $registroinspeccionbarrenado->turno = $request->get('turno');
         $registroinspeccionbarrenado->linea = $request->get('linea');
-        $registroinspeccionbarrenado->producto = $request->get('producto');
+        $registroinspeccionbarrenado->producto_id = $request->get('producto_id');
         $registroinspeccionbarrenado->total_piezas = $request->get('total_piezas');
         $registroinspeccionbarrenado->piezas_malas = $request->get('piezas_malas');
         $registroinspeccionbarrenado->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');

@@ -38,7 +38,6 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
                         </div>
                         </div>
@@ -126,8 +125,10 @@
                             value="{{ old('suaje_id') }}"
                         >
                         <option value="selected">Seleccione una opcion</option>
+                        <option value="1">NSP</option>
                         <option value="2">S10</option>
-                        <option value="3">3X3</option>
+                        <option value="3">PROPTECK</option>
+                        <option value="4">T-15</option>
                         </select>
                         @error('suaje_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -147,9 +148,11 @@
                             value="{{ old('materiaprima_id') }}"
                         >
                         <option value="selected">Seleccione una opcion</option>
-                        <option value="1">TAX 120</option>
-                        <option value="2">FRIGOCEL</option>
-                        <option value="3">AYE 128</option>
+                        <option value="1">PLIPROPILENO</option>
+                        <option value="2">TAX</option>
+                        <option value="3">PROPTECK</option>
+                        <option value="4">PCK</option>
+                        <option value="5">VAL</option>
                         </select>
                         @error('materiaprima_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

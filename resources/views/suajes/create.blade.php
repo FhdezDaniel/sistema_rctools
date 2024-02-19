@@ -109,12 +109,60 @@
                             @enderror"
                             value="{{ old('corte_id') }}"
                         >
-                        <option value="selected">Seleccione una opcion</option>
-                        <option value="1">S10</option>
+                        <option value="selected">Seleccione una opción</option>
+                        <option value="1">S10-T</option>
                         <option value="2">SKC</option>
                         <option value="3">SKC-X2</option>
                         <option value="4">NY7</option>
                         <option value="5">KSE</option>
+                        <option value="6">WK055</option>
+                        <option value="7">015</option>
+                        <option value="8">NE5</option>
+                        <option value="9">NSP</option>
+                        <option value="10">NKK</option>
+                        <option value="11">NG-01</option>
+                        <option value="12">KG-020</option>
+                        <option value="13">KS-25</option>
+                        <option value="14">NKG</option>
+                        <option value="15">MPH2</option>
+                        <option value="16">W20</option>
+                        <option value="17">SM1</option>
+                        <option value="18">KD10</option>
+                        <option value="19">COMPLETO</option>
+                        <option value="21">POR MITAD</option>
+                        <option value="22">PROPTECK 162</option>
+                        <option value="23">FRIGOCEL VG2M</option>
+                        <option value="24">FRIGOCEL FR42</option>
+                        <option value="25">VALEO-08</option>
+                        <option value="26">VALEO-07</option>
+                        <option value="27">VALEO-07T</option>
+                        <option value="28">VALEO-V09</option>
+                        <option value="29">VALEO-630</option>
+                        <option value="30">VALEO-V99</option>
+                        <option value="31">VALEO-VRH</option>
+                        <option value="32">VALEO-VRE</option>
+                        <option value="33">Y2A</option>
+                        <option value="34">AY8</option>
+                        <option value="36">Y4A</option>
+                        <option value="37">AYE-200</option>
+                        <option value="38">AYE-128</option>
+                        <option value="39">RAFI-086</option>
+                        <option value="40">RAFI-104</option>
+                        <option value="41">RAFI-105</option>
+                        <option value="42">RAFI-110</option>
+                        <option value="43">RAFI-145</option>
+                        <option value="44">RAFI-A2X119</option>
+                        <option value="45">RAFI-146</option>
+                        <option value="46">OMRON 055</option>
+                        <option value="47">OMRON 046</option>
+                        <option value="48">OMRON 047</option>
+                        <option value="49">OMRON 048</option>
+                        <option value="50">KATOLECK-MODELO H</option>
+                        <option value="51">KATOLECK-15T</option>
+                        <option value="52">KATOLECK-020</option>
+                        <option value="53">S10</option>
+                        <option value="54">9X9 9X9</option>
+                        <option value="55">T-15</option>
                         </select>
                         @error('corte_id')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -166,7 +214,7 @@
                             id="comentarios"
                             name="comentarios" 
                             type="text"
-                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('comentarios') border-red-500
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('comentarios') border-red-500
                             @enderror"
                             value="{{ old('comentarios') }}"
                         />
@@ -210,7 +258,6 @@
                 </form>
             </div>
             <div>
-                
-            </div>
+        </div>
     </body>
 </html> 

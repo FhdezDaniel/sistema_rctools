@@ -44,6 +44,10 @@ Route::get('/registrosproduccion', function(){
     return view('registrosproduccion');
 });
 
+Route::get('/consultas', function(){
+    return view('consultas');
+});
+
 Route::resource('/esquemas','App\Http\Controllers\EsquemaController');
 Route::post('sort', '\Rutorika\Sortable\SortableController@sort');
 
@@ -83,3 +87,7 @@ Route::get('/posts/create', [PostController::class, 'create'])->name('posts.crea
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

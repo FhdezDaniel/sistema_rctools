@@ -37,7 +37,6 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
                             </div>
                             </div>
@@ -83,7 +82,7 @@
                                     <option value="4">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                @error('termoformadora_id')
+                                @error('termofromadora_id')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                 @enderror
                             </div>
@@ -101,9 +100,11 @@
                                     value="{{ old('producto_id') }}"
                                 >
                                     <option value="selected">Seleccione una opción</option>
-                                    <option value="9">TAX 120</option>
-                                    <option value="2">PCK0054</option>
-                                    <option value="3">Frigocel</option>
+                                    <option value="1">NSKYP10</option>
+                                    <option value="2">TAX 106</option>
+                                    <option value="3">PROPTECK 162</option>
+                                    <option value="4">PCK00558</option>
+                                    <option value="5">TAX 950</option>
                                 </select>
                                 @error('producto_id')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
@@ -152,7 +153,7 @@
                             
                     </div>
                     <div class="flex">
-                            <div class="mb-5 w-3/5">
+                    <div class="mb-5 w-3/5">
                                 <label for="fecha_inicio" class="mb-2 block uppercase text-gray-700 font-bold">
                                     Fecha - Inicio
                                 </label>
@@ -161,7 +162,7 @@
                                     name="fecha_inicio" 
                                     type="date"
                                     placeholder="Fecha - inicio de producción"
-                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('fecha_inicio') border-red-500
+                                    class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('inicio') border-red-500
                                     @enderror"
                                     value="{{ old('fecha_inicio') }}"
                                 />
@@ -199,9 +200,15 @@
                                     value="{{ old('estatus') }}"
                                 >
                                     <option value="Completado">Completado</option>
-                                    <option value="Proceso">En proceso</option>
+                                    <option value="En proceso">En proceso</option>
                                     <option value="Pausado">Pausado</option>
                                     <option value="Problemas">Problemas</option>
+                                    <option value="Prioridad 1">Prioridad 1</option>
+                                    <option value="Prioridad 2">Prioridad 2</option>
+                                    <option value="Prioridad 3">Prioridad 3</option>
+                                    <option value="Prioridad 4">Prioridad 4</option>
+                                    <option value="Prioridad 5">Prioridad 5</option>
+
                                  </select>
                                 @error('estatus')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

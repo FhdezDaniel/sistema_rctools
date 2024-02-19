@@ -37,9 +37,11 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                             @role(['Admin','GerenteProduccion'])
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
+                            @endrole
+                            @role(['Admin','GerenteProduccion'])
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/consultas">Consultas</a>
                             @endrole
                             </div>
                             </div>
@@ -50,6 +52,21 @@
                                     <li><a class="hover:text-black text-lg uppercase" href="/mantenimiento">Mantenimiento</a></li>
                                     <li><a class="hover:text-black text-lg uppercase" href="/empleados">Empleados</a></li>
                                     </ul>
+
+                                    <a  class="font-medium text-neutral-100" 
+                                    href="{{ route('posts.index', auth()->user()->username) }}">
+                                    USUARIO:
+                                        <span class="font-medium space-x-2 hover:text-black"> 
+                                            {{ auth()->user()->username }}
+                                        </span>
+                                </a>
+                            
+                                <form class="space-x-4" method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="font-semibold text-white uppercase hover:text-black">
+                                        Cerrar sesión
+                                    </button>
+                                </form>
                                     
                                     
                                 </div>
@@ -80,7 +97,15 @@
                             <path d="m2.434 6.693 5.517-4.95A1 1 0 0 0 6.615.257L1.1 5.205a2.051 2.051 0 0 0-.01 3.035l5.61 5.088a1 1 0 1 0 1.344-1.482l-5.61-5.153Z"/>
                         </svg>
                         <span class="ml-2">REGRESAR</span>
-                    </a>       
+                    </a>   
+                    @role(['Supervisor','Admin'])
+                    <a href="/produccion" class="text-white bg-amber-500 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+                        </svg>
+                        <span class="ml-2">LINEAS</span>
+                    </a>     
+                    @endrole
                 </div>
                 <div>
                 <h1 class="mb-4 ml-20  text-4xl font-bold leading-none tracking-tight text-gray-900">Termo<mark class="ml-2 px-2 text-white bg-red-700 rounded">Formadoras</mark></h1>
@@ -119,14 +144,14 @@
                                 FECHA - INICIO
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                FECHA - TERMINO 
+                                FECHA - TERMINO
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 ESTATUS
                             </th>
                             @role(['Admin','GerenteProduccion'])
                             <th scope="col" class="px-6 py-3">
-                                ACCIÓN
+                                ACCION
                             </th>
                             @endrole
                         </tr>
@@ -158,10 +183,30 @@
                                         <td scope="row" class="px-6 py-4 font-bold text-orange-600  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
                                         @break
 
-                                        @case($planproduccion->estatus == 'Proceso') 
+                                        @case($planproduccion->estatus == 'En proceso') 
                                         <td scope="row" class="px-6 py-4 font-bold text-gray-600  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
-                                        @endswitch
+                                        @break
 
+                                        @case($planproduccion->estatus == 'Prioridad 1') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-600  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        @break
+
+                                        @case($planproduccion->estatus == 'Prioridad 2') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-500  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        @break
+
+                                        @case($planproduccion->estatus == 'Prioridad 3') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-400  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        @break
+
+                                        @case($planproduccion->estatus == 'Prioridad 4') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-300  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        @break
+
+                                        @case($planproduccion->estatus == 'Prioridad 5') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-200  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        @endswitch
+                                    
                                 @role(['Admin','GerenteProduccion'])
                                     <td class="">
                                         <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">

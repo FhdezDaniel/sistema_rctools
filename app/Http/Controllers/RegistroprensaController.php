@@ -28,7 +28,7 @@ class RegistroprensaController extends Controller
         $registroprensas->fecha = $request->get('fecha');
         $registroprensas->turno = $request->get('turno');
         $registroprensas->linea = $request->get('linea');
-        $registroprensas->producto = $request->get('producto');
+        $registroprensas->producto_id = $request->get('producto_id');
         $registroprensas->piezas_buenas = $request->get('piezas_buenas');
         $registroprensas->piezas_malas = $request->get('piezas_malas');
         $registroprensas->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');
@@ -63,7 +63,7 @@ class RegistroprensaController extends Controller
         $registroprensa->fecha = $request->get('fecha');
         $registroprensa->turno = $request->get('turno');
         $registroprensa->linea = $request->get('linea');
-        $registroprensa->producto = $request->get('producto');
+        $registroprensa->producto_id = $request->get('producto_id');
         $registroprensa->piezas_buenas = $request->get('piezas_buenas');
         $registroprensa->piezas_malas = $request->get('piezas_malas');
         $registroprensa->tiempo_muerto_operador = $request->get('tiempo_muerto_operador');

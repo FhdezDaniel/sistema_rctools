@@ -38,7 +38,6 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="#">Indicadores</a>
                             @role(['Admin','GerenteProduccion','DireccionGeneral'])
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="catalogo">Catalogo</a>
                             @endrole
@@ -93,7 +92,11 @@
                                     value="{{ $almacenprovisionals->producto_id }}"
                                 >
                                     <option value="{{ $almacenprovisionals->producto_id }}">{{$almacenprovisionals->producto->nombre}}</option>
-                                    <option value="1">SIIX 648</option>
+                                    <option value="1">NSKYP10</option>
+                                    <option value="2">TAX 106</option>
+                                    <option value="3">PROPTECK 162</option>
+                                    <option value="4">PCK00558</option>
+                                    <option value="5">TAX 950</option>
                                     
                                 </select>
                                 @error('producto_id')
