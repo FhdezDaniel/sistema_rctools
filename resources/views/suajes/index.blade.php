@@ -75,6 +75,8 @@
                 @endauth
     </header>
     
+    Prueba github
+
     <body class="bg-gray-300">
         <div class="w-screen h-screen bg-gray-300">
             <div>
