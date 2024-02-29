@@ -119,7 +119,7 @@
                                 </th>
                                 @role(['Admin','Operador','Supervisor'])
                                 <th scope="col" class="px-6 py-3">
-                                    ACCIÓN 
+                                    ACCION
                                 </th>
                                 @endrole
                             </tr>

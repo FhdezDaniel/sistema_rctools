@@ -48,25 +48,25 @@
                         </div>    
                         </li>
                     
-                                    <li><a class="hover:text-black text-lg uppercase" href="/calidad">Calidad</a></li>
-                                    <li><a class="hover:text-black text-lg uppercase" href="/mantenimiento">Mantenimiento</a></li>
-                                    <li><a class="hover:text-black text-lg uppercase" href="/empleados">Empleados</a></li>
-                                    </ul>
+                            <li><a class="hover:text-black text-lg uppercase" href="/calidad">Calidad</a></li>
+                            <li><a class="hover:text-black text-lg uppercase" href="/mantenimiento">Mantenimiento</a></li>
+                            <li><a class="hover:text-black text-lg uppercase" href="/empleados">Empleados</a></li>
+                            </ul>
 
-                                    <a  class="font-medium text-neutral-100" 
-                                    href="{{ route('posts.index', auth()->user()->username) }}">
-                                    USUARIO:
-                                        <span class="font-medium space-x-2 hover:text-black"> 
-                                            {{ auth()->user()->username }}
-                                        </span>
+                            <a  class="font-medium text-neutral-100" 
+                            href="{{ route('posts.index', auth()->user()->username) }}">
+                            USUARIO:
+                                <span class="font-medium space-x-2 hover:text-black"> 
+                                    {{ auth()->user()->username }}
+                                </span>
                                 </a>
                             
-                                <form class="space-x-4" method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                                    <button type="submit" class="font-semibold text-white uppercase hover:text-black">
-                                        Cerrar sesión
-                                    </button>
-                                </form>
+                            <form class="space-x-4" method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="font-semibold text-white uppercase hover:text-black">
+                                    Cerrar sesión
+                                </button>
+                            </form>
                                     
                                     
                                 </div>
@@ -144,7 +144,7 @@
                                 FECHA - INICIO
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                FECHA - TERMINO
+                                FECHA - TERMNINO
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 ESTATUS
@@ -188,30 +188,38 @@
                                         @break
 
                                         @case($planproduccion->estatus == 'Prioridad 1') 
-                                        <td scope="row" class="px-6 py-4 font-bold text-orange-600  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-700  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
                                         @break
 
                                         @case($planproduccion->estatus == 'Prioridad 2') 
-                                        <td scope="row" class="px-6 py-4 font-bold text-orange-500  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-600  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
                                         @break
 
                                         @case($planproduccion->estatus == 'Prioridad 3') 
-                                        <td scope="row" class="px-6 py-4 font-bold text-orange-400  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-500  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
                                         @break
 
                                         @case($planproduccion->estatus == 'Prioridad 4') 
-                                        <td scope="row" class="px-6 py-4 font-bold text-orange-300  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-400  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
                                         @break
 
                                         @case($planproduccion->estatus == 'Prioridad 5') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-300 whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        @break
+
+                                        @case($planproduccion->estatus == 'Prioridad 6') 
                                         <td scope="row" class="px-6 py-4 font-bold text-orange-200  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
+                                        @break
+
+                                        @case($planproduccion->estatus == 'Prioridad 7') 
+                                        <td scope="row" class="px-6 py-4 font-bold text-orange-100  whitespace-nowrap dark:text-white bg-white"> {{ $planproduccion->estatus}}</td> 
                                         @endswitch
                                     
                                 @role(['Admin','GerenteProduccion'])
                                     <td class="">
                                         <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
                                         <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  flex font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
-                                            Editar 
+                                            Editar
                                         </a>
                                         @csrf
                                         @method('DELETE')
@@ -226,4 +234,19 @@
             </div>
         </div>
     </body>
+    Fernanda
+    Litzy 
+    Andrea v
+    Fanny
+    Paulina h
+    Mariana m
+    Alexa
+    Andrea ri
+    Luisa
+    Mía
+    Karla
+    Fabiola
+    Fernanda rv
+    Mafer
+    Fanni
 </html>

@@ -9,7 +9,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
-        <title>RC Tools - Suajes</title>
+        <title>RC Tools - Inventario Suajes</title>
     </head>
     
     <header>
@@ -106,7 +106,7 @@
                             ID
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            SUAJE 
+                            SUAJE
                         </th>
                         <th scope="col" class="px-6 py-3">
                             CONTADOR
@@ -121,7 +121,7 @@
                             FECHA BAJA
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            HISTORIAL
+                            HITORIAL
                         </th>
                         @role(['Admin','Supervisor'])
                         <th scope="col" class="px-6 py-3">

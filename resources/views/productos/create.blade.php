@@ -124,7 +124,7 @@
                             @enderror"
                             value="{{ old('suaje_id') }}"
                         >
-                        <option value="selected">Seleccione una opcion</option>
+                        <option value="selected">Seleccione una opción</option>
                         <option value="1">NSP</option>
                         <option value="2">S10</option>
                         <option value="3">PROPTECK</option>
@@ -148,7 +148,7 @@
                             value="{{ old('materiaprima_id') }}"
                         >
                         <option value="selected">Seleccione una opcion</option>
-                        <option value="1">PLIPROPILENO</option>
+                        <option value="1">POLIPROPILENO</option>
                         <option value="2">TAX</option>
                         <option value="3">PROPTECK</option>
                         <option value="4">PCK</option>

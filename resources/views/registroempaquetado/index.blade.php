@@ -105,7 +105,7 @@
                                     NOMBRE DEL OPERADOR 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    MAQUINA 
+                                    MAQUINA
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     HORA
@@ -120,7 +120,7 @@
                                     LINEA
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    NOMBRE DEL PRODUCTO  
+                                    NOMBRE DEL PRODUCTO
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     CAJAS RECHAZADAS
@@ -135,7 +135,7 @@
                                     CAUSAS
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    LIMPIEZA 
+                                    LIMPIEZA
                                 </th>
                                 @role(['Admin'])
                                 <th scope="col" class="px-6 py-3">

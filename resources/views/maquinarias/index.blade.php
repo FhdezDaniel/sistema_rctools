@@ -9,11 +9,11 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
-        <title>RC Tools - Registro prensa</title>
+        <title>RC Tools - Maquinarias</title>
     </head>
     
     <header>
-    @auth 
+    @auth
         <section>
         <nav class="flex justify-between bg-red-700 text-neutral-100 w-screen" :class="{'flex': open, 'hidden': !open}">
             <div class="px-10 py-4 flex w-screen items-center">
@@ -38,9 +38,7 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/registrosproduccion">Registro de producción</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
-                            @role(['Admin','GerenteProduccion'])
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
-                            @endrole
                             @role(['Admin','GerenteProduccion'])
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/consultas">Consultas</a>
                             @endrole
@@ -76,19 +74,19 @@
 
     <body class="bg-gray-300">
         <div>
-            <h1 class="mt-14 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900">REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Prensa</mark></h1>
+            <h1 class="mt-20 ml-20 mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900"><mark class="px-2 text-white bg-red-700 rounded ml-3">Maquinaria</mark></h1>
 
             <div class="mt-12 mr-20 flex flex-row justify-end">
-                @role(['Admin','Operador'])
-                <a href="registroprensa/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                    <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
-                        <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
-                    </svg>       
-                    <span class="ml-2">NUEVO REGISTRO PRENSA</span>
+                @role(['Admin'])
+                <a href="maquinaria/create" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M.188 5H5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707c-.358.362-.617.81-.753 1.3C.148 5.011.166 5 .188 5ZM14 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm2 7h-1v1a1 1 0 0 1-2 0v-1h-1a1 1 0 0 1 0-2h1v-1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 0 2Z"/>
+                    <path d="M6 14a7.969 7.969 0 0 1 10-7.737V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H.188A.909.909 0 0 1 0 6.962V18a1.969 1.969 0 0 0 1.933 2h6.793A7.976 7.976 0 0 1 6 14Z"/>
+                </svg>     
+                    <span class="ml-2">REGISTRAR NUEVO MAQUINA</span>
                 </a> 
                 @endrole
-                <a href="/registrosproduccion" class="text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+                <a href="/home" class="text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
                     <svg class="w-6 h-6 text-white  dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
                         <path d="M13.606 3.748V2.53a1.542 1.542 0 0 0-.872-1.431 1.352 1.352 0 0 0-1.472.2L6.155 5.552a1.6 1.6 0 0 0 0 2.415l5.108 4.25a1.355 1.355 0 0 0 1.472.2 1.546 1.546 0 0 0 .872-1.428v-1.09a4.721 4.721 0 0 1 3.7 2.868 1.186 1.186 0 0 0 1.08.73 1.225 1.225 0 0 0 1.213-1.286v-1.33a6.923 6.923 0 0 0-5.994-7.133Z"/>
                         <path d="m2.434 6.693 5.517-4.95A1 1 0 0 0 6.615.257L1.1 5.205a2.051 2.051 0 0 0-.01 3.035l5.61 5.088a1 1 0 1 0 1.344-1.482l-5.61-5.153Z"/>
@@ -98,48 +96,15 @@
             </div>
             <div>
                 <div class="ml-20 mt-4 w-11/12 overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <table class="w-full text-xs text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-white uppercase bg-sky-900 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
-                                    NOMBRE OPERADOR
+                                    ID
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    MAQUINA
+                                    DESCRIPCION
                                 </th>
-                                <th scope="col" class="px-6 py-3">
-                                    HORA
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    FECHA
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    TURNO
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    LINEA
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    NOMBRE DEL PRODUCTO
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    PIEZAS BUENAS
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    PIEZAS MALAS
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    TIEMPO MUERTO OP
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    TIEMPO MUERTO MTTO
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    OBSERVACIONES
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    LIMPIEZA
-                                </th>   
                                 @role(['Admin'])
                                 <th scope="col" class="px-6 py-3">
                                     ACCION
@@ -148,39 +113,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($registroprensas as $registroprensa)
+                            @foreach ($maquinarias as $maquinaria)
                                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->empleado->nombre_completo }}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->maquina}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->hora}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->fecha}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->turno}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->linea}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->producto->nombre}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->piezas_buenas}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->piezas_malas}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->tiempo_muerto_operador}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->tiempo_muerto_mantenimiento}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->causa}}</td>
-                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $registroprensa->limpieza}}</td>
-                                    @role(['Admin'])
+                                    <th scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $maquinaria->id }}</th>
+                                    <td scope="row" class="px-6 py-4 font-semibold text-xs text-black whitespace-nowrap dark:text-white">{{ $maquinaria->descripcion }}</td>
                                     <td>
-                                        <form action="{{ route ('registroprensa.destroy',$registroprensa->id)}}" method="POST">
-                                            <a href="/registroprensa/{{ $registroprensa->id }}/edit" class="text-white flex bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 mt-2 py-2.5 mr-2 w-16">
+                                        <form action="" method="POST">
+                                            @role(['Admin'])
+                                            <a href="" class="text-white flex bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 mt-2 py-2.5 mr-2 w-16">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                                                 </svg>
                                             </a>
+                                            @endrole
                                             @csrf
+                                            @role(['Admin'])
                                             @method('DELETE')
                                             <button type="submit" class="focus:outline-none mt-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                                 </svg>
                                             </button>
+                                            @endrole
                                         </form>
                                     </td>
-                                    @endrole
                                 </tr>
                             @endforeach
                         </tbody>

@@ -87,7 +87,7 @@
                                         name="nombre_completo" 
                                         type="text"
                                         placeholder="Escriba el nombre completo del empleado"
-                                        class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombre_completo') border-red-500
+                                        class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombre_completo') border-red-500
                                         @enderror"
                                         value="{{ $empleado->nombre_completo }}"
                                     />

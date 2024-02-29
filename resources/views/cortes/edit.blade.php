@@ -9,7 +9,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
-        <title>RC Tools - Crear nuevo registro suaje</title>
+        <title>RC Tools - Crear nuevo registro cortes</title>
     </head>
 
     <header>

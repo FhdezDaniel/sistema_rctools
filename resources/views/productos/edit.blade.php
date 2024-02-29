@@ -86,7 +86,7 @@
                             name="clave" 
                             type="text"
                             placeholder="Escriba la clave del producto"
-                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('clave') border-red-500
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('clave') border-red-500
                             @enderror"
                             value="{{ $producto->clave }}"
                         />
@@ -121,7 +121,7 @@
                             id="suaje_id"
                             name="suaje_id" 
                             type="selected"
-                            class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('suaje_id') border-red-500
+                            class="border-2 font-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('suaje_id') border-red-500
                             @enderror"
                             value="{{ $producto->suaje_id }}"
                         >
@@ -143,7 +143,7 @@
                             id="materiaprima_id"
                             name="materiaprima_id" 
                             type="selected"
-                            class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('materiaprima_id') border-red-500
+                            class="border-2 font-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('materiaprima_id') border-red-500
                             @enderror"
                             value="{{ $producto->materiaprima_id }}"
                         >
@@ -159,13 +159,13 @@
 
                     <div class="mb-5">
                         <label for="caja_id" class="mb-2 block uppercase text-gray-700 font-bold">
-                            Caja 
+                            Caja
                         </label>
                         <select
                             id="caja_id"
                             name="caja_id" 
                             type="selected"
-                            class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('caja_id') border-red-500
+                            class="border-2 font-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('caja_id') border-red-500
                             @enderror"
                             value="{{ $producto->caja_id }}"
                         >
@@ -177,7 +177,7 @@
                         <option value="5">INVERNADERO</option>
                         <option value="6">JAE</option>
                         <option value="7">MATSUJU</option>
-                        <option value="8">SEMILLERO</option>
+                        <option value="8">SEMILLLERO</option>
                         <option value="9">SIIX</option>
                         <option value="10">TETELA</option>
                         <option value="11">TIJUANA</option>
@@ -201,7 +201,7 @@
                             id="bolsa_id"
                             name="bolsa_id" 
                             type="selected"
-                            class="border-2 ont-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('bolsa_id') border-red-500
+                            class="border-2 font-medium uppercase text-gray-500 p-3 w-full rounded-lg @error('bolsa_id') border-red-500
                             @enderror"
                             value="{{ $producto->bolsa_id }}"
                         >

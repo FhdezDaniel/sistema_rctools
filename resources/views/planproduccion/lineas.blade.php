@@ -74,12 +74,11 @@
                         </section>
     </header>
     
-    <body class="bg-gray-300">
-        <div class="w-screen">
+<body class="bg-gray-300">
+    <div class="w-screen">
         
-            <div>
-
-                <h1 class="mt-14 ml-20 mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción Linea
+        <div>
+            <h1 class="mt-14 ml-20 mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900">PLAN <mark class="px-2 text-white bg-red-700 rounded">Producción Linea
                 @foreach ($planproduccions as $planproduccion)
                     @switch(true)
                             @case($planproduccion->estatus == 'Prioridad 1')
@@ -208,7 +207,7 @@
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
-                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-600 text-white">PRIORIDAD 1</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-700 text-black">PRIORIDAD 1</td>
                                                             <td>
                                                                 @role(['Supervisor','Admin'])
                                                                     <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
@@ -233,7 +232,7 @@
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
-                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-500 text-white">PRIORIDAD 2</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-600 text-black">PRIORIDAD 2</td>
                                                             <td>
                                                                 @role(['Supervisor','Admin'])
                                                                     <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
@@ -258,7 +257,7 @@
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
-                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-400 text-white">PRIORIDAD 3</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-500 text-black">PRIORIDAD 3</td>
                                                             <td>
                                                                 @role(['Supervisor','Admin'])
                                                                     <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
@@ -283,7 +282,7 @@
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
-                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-300 text-white">PRIORIDAD 4</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-400 text-black">PRIORIDAD 4</td>
                                                             <td>
                                                                 @role(['Supervisor','Admin'])
                                                                     <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
@@ -308,7 +307,57 @@
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
                                                             <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
-                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-200 text-black">PRIORIDAD 5</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-300 text-black">PRIORIDAD 5</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
+                                                        @break
+
+                                                        @case($planproduccion->estatus == 'Prioridad 6') 
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-200 text-black">PRIORIDAD 6</td>
+                                                            <td>
+                                                                @role(['Supervisor','Admin'])
+                                                                    <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">
+                                                                        <a href="/planproduccion/{{ $planproduccion->id }}/edit" class="text-white ml-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2">
+                                                                            EDITAR
+                                                                        </a>
+                                                                @endrole
+                                                            </td>
+                                                        </tr>
+                                                    @break
+
+                                                    @case($planproduccion->estatus == 'Prioridad 7') 
+                                                        <tr class="border-b dark:border-neutral-500 bg-white">
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->termoformadora->id }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->codigo }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->suaje->corte->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->materiaprima->descripcion }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->caja->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->producto->bolsa->nombre }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->cantidad_empaquetado }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_inicio }}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold">{{ $planproduccion->fecha_termino}}</td>
+                                                            <td class="whitespace-nowrap  px-6 py-4 font-semibold bg-orange-100 text-black">PRIORIDAD 7</td>
                                                             <td>
                                                                 @role(['Supervisor','Admin'])
                                                                     <form action="{{ route ('planproduccion.destroy', $planproduccion->id) }}" method="POST">

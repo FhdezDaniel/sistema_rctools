@@ -31,6 +31,7 @@ class PlanproduccionController extends Controller
         $planproduccions->fecha_inicio = $request->get('fecha_inicio');
         $planproduccions->fecha_termino = $request->get('fecha_termino');
         $planproduccions->estatus = $request->get('estatus');
+        
 
         $planproduccions->save();
 

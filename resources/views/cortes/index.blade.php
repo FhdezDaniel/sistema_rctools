@@ -9,7 +9,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
-        <title>RC Tools - Suajes</title>
+        <title>RC Tools - Cortes</title>
     </head>
     
     <header>
@@ -121,7 +121,7 @@
                 <tbody>
                 @foreach ( $cortes as $corte )
                         <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 uppercase">
-                            <th scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $corte->id }} </th>
+                            <th scope="row" class="px-6 PY-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $corte->id }} </th>
                             <th scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $corte->nombre }} </th>
                             <th scope="row" class="px-6 py-4 font-bold text-gray-700  whitespace-nowrap dark:text-white">{{ $corte->fecha_registro }} </th>
                             <td>

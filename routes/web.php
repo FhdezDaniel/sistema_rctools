@@ -21,6 +21,7 @@ use App\Http\Controllers\InventarioSuajeController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\EsquemaController;
 use App\Http\Controllers\SortableController;
+use App\Http\Controllers\MaquinariaController;
 
 // VISTAS GENERALES
 
@@ -58,11 +59,13 @@ Route::resource('/materiaprima','App\Http\Controllers\MateriaprimaController');
 Route::resource('/cajas','App\Http\Controllers\CajaController');
 Route::Resource('/inventariosuajes','App\Http\Controllers\InventarioSuajeController');
 Route::Resource('/productos','App\Http\Controllers\ProductoController');
+Route::Resource('/maquinarias','App\Http\Controllers\MaquinariaController');
 
 Route::resource('/almacenprovisional','App\Http\Controllers\AlmacenprovisionalController');
 Route::resource('/planproduccion','App\Http\Controllers\PlanproduccionController');
 Route::resource('/suajes','App\Http\Controllers\SuajeController');
 Route::resource('/registroproduccion','App\Http\Controllers\ProduccionregistroController');
+
 
 // REGISTRO Y LOGIN 
 Route::get('/', [LoginController::class, 'index'])->name('login');
@@ -71,6 +74,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
+
 
 // REGISTROS
 Route::resource('/registrotermoformado','App\Http\Controllers\RegistrotermoformadoController');

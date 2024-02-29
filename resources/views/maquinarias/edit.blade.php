@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,10 +8,10 @@
             @vite('resources/js/app.js')
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}"> 
-        <title>RC Tools - Editar registro almacen provisional</title>
+        <link rel="shortcut icon" href="{{ asset('images/rctoolslogo.jpg') }}">
+        <title>RC Tools - Crear nuevo registro almacen provisional</title>
     </head>
-
+    
     <header>
     @auth 
         <section>
@@ -40,7 +39,7 @@
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/almacenprovisional">Almacen provisional</a>
                             <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/suajes">Suajes</a>
                             @role(['Admin','GerenteProduccion','DireccionGeneral'])
-                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="catalogo">Catalogo</a>
+                            <a class="block px-4 py-2 mt-2 text-base text-black font-semibold  rounded-lg hover:bg-slate-300 uppercase" href="/catalogo">Catalogo</a>
                             @endrole
                         </div>
                         </div>
@@ -71,18 +70,17 @@
                     </section>
                 @endauth
     </header>
-    
+
     <body class="bg-gray-300">
             <div>
-                <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">EDITAR REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Almacen provisional</mark></h2>
+                <h2 class="mt-10 ml-20 mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 ">CREAR NUEVO REGISTRO<mark class="px-2 text-white bg-red-700 rounded ml-3">Almacen provisional</mark></h2>
             </div>
             <div class="w-4/12  ml-20 bg-white p-6 rounded-lg shadow-xl">
-                <form action="/almacenprovisional/{{ $almacenprovisionals->id }}" method="POST">
+                <form action="/almacenprovisional" method="POST">
                     @csrf
-                    @method('PUT')
                     <div class="mb-5">
                         <label for="producto_id" class="mb-2 block uppercase text-gray-700 font-bold">
-                                    NOMBRE DEL PRODUCTO
+                                    Nombre del producto
                                 </label>
                                 <select 
                                     id="producto_id"
@@ -90,20 +88,20 @@
                                     type="selected"
                                     class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('producto_id') border-red-500
                                     @enderror"
-                                    value="{{ $almacenprovisionals->producto_id }}"
+                                    value="{{ old('producto_id') }}"
                                 >
-                                    <option value="{{ $almacenprovisionals->producto_id }}">{{$almacenprovisionals->producto->nombre}}</option>
+                                    <option value="selected">Seleccione una opción</option>
                                     <option value="1">NSKYP10</option>
                                     <option value="2">TAX 106</option>
                                     <option value="3">PROPTECK 162</option>
                                     <option value="4">PCK00558</option>
                                     <option value="5">TAX 950</option>
-                                    
                                 </select>
                                 @error('producto_id')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                                 @enderror
                         </div>
+                    
                     <div class="mb-5">
                         <label for="piezas" class="mb-2 block uppercase text-gray-700 font-bold">
                             Piezas
@@ -115,7 +113,7 @@
                             placeholder="Numero de piezas"
                             class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('piezas') border-red-500
                             @enderror"
-                            value="{{ $almacenprovisionals->piezas }}"
+                            value="{{ old('piezas') }}"
                         />
                         @error('piezas')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

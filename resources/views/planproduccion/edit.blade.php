@@ -217,6 +217,8 @@
                                 <option value="Prioridad 3">Prioridad 3</option>
                                 <option value="Prioridad 4">Prioridad 4</option>
                                 <option value="Prioridad 5">Prioridad 5</option>
+                                <option value="Prioridad 6">Prioridad 6</option>
+                                <option value="Prioridad 7">Prioridad 7</option>
                                 </select>
                                 @error('estatus')
                                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>

@@ -93,7 +93,7 @@
                     >
                         <option value="selected">Seleccione una opción</option>
                         <option value="953">Carlos Martinez Hernandez</option>
-                        <option value="145">Daniela Hernandez Arreguin</option>
+                        <option value="145">Daniel Hernandez Arreguin</option>
                     </select>    
                 </div>
 
@@ -129,8 +129,8 @@
                         <option value="selected">Seleccione una opción</option>
                         <option value="piezas_buenas">Piezas buenas</option>
                         <option value="piezas_malas">Piezas malas</option>
-                        <option value="sum(piezas_buenas)">Suma Piezas buenas</option>
-                        <option value="sum(piezas_malas)">Suma Piezas malas</option>
+                        <option value="sum(piezas_buenas)">Suma piezas buenas</option>
+                        <option value="sum(piezas_malas)">Suma piezas malas</option>
                     </select>
                 </div>
 
@@ -161,7 +161,7 @@
                     />
                 </div>
     
-                <div class=" mt-28">
+                <div class="mt-28">
                     <button 
                         onclick="mifuncion()" 
                         class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
@@ -183,7 +183,7 @@
                         y = document.getElementById("num2").value;
                         d = document.getElementById("num3").value;
                         z = document.getElementById("num4").value;
-                        l = document.getElementById("num5").value;
+                        l = document.getElementById("num5").value; 
                         
                         text = "Select "+(l)+" from "+(y)+" where (empleado_id = "+(x)+" and fecha >= '"+(d)+"' and fecha <= '"+(z)+"')"
 
@@ -287,17 +287,14 @@
                                     x = document.getElementById("termoformadora").value;
                                     y = document.getElementById("registro").value;
                                     d = document.getElementById("fechaini").value;
-                                    z = document.getElementById("fechater").value;
+                                    z = document.getElementById("fechater").value;  
                             
                                     text = "Select maquina, tiempo_muerto_mantenimiento, causa, fecha from "+(y)+" where (maquina = '"+(x)+"' and fecha >= '"+(d)+"' and fecha <= '"+(z)+"')"
 
                                     document.getElementById("consulta_maquina").innerHTML = text;
-                            
-                                }
 
+                                } 
                         </script>
-            
-        
     </body>
 </html>
                       

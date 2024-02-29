@@ -19,7 +19,7 @@
             <div class="px-10 py-4 flex w-screen items-center">
             <img class="h-16" src="{{ asset('images/rctoolslogo.jpg') }}" alt="logo"> 
                 <a class="text-3xl font-sans font-medium ml-3 hover:text-black uppercase" href="/home">
-                    RC Tools 
+                    RC Tools
                 </a>
 
                 <ul class="hidden md:flex px-4 mx-auto font-sans font-medium space-x-12">
@@ -86,7 +86,7 @@
                             name="nombre" 
                             type="text"
                             placeholder="Escriba el nombre o tipo de bolsa"
-                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('nombre') border-red-500
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('nombre') border-red-500
                             @enderror"
                             value="{{ $bolsa->nombre }}"
                         />
@@ -104,7 +104,7 @@
                             name="existencia" 
                             type="text"
                             placeholder="Escriba el numero de existencia de la caja a registrar"
-                            class="border-2 ont-medium text-gray-500 p-3 w-full rounded-lg @error('existencia') border-red-500
+                            class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('existencia') border-red-500
                             @enderror"
                             value="{{ $bolsa->existencia }}"
                         />

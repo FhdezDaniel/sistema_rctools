@@ -102,7 +102,7 @@
                             id="contador_uso"
                             name="contador_uso" 
                             type="text"
-                            placeholder="Contador de uso de suaje"
+                            placeholder="Contador de use de suaje"
                             class="border-2 font-medium text-gray-500 p-3 w-full rounded-lg @error('contador_uso') border-red-500
                             @enderror"
                             value="{{ old('contador_uso') }}"
